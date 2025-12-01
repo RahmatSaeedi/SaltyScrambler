@@ -13,7 +13,7 @@
     <meta name="author" content="Rahmat Saeedi">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
-    
+
     <!-- Open Graph / Facebook Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://RahmatSaeedi.github.io/SaltyScrambler/">
@@ -749,6 +749,140 @@
                 font-size: 1rem;
             }
         }
+
+        /* Information Sections */
+        .info-section {
+            background: white;
+            border-radius: 1rem;
+            padding: 2.5rem 1.5rem;
+            margin: 2rem auto;
+            max-width: 900px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .info-section h2 {
+            color: #dc2626;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #FF0000;
+            padding-bottom: 0.75rem;
+        }
+
+        .info-section h3 {
+            color: #0D0C22;
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .feature-item {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border-left: 4px solid #FF0000;
+        }
+
+        .feature-item strong {
+            color: #dc2626;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-item p {
+            color: #666;
+            margin: 0;
+        }
+
+        .faq-item {
+            margin: 1.5rem 0;
+            background: #f9f9f9;
+            padding: 1.25rem;
+            border-radius: 0.75rem;
+            border-left: 4px solid #FF0000;
+        }
+
+        .faq-item strong {
+            color: #dc2626;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-item p {
+            color: #666;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .pwa-instructions {
+            background: linear-gradient(135deg, rgba(255, 0, 0, 0.05) 0%, rgba(255, 0, 0, 0.02) 100%);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            margin: 1rem 0;
+            border-left: 4px solid #FF0000;
+        }
+
+        .pwa-instructions h4 {
+            color: #dc2626;
+            margin-top: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .pwa-instructions h4:first-child {
+            margin-top: 0;
+        }
+
+        .pwa-instructions ol, .pwa-instructions ul {
+            margin: 0.5rem 0 0 1.5rem;
+            color: #666;
+        }
+
+        .pwa-instructions li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .security-badge {
+            display: inline-block;
+            background: #dc2626;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 0.25rem;
+        }
+
+        @media (max-width: 768px) {
+            .info-section {
+                padding: 1.5rem 1rem;
+                margin: 1.5rem auto;
+            }
+
+            .info-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .info-section h3 {
+                font-size: 1.1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .pwa-instructions {
+                padding: 1rem;
+            }
+        }
     </style>
 
     <!-- JSON-LD Structured Data -->
@@ -881,6 +1015,190 @@
                 <p id="decryptStatus"></p>
                 <div id="gallery" aria-live="polite"></div>
             </section>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="info-section" id="aboutSection">
+        <h2 id="aboutTitle">About The Salty Scrambler</h2>
+        <p id="aboutDescription">The Salty Scrambler is a free, open-source, browser-based file encryption tool designed for maximum security and privacy. It allows you to encrypt any file type with a strong password, creating a protected .encrypted file that can only be decrypted with the correct password.</p>
+    </div>
+
+    <!-- Key Features Section -->
+    <div class="info-section" id="featuresSection">
+        <h2 id="featuresTitle">Key Features</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <strong id="feature1Title">🔐 Military-Grade Encryption</strong>
+                <p id="feature1Desc">AES-256-GCM encryption standard</p>
+            </div>
+            <div class="feature-item">
+                <strong id="feature2Title">🔑 Strong Key Derivation</strong>
+                <p id="feature2Desc">PBKDF2 with 310,000 iterations</p>
+            </div>
+            <div class="feature-item">
+                <strong id="feature3Title">☁️ Browser-Based</strong>
+                <p id="feature3Desc">No servers, no uploads, no data collection</p>
+            </div>
+            <div class="feature-item">
+                <strong id="feature4Title">📁 Any File Type</strong>
+                <p id="feature4Desc">Encrypt documents, images, videos, and more</p>
+            </div>
+            <div class="feature-item">
+                <strong id="feature5Title">⚡ Multiple Files</strong>
+                <p id="feature5Desc">Encrypt/decrypt multiple files at once</p>
+            </div>
+            <div class="feature-item">
+                <strong id="feature6Title">🌍 50+ Languages</strong>
+                <p id="feature6Desc">Supports multilingual users worldwide</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- How It Works Section -->
+    <div class="info-section" id="howItWorksSection">
+        <h2 id="howItWorksTitle">How It Works</h2>
+
+        <h3 id="encryptProcessTitle">Encryption Process</h3>
+        <ol id="encryptProcessList" style="margin-left: 1.5rem; color: #666;">
+            <li id="encryptStep1">Select any files you want to encrypt</li>
+            <li id="encryptStep2">Create a strong encryption password</li>
+            <li id="encryptStep3">Click Encrypt - the app generates a .encrypted file</li>
+            <li id="encryptStep4">Share safely: send the encrypted file anywhere with confidence</li>
+        </ol>
+
+        <h3 id="decryptProcessTitle">Decryption Process</h3>
+        <ol id="decryptProcessList" style="margin-left: 1.5rem; color: #666;">
+            <li id="decryptStep1">Select your .encrypted file</li>
+            <li id="decryptStep2">Enter the correct decryption password</li>
+            <li id="decryptStep3">Click Decrypt - your original files are instantly restored</li>
+            <li id="decryptStep4">Open and use your files normally</li>
+        </ol>
+
+        <h3 id="technicalDetailsTitle">Technical Details</h3>
+        <p id="technicalDetail1"><strong id="encryptMethodLabel">Encryption Method:</strong> <span id="encryptMethodDesc">AES-256-GCM (Advanced Encryption Standard with 256-bit keys in Galois/Counter Mode) - Provides confidentiality and authenticity, resistant to all known cryptographic attacks</span></p>
+        <p id="technicalDetail2"><strong id="keyDerivationLabel">Key Derivation:</strong> <span id="keyDerivationDesc">PBKDF2 (Password-Based Key Derivation Function 2) with 310,000 HMAC-SHA256 iterations - Resistant to brute-force and dictionary attacks</span></p>
+        <p id="technicalDetail3"><strong id="privacyLabel">Privacy:</strong> <span id="privacyDesc">All encryption happens in your browser. Your files never touch any server. Your passwords are never transmitted. Complete control of your data.</span></p>
+    </div>
+
+    <!-- Security Section -->
+    <div class="info-section" id="securitySection">
+        <h2 id="securityTitle">Security Considerations</h2>
+        <p id="securityIntro">Your security is our priority:</p>
+        <div style="margin: 1rem 0;">
+            <span class="security-badge" id="secBadge1">✓ Client-Side Only</span>
+            <span class="security-badge" id="secBadge2">✓ No Data Retention</span>
+            <span class="security-badge" id="secBadge3">✓ Open Source</span>
+            <span class="security-badge" id="secBadge4">✓ Industry Standards</span>
+            <span class="security-badge" id="secBadge5">✓ PBKDF2 Hardened</span>
+        </div>
+        <h3 id="bestPracticesTitle">Best Practices</h3>
+        <ul id="bestPracticesList" style="margin-left: 1.5rem; color: #666;">
+            <li id="bestPractice1">Use strong, unique passwords (mix uppercase, lowercase, numbers, symbols)</li>
+            <li id="bestPractice2">Never share your encryption password</li>
+            <li id="bestPractice3">Keep your encrypted files in a safe location</li>
+            <li id="bestPractice4">Test decryption on a copy before considering the original lost</li>
+            <li id="bestPractice5">Remember your password - there is no recovery mechanism</li>
+        </ul>
+    </div>
+
+    <!-- Progressive Web App Installation -->
+    <div class="info-section" id="pwaSection">
+        <h2 id="pwaTitle">📱 Install as App</h2>
+        <p id="pwaIntroduction">The Salty Scrambler is a Progressive Web App (PWA) that can be installed on your phone or computer for easy access.</p>
+
+        <div class="pwa-instructions">
+            <h4 id="pwaWindowsTitle">Install on Windows</h4>
+            <ol id="pwaWindowsList">
+                <li id="pwaWindows1">Open the application in Microsoft Edge or Google Chrome</li>
+                <li id="pwaWindows2">Click the install button (usually appears in the address bar)</li>
+                <li id="pwaWindows3">Click "Install" in the popup dialog</li>
+                <li id="pwaWindows4">The app will be installed as a desktop application</li>
+                <li id="pwaWindows5">Find it in your Start Menu or on your desktop</li>
+            </ol>
+        </div>
+
+        <div class="pwa-instructions">
+            <h4 id="pwaIOSTitle">Install on iPhone/iPad (iOS)</h4>
+            <ol id="pwaIOSList">
+                <li id="pwaIOS1">Open Safari and navigate to the application</li>
+                <li id="pwaIOS2">Tap the Share button (icon with an arrow pointing upward)</li>
+                <li id="pwaIOS3">Scroll down and tap "Add to Home Screen"</li>
+                <li id="pwaIOS4">Choose a name for the app (or keep the default)</li>
+                <li id="pwaIOS5">Tap "Add" in the top right corner</li>
+                <li id="pwaIOS6">The app will appear on your home screen</li>
+            </ol>
+        </div>
+
+        <div class="pwa-instructions">
+            <h4 id="pwaAndroidTitle">Install on Android</h4>
+            <ol id="pwaAndroidList">
+                <li id="pwaAndroid1">Open Google Chrome and navigate to the application</li>
+                <li id="pwaAndroid2">Tap the three dots menu (⋮) in the top right</li>
+                <li id="pwaAndroid3">Select "Install app" or "Add to Home screen"</li>
+                <li id="pwaAndroid4">Confirm the installation</li>
+                <li id="pwaAndroid5">The app will be added to your home screen</li>
+            </ol>
+        </div>
+
+        <div class="pwa-instructions">
+            <h4 id="pwaMacTitle">Install on Mac</h4>
+            <ol id="pwaMacList">
+                <li id="pwaMac1">Open Safari or Google Chrome</li>
+                <li id="pwaMac2">Visit the application in your browser</li>
+                <li id="pwaMac3">In Safari: File → Add to Dock, or in Chrome: click the install button</li>
+                <li id="pwaMac4">Choose a name for the app</li>
+                <li id="pwaMac5">Click "Add" to install it in your dock</li>
+            </ol>
+        </div>
+
+        <p id="pwaNote" style="color: #666; font-size: 0.95rem; margin-top: 1.5rem;">
+            <strong id="pwaNoteBold">Note:</strong> <span id="pwaNoteContinued">Once installed, the app works completely offline. You don't need an internet connection to encrypt or decrypt files!</span>
+        </p>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="info-section" id="faqSection">
+        <h2 id="faqTitle">Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <strong id="faq1Q">Q: Is my data completely secure?</strong>
+            <p id="faq1A">Yes. All encryption happens in your browser. Your files never leave your computer or are transmitted anywhere.</p>
+        </div>
+
+        <div class="faq-item">
+            <strong id="faq2Q">Q: What if I forget my password?</strong>
+            <p id="faq2A">Unfortunately, there is no recovery mechanism. If you forget your password, the encrypted files cannot be decrypted. This is by design - it ensures your data cannot be recovered by anyone else either.</p>
+        </div>
+
+        <div class="faq-item">
+            <strong id="faq3Q">Q: Can you decrypt my files if I lose the password?</strong>
+            <p id="faq3A">No. We have no access to your encrypted files or passwords. Only you can decrypt your data.</p>
+        </div>
+
+        <div class="faq-item">
+            <strong id="faq4Q">Q: Is The Salty Scrambler free?</strong>
+            <p id="faq4A">Yes, completely free and open-source. No premium features or hidden costs.</p>
+        </div>
+
+        <div class="faq-item">
+            <strong id="faq5Q">Q: Can I use this on mobile?</strong>
+            <p id="faq5A">Yes! The application is fully responsive and works on iOS and Android devices.</p>
+        </div>
+
+        <div class="faq-item">
+            <strong id="faq6Q">Q: What file types can I encrypt?</strong>
+            <p id="faq6A">Any file type! Documents, images, videos, archives, PDFs, spreadsheets, presentations, audio files, executables - anything.</p>
+        </div>
+
+        <div class="faq-item">
+            <strong id="faq7Q">Q: Can I encrypt files and decrypt them on a different device?</strong>
+            <p id="faq7A">Yes! Share the .encrypted file and password with someone else, and they can decrypt it using The Salty Scrambler on their device.</p>
+        </div>
+
+        <div class="faq-item">
+            <strong id="faq8Q">Q: How is this different from other encryption tools?</strong>
+            <p id="faq8A">The Salty Scrambler is completely free, requires no installation, is browser-based, supports 50+ languages, and uses military-grade encryption - all without collecting any personal data.</p>
         </div>
     </div>
 
@@ -1297,7 +1615,99 @@
             error_invalid_file: '{0}: invalid or corrupt file.',
             donation_title: 'Love The Salty Scrambler?',
             donation_subtitle: 'Your support helps us keep this tool free, secure, and continuously improving. Consider buying us a coffee to fuel our work!',
-            donation_btn: 'Buy Us a Coffee'
+            donation_btn: 'Buy Us a Coffee',
+            aboutTitle: 'About The Salty Scrambler',
+            aboutDescription: 'The Salty Scrambler is a free, open-source, browser-based file encryption tool designed for maximum security and privacy. It allows you to encrypt any file type with a strong password, creating a protected .encrypted file that can only be decrypted with the correct password.',
+            featuresTitle: 'Key Features',
+            feature1Title: '🔐 Military-Grade Encryption',
+            feature1Desc: 'AES-256-GCM encryption standard',
+            feature2Title: '🔑 Strong Key Derivation',
+            feature2Desc: 'PBKDF2 with 310,000 iterations',
+            feature3Title: '☁️ Browser-Based',
+            feature3Desc: 'No servers, no uploads, no data collection',
+            feature4Title: '📁 Any File Type',
+            feature4Desc: 'Encrypt documents, images, videos, and more',
+            feature5Title: '⚡ Multiple Files',
+            feature5Desc: 'Encrypt/decrypt multiple files at once',
+            feature6Title: '🌍 50+ Languages',
+            feature6Desc: 'Supports multilingual users worldwide',
+            howItWorksTitle: 'How It Works',
+            encryptProcessTitle: 'Encryption Process',
+            encryptStep1: 'Select any files you want to encrypt',
+            encryptStep2: 'Create a strong encryption password',
+            encryptStep3: 'Click Encrypt - the app generates a .encrypted file',
+            encryptStep4: 'Share safely: send the encrypted file anywhere with confidence',
+            decryptProcessTitle: 'Decryption Process',
+            decryptStep1: 'Select your .encrypted file',
+            decryptStep2: 'Enter the correct decryption password',
+            decryptStep3: 'Click Decrypt - your original files are instantly restored',
+            decryptStep4: 'Open and use your files normally',
+            technicalDetailsTitle: 'Technical Details',
+            encryptMethodLabel: 'Encryption Method:',
+            encryptMethodDesc: 'AES-256-GCM (Advanced Encryption Standard with 256-bit keys in Galois/Counter Mode) - Provides confidentiality and authenticity, resistant to all known cryptographic attacks',
+            keyDerivationLabel: 'Key Derivation:',
+            keyDerivationDesc: 'PBKDF2 (Password-Based Key Derivation Function 2) with 310,000 HMAC-SHA256 iterations - Resistant to brute-force and dictionary attacks',
+            privacyLabel: 'Privacy:',
+            privacyDesc: 'All encryption happens in your browser. Your files never touch any server. Your passwords are never transmitted. Complete control of your data.',
+            securityTitle: 'Security Considerations',
+            securityIntro: 'Your security is our priority:',
+            secBadge1: '✓ Client-Side Only',
+            secBadge2: '✓ No Data Retention',
+            secBadge3: '✓ Open Source',
+            secBadge4: '✓ Industry Standards',
+            secBadge5: '✓ PBKDF2 Hardened',
+            bestPracticesTitle: 'Best Practices',
+            bestPractice1: 'Use strong, unique passwords (mix uppercase, lowercase, numbers, symbols)',
+            bestPractice2: 'Never share your encryption password',
+            bestPractice3: 'Keep your encrypted files in a safe location',
+            bestPractice4: 'Test decryption on a copy before considering the original lost',
+            bestPractice5: 'Remember your password - there is no recovery mechanism',
+            pwaTitle: '📱 Install as App',
+            pwaIntroduction: 'The Salty Scrambler is a Progressive Web App (PWA) that can be installed on your phone or computer for easy access.',
+            pwaWindowsTitle: 'Install on Windows',
+            pwaWindows1: 'Open the application in Microsoft Edge or Google Chrome',
+            pwaWindows2: 'Click the install button (usually appears in the address bar)',
+            pwaWindows3: 'Click "Install" in the popup dialog',
+            pwaWindows4: 'The app will be installed as a desktop application',
+            pwaWindows5: 'Find it in your Start Menu or on your desktop',
+            pwaIOSTitle: 'Install on iPhone/iPad (iOS)',
+            pwaIOS1: 'Open Safari and navigate to the application',
+            pwaIOS2: 'Tap the Share button (icon with an arrow pointing upward)',
+            pwaIOS3: 'Scroll down and tap "Add to Home Screen"',
+            pwaIOS4: 'Choose a name for the app (or keep the default)',
+            pwaIOS5: 'Tap "Add" in the top right corner',
+            pwaIOS6: 'The app will appear on your home screen',
+            pwaAndroidTitle: 'Install on Android',
+            pwaAndroid1: 'Open Google Chrome and navigate to the application',
+            pwaAndroid2: 'Tap the three dots menu (⋮) in the top right',
+            pwaAndroid3: 'Select "Install app" or "Add to Home screen"',
+            pwaAndroid4: 'Confirm the installation',
+            pwaAndroid5: 'The app will be added to your home screen',
+            pwaMacTitle: 'Install on Mac',
+            pwaMac1: 'Open Safari or Google Chrome',
+            pwaMac2: 'Visit the application in your browser',
+            pwaMac3: 'In Safari: File → Add to Dock, or in Chrome: click the install button',
+            pwaMac4: 'Choose a name for the app',
+            pwaMac5: 'Click "Add" to install it in your dock',
+            pwaNoteBold: 'Note:',
+            pwaNoteContinued: 'Once installed, the app works completely offline. You don\'t need an internet connection to encrypt or decrypt files!',
+            faqTitle: 'Frequently Asked Questions',
+            faq1Q: 'Q: Is my data completely secure?',
+            faq1A: 'Yes. All encryption happens in your browser. Your files never leave your computer or are transmitted anywhere.',
+            faq2Q: 'Q: What if I forget my password?',
+            faq2A: 'Unfortunately, there is no recovery mechanism. If you forget your password, the encrypted files cannot be decrypted. This is by design - it ensures your data cannot be recovered by anyone else either.',
+            faq3Q: 'Q: Can you decrypt my files if I lose the password?',
+            faq3A: 'No. We have no access to your encrypted files or passwords. Only you can decrypt your data.',
+            faq4Q: 'Q: Is The Salty Scrambler free?',
+            faq4A: 'Yes, completely free and open-source. No premium features or hidden costs.',
+            faq5Q: 'Q: Can I use this on mobile?',
+            faq5A: 'Yes! The application is fully responsive and works on iOS and Android devices.',
+            faq6Q: 'Q: What file types can I encrypt?',
+            faq6A: 'Any file type! Documents, images, videos, archives, PDFs, spreadsheets, presentations, audio files, executables - anything.',
+            faq7Q: 'Q: Can I encrypt files and decrypt them on a different device?',
+            faq7A: 'Yes! Share the .encrypted file and password with someone else, and they can decrypt it using The Salty Scrambler on their device.',
+            faq8Q: 'Q: How is this different from other encryption tools?',
+            faq8A: 'The Salty Scrambler is completely free, requires no installation, is browser-based, supports 50+ languages, and uses military-grade encryption - all without collecting any personal data.'
           },
           zh: {
             language: '语言',
@@ -1333,7 +1743,99 @@
             error_invalid_file: '{0}：无效或损坏的文件。',
             donation_title: '喜欢 The Salty Scrambler 吗？',
             donation_subtitle: '您的支持帮助我们保持此工具免费、安全并不断改进。请考虑请我们喝杯咖啡，为我们的工作加油！',
-            donation_btn: '请我们喝咖啡'
+            donation_btn: '请我们喝咖啡',
+            aboutTitle: '关于 The Salty Scrambler',
+            aboutDescription: 'The Salty Scrambler 是一个免费的、开源的、基于浏览器的文件加密工具，旨在提供最大的安全性和隐私保护。它允许您使用强密码加密任何类型的文件，创建一个受保护的 .encrypted 文件，只能用正确的密码解密。',
+            featuresTitle: '主要功能',
+            feature1Title: '🔐 军用级加密',
+            feature1Desc: 'AES-256-GCM 加密标准',
+            feature2Title: '🔑 强密钥推导',
+            feature2Desc: '310,000 次迭代的 PBKDF2',
+            feature3Title: '☁️ 基于浏览器',
+            feature3Desc: '无服务器，无上传，无数据收集',
+            feature4Title: '📁 任何文件类型',
+            feature4Desc: '加密文档、图像、视频等',
+            feature5Title: '⚡ 多文件',
+            feature5Desc: '一次加密/解密多个文件',
+            feature6Title: '🌍 50+ 种语言',
+            feature6Desc: '支持全球多语言用户',
+            howItWorksTitle: '如何工作',
+            encryptProcessTitle: '加密流程',
+            encryptStep1: '选择要加密的任何文件',
+            encryptStep2: '创建一个强加密密码',
+            encryptStep3: '点击加密 - 应用生成 .encrypted 文件',
+            encryptStep4: '安全分享：将加密文件发送到任何地方',
+            decryptProcessTitle: '解密流程',
+            decryptStep1: '选择您的 .encrypted 文件',
+            decryptStep2: '输入正确的解密密码',
+            decryptStep3: '点击解密 - 您的原始文件立即恢复',
+            decryptStep4: '正常打开和使用您的文件',
+            technicalDetailsTitle: '技术细节',
+            encryptMethodLabel: '加密方法：',
+            encryptMethodDesc: 'AES-256-GCM（具有 256 位密钥的高级加密标准在伽罗瓦/计数器模式中）- 提供机密性和真实性，抵抗所有已知的密码攻击',
+            keyDerivationLabel: '密钥推导：',
+            keyDerivationDesc: '使用 310,000 个 HMAC-SHA256 迭代的 PBKDF2 - 抵抗暴力破解和字典攻击',
+            privacyLabel: '隐私：',
+            privacyDesc: '所有加密都在您的浏览器中进行。您的文件永远不会接触任何服务器。您的密码永远不会被传输。完全控制您的数据。',
+            securityTitle: '安全考虑',
+            securityIntro: '您的安全是我们的优先事项：',
+            secBadge1: '✓ 仅客户端',
+            secBadge2: '✓ 无数据保留',
+            secBadge3: '✓ 开源',
+            secBadge4: '✓ 行业标准',
+            secBadge5: '✓ PBKDF2 强化',
+            bestPracticesTitle: '最佳实践',
+            bestPractice1: '使用强大的、唯一的密码（混合大写、小写、数字、符号）',
+            bestPractice2: '切勿与任何人共享您的加密密码',
+            bestPractice3: '将加密文件保存在安全位置',
+            bestPractice4: '在认为原件丢失之前在副本上测试解密',
+            bestPractice5: '记住您的密码 - 没有恢复机制',
+            pwaTitle: '📱 安装为应用',
+            pwaIntroduction: 'The Salty Scrambler 是一个 Progressive Web App (PWA)，可以安装在您的手机或计算机上以便轻松访问。',
+            pwaWindowsTitle: '在 Windows 上安装',
+            pwaWindows1: '在 Microsoft Edge 或 Google Chrome 中打开应用',
+            pwaWindows2: '点击安装按钮（通常显示在地址栏中）',
+            pwaWindows3: '在弹出对话框中点击"安装"',
+            pwaWindows4: '应用将作为桌面应用安装',
+            pwaWindows5: '在开始菜单或桌面上找到它',
+            pwaIOSTitle: '在 iPhone/iPad (iOS) 上安装',
+            pwaIOS1: '打开 Safari 并导航到应用',
+            pwaIOS2: '点击共享按钮（带上箭头的图标）',
+            pwaIOS3: '向下滚动并点击"添加到主屏幕"',
+            pwaIOS4: '为应用选择一个名称（或保持默认）',
+            pwaIOS5: '点击右上角的"添加"',
+            pwaIOS6: '应用将出现在您的主屏幕上',
+            pwaAndroidTitle: '在 Android 上安装',
+            pwaAndroid1: '打开 Google Chrome 并导航到应用',
+            pwaAndroid2: '点击右上角的三点菜单 (⋮)',
+            pwaAndroid3: '选择"安装应用"或"添加到主屏幕"',
+            pwaAndroid4: '确认安装',
+            pwaAndroid5: '应用将被添加到您的主屏幕',
+            pwaMacTitle: '在 Mac 上安装',
+            pwaMac1: '打开 Safari 或 Google Chrome',
+            pwaMac2: '在浏览器中访问应用',
+            pwaMac3: '在 Safari 中：文件 → 添加到 Dock，或在 Chrome 中：点击安装按钮',
+            pwaMac4: '为应用选择一个名称',
+            pwaMac5: '点击"添加"以将其安装到您的 Dock',
+            pwaNoteBold: '注意：',
+            pwaNoteContinued: '安装后，应用完全离线工作。您不需要互联网连接来加密或解密文件！',
+            faqTitle: '常见问题',
+            faq1Q: '问：我的数据完全安全吗？',
+            faq1A: '是的。所有加密都在您的浏览器中进行。您的文件永远不会离开您的计算机或在任何地方传输。',
+            faq2Q: '问：如果我忘记了密码怎么办？',
+            faq2A: '不幸的是，没有恢复机制。如果您忘记了密码，加密的文件无法解密。这是有意设计的 - 它确保您的数据也不能被任何其他人恢复。',
+            faq3Q: '问：如果我丢失了密码，您能解密我的文件吗？',
+            faq3A: '不能。我们无法访问您的加密文件或密码。只有您才能解密您的数据。',
+            faq4Q: '问：The Salty Scrambler 是免费的吗？',
+            faq4A: '是的，完全免费且开源。没有高级功能或隐藏成本。',
+            faq5Q: '问：我可以在手机上使用吗？',
+            faq5A: '是的！该应用是完全响应式的，适用于 iOS 和 Android 设备。',
+            faq6Q: '问：我可以加密哪些文件类型？',
+            faq6A: '任何文件类型！文档、图像、视频、档案、PDF、电子表格、演示文稿、音频文件、可执行文件 - 任何东西。',
+            faq7Q: '问：我可以在不同的设备上加密和解密文件吗？',
+            faq7A: '是的！与其他人共享 .encrypted 文件和密码，他们可以在他们的设备上使用 The Salty Scrambler 解密它。',
+            faq8Q: '问：这与其他加密工具有何不同？',
+            faq8A: 'The Salty Scrambler 完全免费，无需安装，基于浏览器，支持 50+ 种语言，使用军用级加密 - 所有这些都无需收集任何个人数据。'
           },
           es: {
             language: 'Idioma',
@@ -1369,7 +1871,99 @@
             error_invalid_file: '{0}: archivo inválido o dañado.',
             donation_title: '¿Te encanta The Salty Scrambler?',
             donation_subtitle: 'Tu apoyo nos ayuda a mantener esta herramienta gratuita, segura y en constante mejora. ¡Considera invitarnos un café para impulsar nuestro trabajo!',
-            donation_btn: 'Invítanos un Café'
+            donation_btn: 'Invítanos un Café',
+            aboutTitle: 'Acerca de The Salty Scrambler',
+            aboutDescription: 'The Salty Scrambler es una herramienta gratuita, de código abierto y basada en navegador para cifrar archivos, diseñada para máxima seguridad y privacidad. Te permite cifrar cualquier tipo de archivo con una contraseña fuerte, creando un archivo .encrypted protegido que solo se puede descifrar con la contraseña correcta.',
+            featuresTitle: 'Características Principales',
+            feature1Title: '🔐 Cifrado de Nivel Militar',
+            feature1Desc: 'Estándar de cifrado AES-256-GCM',
+            feature2Title: '🔑 Derivación de Clave Fuerte',
+            feature2Desc: 'PBKDF2 con 310,000 iteraciones',
+            feature3Title: '☁️ Basado en Navegador',
+            feature3Desc: 'Sin servidores, sin subidas, sin recopilación de datos',
+            feature4Title: '📁 Cualquier Tipo de Archivo',
+            feature4Desc: 'Cifra documentos, imágenes, videos y más',
+            feature5Title: '⚡ Múltiples Archivos',
+            feature5Desc: 'Cifra/descifra varios archivos a la vez',
+            feature6Title: '🌍 50+ Idiomas',
+            feature6Desc: 'Soporta usuarios multilingües en todo el mundo',
+            howItWorksTitle: 'Cómo Funciona',
+            encryptProcessTitle: 'Proceso de Cifrado',
+            encryptStep1: 'Selecciona cualquier archivo que desees cifrar',
+            encryptStep2: 'Crea una contraseña de cifrado fuerte',
+            encryptStep3: 'Haz clic en Cifrar - la aplicación genera un archivo .encrypted',
+            encryptStep4: 'Comparte de forma segura: envía el archivo cifrado a cualquier lugar',
+            decryptProcessTitle: 'Proceso de Descifrado',
+            decryptStep1: 'Selecciona tu archivo .encrypted',
+            decryptStep2: 'Ingresa la contraseña de descifrado correcta',
+            decryptStep3: 'Haz clic en Descifrar - tus archivos originales se restauran al instante',
+            decryptStep4: 'Abre y usa tus archivos normalmente',
+            technicalDetailsTitle: 'Detalles Técnicos',
+            encryptMethodLabel: 'Método de Cifrado:',
+            encryptMethodDesc: 'AES-256-GCM (Estándar de Cifrado Avanzado con claves de 256 bits en Modo de Contador de Galois) - Proporciona confidencialidad y autenticidad, resistente a todos los ataques criptográficos conocidos',
+            keyDerivationLabel: 'Derivación de Clave:',
+            keyDerivationDesc: 'PBKDF2 (Función de Derivación de Clave Basada en Contraseña 2) con 310,000 iteraciones HMAC-SHA256 - Resistente a ataques de fuerza bruta y diccionario',
+            privacyLabel: 'Privacidad:',
+            privacyDesc: 'Todo el cifrado ocurre en tu navegador. Tus archivos nunca tocan ningún servidor. Tus contraseñas nunca se transmiten. Control total de tus datos.',
+            securityTitle: 'Consideraciones de Seguridad',
+            securityIntro: 'Tu seguridad es nuestra prioridad:',
+            secBadge1: '✓ Solo del Lado del Cliente',
+            secBadge2: '✓ Sin Retención de Datos',
+            secBadge3: '✓ Código Abierto',
+            secBadge4: '✓ Estándares de la Industria',
+            secBadge5: '✓ PBKDF2 Reforzado',
+            bestPracticesTitle: 'Mejores Prácticas',
+            bestPractice1: 'Usa contraseñas únicas y fuertes (mezcla mayúsculas, minúsculas, números, símbolos)',
+            bestPractice2: 'Nunca compartas tu contraseña de cifrado',
+            bestPractice3: 'Mantén tus archivos cifrados en un lugar seguro',
+            bestPractice4: 'Prueba el descifrado en una copia antes de considerar el original perdido',
+            bestPractice5: 'Recuerda tu contraseña - no hay mecanismo de recuperación',
+            pwaTitle: '📱 Instalar como Aplicación',
+            pwaIntroduction: 'The Salty Scrambler es una Aplicación Web Progresiva (PWA) que se puede instalar en tu teléfono u ordenador para acceso fácil.',
+            pwaWindowsTitle: 'Instalar en Windows',
+            pwaWindows1: 'Abre la aplicación en Microsoft Edge o Google Chrome',
+            pwaWindows2: 'Haz clic en el botón de instalación (generalmente aparece en la barra de direcciones)',
+            pwaWindows3: 'Haz clic en "Instalar" en el diálogo emergente',
+            pwaWindows4: 'La aplicación se instalará como una aplicación de escritorio',
+            pwaWindows5: 'Encuéntrala en tu menú Inicio o en tu escritorio',
+            pwaIOSTitle: 'Instalar en iPhone/iPad (iOS)',
+            pwaIOS1: 'Abre Safari y ve a la aplicación',
+            pwaIOS2: 'Toca el botón Compartir (icono con flecha hacia arriba)',
+            pwaIOS3: 'Desplázate hacia abajo y toca "Añadir a Pantalla de inicio"',
+            pwaIOS4: 'Elige un nombre para la aplicación (o mantén el predeterminado)',
+            pwaIOS5: 'Toca "Añadir" en la esquina superior derecha',
+            pwaIOS6: 'La aplicación aparecerá en tu pantalla de inicio',
+            pwaAndroidTitle: 'Instalar en Android',
+            pwaAndroid1: 'Abre Google Chrome y ve a la aplicación',
+            pwaAndroid2: 'Toca el menú de tres puntos (⋮) en la esquina superior derecha',
+            pwaAndroid3: 'Selecciona "Instalar aplicación" o "Añadir a Pantalla de inicio"',
+            pwaAndroid4: 'Confirma la instalación',
+            pwaAndroid5: 'La aplicación se añadirá a tu pantalla de inicio',
+            pwaMacTitle: 'Instalar en Mac',
+            pwaMac1: 'Abre Safari o Google Chrome',
+            pwaMac2: 'Visita la aplicación en tu navegador',
+            pwaMac3: 'En Safari: Archivo → Añadir al Dock, o en Chrome: haz clic en el botón de instalación',
+            pwaMac4: 'Elige un nombre para la aplicación',
+            pwaMac5: 'Haz clic en "Añadir" para instalarla en tu Dock',
+            pwaNoteBold: 'Nota:',
+            pwaNoteContinued: '¡Una vez instalada, la aplicación funciona completamente sin conexión. ¡No necesitas una conexión a Internet para cifrar o descifrar archivos!',
+            faqTitle: 'Preguntas Frecuentes',
+            faq1Q: 'P: ¿Mis datos están completamente seguros?',
+            faq1A: 'Sí. Todo el cifrado ocurre en tu navegador. Tus archivos nunca dejan tu computadora ni se transmiten en ningún lugar.',
+            faq2Q: 'P: ¿Qué pasa si olvido mi contraseña?',
+            faq2A: 'Desafortunadamente, no hay mecanismo de recuperación. Si olvidas tu contraseña, los archivos cifrados no pueden descifrarse. Esto es por diseño - asegura que tus datos tampoco puedan ser recuperados por nadie más.',
+            faq3Q: 'P: ¿Puedes descifrar mis archivos si pierdo la contraseña?',
+            faq3A: 'No. No tenemos acceso a tus archivos cifrados o contraseñas. Solo tú puedes descifrar tus datos.',
+            faq4Q: 'P: ¿Es The Salty Scrambler gratuito?',
+            faq4A: 'Sí, completamente gratuito y de código abierto. Sin funciones premium ni costos ocultos.',
+            faq5Q: 'P: ¿Puedo usarlo en teléfono?',
+            faq5A: '¡Sí! La aplicación es completamente responsive y funciona en dispositivos iOS y Android.',
+            faq6Q: 'P: ¿Qué tipos de archivo puedo cifrar?',
+            faq6A: '¡Cualquier tipo de archivo! Documentos, imágenes, videos, archivos, PDFs, hojas de cálculo, presentaciones, archivos de audio, ejecutables - cualquier cosa.',
+            faq7Q: 'P: ¿Puedo cifrar archivos y descifrarlos en un dispositivo diferente?',
+            faq7A: '¡Sí! Comparte el archivo .encrypted y la contraseña con otra persona, y pueden descifrarlo usando The Salty Scrambler en su dispositivo.',
+            faq8Q: 'P: ¿Cómo es esto diferente de otras herramientas de cifrado?',
+            faq8A: 'The Salty Scrambler es completamente gratuito, no requiere instalación, está basado en navegador, soporta 50+ idiomas, y usa cifrado de nivel militar - todo sin recopilar datos personales.'
           },
           fr: {
             language: 'Langue',
@@ -1405,7 +1999,99 @@
             error_invalid_file: '{0}: fichier invalide ou corrompu.',
             donation_title: 'Vous aimez The Salty Scrambler ?',
             donation_subtitle: 'Votre soutien nous aide à garder cet outil gratuit, sécurisé et en constante amélioration. Offrez-nous un café pour alimenter notre travail !',
-            donation_btn: 'Offrir un Café'
+            donation_btn: 'Offrir un Café',
+            aboutTitle: 'À Propos de The Salty Scrambler',
+            aboutDescription: 'The Salty Scrambler est un outil de chiffrement de fichiers gratuit, open-source et basé sur navigateur conçu pour la sécurité et la confidentialité maximales. Il vous permet de chiffrer n\'importe quel type de fichier avec un mot de passe fort, créant un fichier .encrypted protégé qui ne peut être déchiffré qu\'avec le mot de passe correct.',
+            featuresTitle: 'Caractéristiques Principales',
+            feature1Title: '🔐 Chiffrement Militaire',
+            feature1Desc: 'Standard de chiffrement AES-256-GCM',
+            feature2Title: '🔑 Dérivation de Clé Forte',
+            feature2Desc: 'PBKDF2 avec 310 000 itérations',
+            feature3Title: '☁️ Basé sur Navigateur',
+            feature3Desc: 'Pas de serveurs, pas de téléchargements, pas de collecte de données',
+            feature4Title: '📁 N\'importe Quel Type de Fichier',
+            feature4Desc: 'Chiffrez des documents, des images, des vidéos et plus',
+            feature5Title: '⚡ Fichiers Multiples',
+            feature5Desc: 'Chiffrez/déchiffrez plusieurs fichiers à la fois',
+            feature6Title: '🌍 Plus de 50 Langues',
+            feature6Desc: 'Soutient les utilisateurs multilingues du monde entier',
+            howItWorksTitle: 'Comment Ça Marche',
+            encryptProcessTitle: 'Processus de Chiffrement',
+            encryptStep1: 'Sélectionnez les fichiers que vous souhaitez chiffrer',
+            encryptStep2: 'Créez un mot de passe de chiffrement fort',
+            encryptStep3: 'Cliquez sur Chiffrer - l\'application génère un fichier .encrypted',
+            encryptStep4: 'Partagez en toute sécurité: envoyez le fichier chiffré n\'importe où',
+            decryptProcessTitle: 'Processus de Déchiffrement',
+            decryptStep1: 'Sélectionnez votre fichier .encrypted',
+            decryptStep2: 'Entrez le mot de passe de déchiffrement correct',
+            decryptStep3: 'Cliquez sur Déchiffrer - vos fichiers d\'origine sont restaurés instantanément',
+            decryptStep4: 'Ouvrez et utilisez normalement vos fichiers',
+            technicalDetailsTitle: 'Détails Techniques',
+            encryptMethodLabel: 'Méthode de Chiffrement:',
+            encryptMethodDesc: 'AES-256-GCM (Norme de Chiffrement Avancé avec clés de 256 bits en Mode Compteur Galois) - Fournit confidentialité et authenticité, résistant à tous les attaques cryptographiques connues',
+            keyDerivationLabel: 'Dérivation de Clé:',
+            keyDerivationDesc: 'PBKDF2 (Fonction de Dérivation de Clé Basée sur Mot de Passe 2) avec 310 000 itérations HMAC-SHA256 - Résistant aux attaques par force brute et dictionnaire',
+            privacyLabel: 'Confidentialité:',
+            privacyDesc: 'Tout le chiffrement se fait dans votre navigateur. Vos fichiers ne touchent jamais aucun serveur. Vos mots de passe ne sont jamais transmis. Contrôle total de vos données.',
+            securityTitle: 'Considérations de Sécurité',
+            securityIntro: 'Votre sécurité est notre priorité:',
+            secBadge1: '✓ Côté Client Uniquement',
+            secBadge2: '✓ Pas de Rétention de Données',
+            secBadge3: '✓ Open Source',
+            secBadge4: '✓ Normes de l\'Industrie',
+            secBadge5: '✓ PBKDF2 Renforcé',
+            bestPracticesTitle: 'Meilleures Pratiques',
+            bestPractice1: 'Utilisez des mots de passe forts et uniques (mélangez majuscules, minuscules, chiffres, symboles)',
+            bestPractice2: 'Ne partagez jamais votre mot de passe de chiffrement',
+            bestPractice3: 'Gardez vos fichiers chiffrés dans un endroit sûr',
+            bestPractice4: 'Testez le déchiffrement sur une copie avant de considérer l\'original comme perdu',
+            bestPractice5: 'Mémorisez votre mot de passe - il n\'y a pas de mécanisme de récupération',
+            pwaTitle: '📱 Installer comme Application',
+            pwaIntroduction: 'The Salty Scrambler est une Application Web Progressive (PWA) qui peut être installée sur votre téléphone ou ordinateur pour un accès facile.',
+            pwaWindowsTitle: 'Installer sur Windows',
+            pwaWindows1: 'Ouvrez l\'application dans Microsoft Edge ou Google Chrome',
+            pwaWindows2: 'Cliquez sur le bouton d\'installation (généralement affiché dans la barre d\'adresse)',
+            pwaWindows3: 'Cliquez sur "Installer" dans la boîte de dialogue contextuelle',
+            pwaWindows4: 'L\'application sera installée en tant qu\'application de bureau',
+            pwaWindows5: 'Trouvez-la dans votre menu Démarrage ou sur votre bureau',
+            pwaIOSTitle: 'Installer sur iPhone/iPad (iOS)',
+            pwaIOS1: 'Ouvrez Safari et accédez à l\'application',
+            pwaIOS2: 'Appuyez sur le bouton Partager (icône avec flèche pointant vers le haut)',
+            pwaIOS3: 'Faites défiler vers le bas et appuyez sur "Ajouter à l\'écran d\'accueil"',
+            pwaIOS4: 'Choisissez un nom pour l\'application (ou conservez la valeur par défaut)',
+            pwaIOS5: 'Appuyez sur "Ajouter" dans le coin supérieur droit',
+            pwaIOS6: 'L\'application apparaîtra sur votre écran d\'accueil',
+            pwaAndroidTitle: 'Installer sur Android',
+            pwaAndroid1: 'Ouvrez Google Chrome et accédez à l\'application',
+            pwaAndroid2: 'Appuyez sur le menu trois points (⋮) dans le coin supérieur droit',
+            pwaAndroid3: 'Sélectionnez "Installer l\'application" ou "Ajouter à l\'écran d\'accueil"',
+            pwaAndroid4: 'Confirmez l\'installation',
+            pwaAndroid5: 'L\'application sera ajoutée à votre écran d\'accueil',
+            pwaMacTitle: 'Installer sur Mac',
+            pwaMac1: 'Ouvrez Safari ou Google Chrome',
+            pwaMac2: 'Visitez l\'application dans votre navigateur',
+            pwaMac3: 'Dans Safari: Fichier → Ajouter au Dock, ou dans Chrome: cliquez sur le bouton d\'installation',
+            pwaMac4: 'Choisissez un nom pour l\'application',
+            pwaMac5: 'Cliquez sur "Ajouter" pour l\'installer dans votre Dock',
+            pwaNoteBold: 'Remarque:',
+            pwaNoteContinued: 'Une fois installée, l\'application fonctionne complètement hors ligne. Vous n\'avez pas besoin d\'une connexion Internet pour chiffrer ou déchiffrer des fichiers!',
+            faqTitle: 'Questions Fréquemment Posées',
+            faq1Q: 'Q: Mes données sont-elles complètement sécurisées?',
+            faq1A: 'Oui. Tout le chiffrement se fait dans votre navigateur. Vos fichiers ne quittent jamais votre ordinateur et ne sont transmis nulle part.',
+            faq2Q: 'Q: Que se passe-t-il si j\'oublie mon mot de passe?',
+            faq2A: 'Malheureusement, il n\'y a pas de mécanisme de récupération. Si vous oubliez votre mot de passe, les fichiers chiffrés ne peuvent pas être déchiffrés. C\'est par conception - cela garantit que vos données ne peuvent pas non plus être récupérées par quelqu\'un d\'autre.',
+            faq3Q: 'Q: Pouvez-vous déchiffrer mes fichiers si je perds le mot de passe?',
+            faq3A: 'Non. Nous n\'avons accès à vos fichiers chiffrés ou mots de passe. Seul vous pouvez déchiffrer vos données.',
+            faq4Q: 'Q: The Salty Scrambler est-il gratuit?',
+            faq4A: 'Oui, entièrement gratuit et open-source. Pas de fonctionnalités premium ni de coûts cachés.',
+            faq5Q: 'Q: Puis-je l\'utiliser sur mobile?',
+            faq5A: 'Oui! L\'application est entièrement responsive et fonctionne sur les appareils iOS et Android.',
+            faq6Q: 'Q: Quels types de fichiers puis-je chiffrer?',
+            faq6A: 'N\'importe quel type de fichier! Documents, images, vidéos, archives, PDF, feuilles de calcul, présentations, fichiers audio, exécutables - n\'importe quoi.',
+            faq7Q: 'Q: Puis-je chiffrer des fichiers et les déchiffrer sur un appareil différent?',
+            faq7A: 'Oui! Partagez le fichier .encrypted et le mot de passe avec quelqu\'un d\'autre, et il peut le déchiffrer en utilisant The Salty Scrambler sur son appareil.',
+            faq8Q: 'Q: Comment cela diffère-t-il des autres outils de chiffrement?',
+            faq8A: 'The Salty Scrambler est entièrement gratuit, ne nécessite pas d\'installation, est basé sur navigateur, supporte plus de 50 langues, et utilise un chiffrement militaire - tout cela sans collecter de données personnelles.'
           },
           ar: {
             language: 'اللغة',
@@ -1657,7 +2343,99 @@
             error_invalid_file: '{0}: अमान्य या क्षतिग्रस्त फ़ाइल।',
             donation_title: 'The Salty Scrambler पसंद है?',
             donation_subtitle: 'आपका समर्थन हमें इस टूल को मुफ्त, सुरक्षित और लगातार बेहतर बनाए रखने में मदद करता है। हमारे काम को प्रोत्साहित करने के लिए हमें एक कॉफी खरीदने पर विचार करें!',
-            donation_btn: 'हमें कॉफी खरीदें'
+            donation_btn: 'हमें कॉफी खरीदें',
+            aboutTitle: 'The Salty Scrambler के बारे में',
+            aboutDescription: 'The Salty Scrambler एक मुफ्त, ओपन-सोर्स, ब्राउज़र-आधारित फ़ाइल एन्क्रिप्शन टूल है जो अधिकतम सुरक्षा और गोपनीयता के लिए डिज़ाइन किया गया है। यह आपको एक मजबूत पासवर्ड के साथ किसी भी प्रकार की फ़ाइल को एन्क्रिप्ट करने की अनुमति देता है, एक संरक्षित .encrypted फ़ाइल बनाता है जिसे केवल सही पासवर्ड से डिक्रिप्ट किया जा सकता है।',
+            featuresTitle: 'मुख्य विशेषताएँ',
+            feature1Title: '🔐 सैन्य-ग्रेड एन्क्रिप्शन',
+            feature1Desc: 'AES-256-GCM एन्क्रिप्शन मानक',
+            feature2Title: '🔑 मजबूत कुंजी व्युत्पत्ति',
+            feature2Desc: '310,000 पुनरावृत्तियों के साथ PBKDF2',
+            feature3Title: '☁️ ब्राउज़र-आधारित',
+            feature3Desc: 'कोई सर्वर नहीं, कोई अपलोड नहीं, कोई डेटा संग्रह नहीं',
+            feature4Title: '📁 कोई भी फ़ाइल प्रकार',
+            feature4Desc: 'दस्तावेज़, चित्र, वीडियो और अधिक को एन्क्रिप्ट करें',
+            feature5Title: '⚡ एकाधिक फ़ाइलें',
+            feature5Desc: 'एक साथ कई फ़ाइलों को एन्क्रिप्ट/डिक्रिप्ट करें',
+            feature6Title: '🌍 50+ भाषाएँ',
+            feature6Desc: 'दुनिया भर में बहुभाषी उपयोगकर्ताओं का समर्थन करता है',
+            howItWorksTitle: 'यह कैसे काम करता है',
+            encryptProcessTitle: 'एन्क्रिप्शन प्रक्रिया',
+            encryptStep1: 'वह फ़ाइलें चुनें जिन्हें आप एन्क्रिप्ट करना चाहते हैं',
+            encryptStep2: 'एक मजबूत एन्क्रिप्शन पासवर्ड बनाएं',
+            encryptStep3: 'एन्क्रिप्ट पर क्लिक करें - ऐप .encrypted फ़ाइल बनाता है',
+            encryptStep4: 'सुरक्षित रूप से साझा करें: एन्क्रिप्ट की गई फ़ाइल को कहीं भी भेजें',
+            decryptProcessTitle: 'डिक्रिप्शन प्रक्रिया',
+            decryptStep1: 'अपनी .encrypted फ़ाइल चुनें',
+            decryptStep2: 'सही डिक्रिप्शन पासवर्ड दर्ज करें',
+            decryptStep3: 'डिक्रिप्ट पर क्लिक करें - आपकी मूल फ़ाइलें तुरंत बहाल हो जाती हैं',
+            decryptStep4: 'अपनी फ़ाइलें सामान्य रूप से खोलें और उपयोग करें',
+            technicalDetailsTitle: 'तकनीकी विवरण',
+            encryptMethodLabel: 'एन्क्रिप्शन विधि:',
+            encryptMethodDesc: 'AES-256-GCM (गैलोइस/काउंटर मोड में 256-बिट कुंजियों के साथ उन्नत एन्क्रिप्शन स्टैंडर्ड) - गोपनीयता और प्रामाणिकता प्रदान करता है, सभी ज्ञात क्रिप्टोग्राफिक हमलों के प्रतिरोधी',
+            keyDerivationLabel: 'कुंजी व्युत्पत्ति:',
+            keyDerivationDesc: 'PBKDF2 (पासवर्ड-आधारित कुंजी व्युत्पत्ति फ़ंक्शन 2) 310,000 HMAC-SHA256 पुनरावृत्तियों के साथ - brute-force और शब्दकोश हमलों के प्रतिरोधी',
+            privacyLabel: 'गोपनीयता:',
+            privacyDesc: 'सभी एन्क्रिप्शन आपके ब्राउज़र में होता है। आपकी फ़ाइलें कभी किसी सर्वर को नहीं छूती। आपके पासवर्ड कभी प्रेषित नहीं होते। आपके डेटा पर पूरा नियंत्रण।',
+            securityTitle: 'सुरक्षा विचार',
+            securityIntro: 'आपकी सुरक्षा हमारी प्राथमिकता है:',
+            secBadge1: '✓ केवल क्लाइंट-साइड',
+            secBadge2: '✓ कोई डेटा प्रतिधारण नहीं',
+            secBadge3: '✓ ओपन सोर्स',
+            secBadge4: '✓ इंडस्ट्री मानक',
+            secBadge5: '✓ PBKDF2 सुदृढ़',
+            bestPracticesTitle: 'सर्वोत्तम प्रथाएं',
+            bestPractice1: 'मजबूत, अद्वितीय पासवर्ड का उपयोग करें (बड़े अक्षर, छोटे अक्षर, संख्याएं, प्रतीक मिश्रित करें)',
+            bestPractice2: 'अपने एन्क्रिप्शन पासवर्ड को कभी साझा न करें',
+            bestPractice3: 'अपनी एन्क्रिप्ट की गई फ़ाइलों को सुरक्षित स्थान पर रखें',
+            bestPractice4: 'मूल को खो गया मानने से पहले एक प्रति पर डिक्रिप्शन का परीक्षण करें',
+            bestPractice5: 'अपना पासवर्ड याद रखें - कोई पुनर्प्राप्ति तंत्र नहीं है',
+            pwaTitle: '📱 ऐप के रूप में इंस्टॉल करें',
+            pwaIntroduction: 'The Salty Scrambler एक प्रगतिशील वेब ऐप (PWA) है जिसे आसान पहुंच के लिए आपके फोन या कंप्यूटर पर इंस्टॉल किया जा सकता है।',
+            pwaWindowsTitle: 'Windows पर इंस्टॉल करें',
+            pwaWindows1: 'Microsoft Edge या Google Chrome में ऐप खोलें',
+            pwaWindows2: 'इंस्टॉल बटन पर क्लिक करें (आमतौर पर एड्रेस बार में दिखाई देता है)',
+            pwaWindows3: 'पॉप-अप डायलॉग में "इंस्टॉल" पर क्लिक करें',
+            pwaWindows4: 'ऐप डेस्कटॉप ऐप्लिकेशन के रूप में इंस्टॉल हो जाएगा',
+            pwaWindows5: 'इसे अपने स्टार्ट मेनू या डेस्कटॉप पर खोजें',
+            pwaIOSTitle: 'iPhone/iPad (iOS) पर इंस्टॉल करें',
+            pwaIOS1: 'Safari खोलें और ऐप पर जाएं',
+            pwaIOS2: 'शेयर बटन पर टैप करें (ऊपर की ओर इशारा करने वाला आइकन)',
+            pwaIOS3: 'नीचे स्क्रॉल करें और "होम स्क्रीन पर जोड़ें" पर टैप करें',
+            pwaIOS4: 'ऐप के लिए एक नाम चुनें (या डिफ़ॉल्ट रखें)',
+            pwaIOS5: 'ऊपरी दाएं कोने में "जोड़ें" पर टैप करें',
+            pwaIOS6: 'ऐप आपकी होम स्क्रीन पर दिखाई देगा',
+            pwaAndroidTitle: 'Android पर इंस्टॉल करें',
+            pwaAndroid1: 'Google Chrome खोलें और ऐप पर जाएं',
+            pwaAndroid2: 'ऊपरी दाएं कोने में तीन बिंदु मेनू (⋮) पर टैप करें',
+            pwaAndroid3: '"ऐप इंस्टॉल करें" या "होम स्क्रीन में जोड़ें" चुनें',
+            pwaAndroid4: 'इंस्टॉलेशन की पुष्टि करें',
+            pwaAndroid5: 'ऐप आपकी होम स्क्रीन में जोड़ा जाएगा',
+            pwaMacTitle: 'Mac पर इंस्टॉल करें',
+            pwaMac1: 'Safari या Google Chrome खोलें',
+            pwaMac2: 'अपने ब्राउज़र में ऐप पर जाएं',
+            pwaMac3: 'Safari में: फ़ाइल → डॉक में जोड़ें, या Chrome में: इंस्टॉल बटन पर क्लिक करें',
+            pwaMac4: 'ऐप के लिए एक नाम चुनें',
+            pwaMac5: 'इसे अपने डॉक में इंस्टॉल करने के लिए "जोड़ें" पर क्लिक करें',
+            pwaNoteBold: 'ध्यान दें:',
+            pwaNoteContinued: 'इंस्टॉल करने के बाद, ऐप पूरी तरह से ऑफ़लाइन काम करता है। फ़ाइलों को एन्क्रिप्ट या डिक्रिप्ट करने के लिए आपको इंटरनेट कनेक्शन की आवश्यकता नहीं है!',
+            faqTitle: 'अक्सर पूछे जाने वाले प्रश्न',
+            faq1Q: 'प्र: क्या मेरा डेटा पूरी तरह से सुरक्षित है?',
+            faq1A: 'हाँ। सभी एन्क्रिप्शन आपके ब्राउज़र में होता है। आपकी फ़ाइलें कभी आपके कंप्यूटर को नहीं छोड़ती या कहीं भी प्रेषित नहीं होती।',
+            faq2Q: 'प्र: अगर मैं अपना पासवर्ड भूल जाऊं तो?',
+            faq2A: 'दुर्भाग्य से, कोई पुनर्प्राप्ति तंत्र नहीं है। यदि आप अपना पासवर्ड भूल जाते हैं, तो एन्क्रिप्ट की गई फ़ाइलें डिक्रिप्ट नहीं की जा सकतीं। यह डिज़ाइन द्वारा है - यह सुनिश्चित करता है कि आपके डेटा को कोई और भी पुनर्प्राप्त नहीं कर सकता।',
+            faq3Q: 'प्र: क्या आप मेरी फ़ाइलों को डिक्रिप्ट कर सकते हैं यदि मैं पासवर्ड खो दूं?',
+            faq3A: 'नहीं। हमारे पास आपकी एन्क्रिप्ट की गई फ़ाइलों या पासवर्ड तक कोई पहुंच नहीं है। केवल आप अपने डेटा को डिक्रिप्ट कर सकते हैं।',
+            faq4Q: 'प्र: क्या The Salty Scrambler मुफ्त है?',
+            faq4A: 'हाँ, पूरी तरह से मुफ्त और ओपन-सोर्स। कोई प्रीमियम फीचर या छिपी हुई लागत नहीं।',
+            faq5Q: 'प्र: क्या मैं इसे मोबाइल पर उपयोग कर सकता हूं?',
+            faq5A: 'हाँ! ऐप पूरी तरह प्रतिक्रियाशील है और iOS और Android डिवाइस पर काम करता है।',
+            faq6Q: 'प्र: मैं किस प्रकार की फ़ाइलों को एन्क्रिप्ट कर सकता हूं?',
+            faq6A: 'कोई भी फ़ाइल प्रकार! दस्तावेज़, चित्र, वीडियो, संग्रह, PDF, स्प्रेडशीट, प्रस्तुतियां, ऑडियो फ़ाइलें, निष्पादन योग्य - कुछ भी।',
+            faq7Q: 'प्र: क्या मैं फ़ाइलों को एन्क्रिप्ट कर सकता हूं और किसी अन्य डिवाइस पर डिक्रिप्ट कर सकता हूं?',
+            faq7A: 'हाँ! .encrypted फ़ाइल और पासवर्ड किसी अन्य व्यक्ति के साथ साझा करें, और वे अपने डिवाइस पर The Salty Scrambler का उपयोग करके इसे डिक्रिप्ट कर सकते हैं।',
+            faq8Q: 'प्र: यह अन्य एन्क्रिप्शन टूल से कैसे अलग है?',
+            faq8A: 'The Salty Scrambler पूरी तरह से मुफ्त है, इंस्टॉलेशन की आवश्यकता नहीं है, ब्राउज़र-आधारित है, 50+ भाषाओं का समर्थन करता है, और सैन्य-ग्रेड एन्क्रिप्शन का उपयोग करता है - सभी व्यक्तिगत डेटा संग्रह के बिना।'
           },
           bn: {
             language: 'ভাষা',
@@ -2305,7 +3083,99 @@
             error_invalid_file: '{0}: فایل نامعتبر یا خراب.',
             donation_title: 'The Salty Scrambler را دوست دارید؟',
             donation_subtitle: 'حمایت شما به ما کمک می‌کند این ابزار را رایگان، امن و دائماً در حال بهبود نگه داریم. برای حمایت از کار ما، یک قهوه برای ما بخرید!',
-            donation_btn: 'برای ما قهوه بخرید'
+            donation_btn: 'برای ما قهوه بخرید',
+            aboutTitle: 'درباره The Salty Scrambler',
+            aboutDescription: 'The Salty Scrambler یک ابزار رمزگذاری فایل رایگان، متن‌باز و مبتنی بر مرورگر است که برای حداکثر امنیت و حریم‌خصوصی طراحی شده است. این ابزار به شما اجازه می‌دهد هر نوع فایلی را با یک رمز عبور قوی رمزگذاری کنید و یک فایل .encrypted محافظت‌شده ایجاد کنید که فقط با رمز عبور صحیح قابل رمزگشایی است.',
+            featuresTitle: 'ویژگی‌های اصلی',
+            feature1Title: '🔐 رمزگذاری درجه نظامی',
+            feature1Desc: 'استاندارد رمزگذاری AES-256-GCM',
+            feature2Title: '🔑 مشتق‌سازی کلید قوی',
+            feature2Desc: 'PBKDF2 با 310,000 تکرار',
+            feature3Title: '☁️ مبتنی بر مرورگر',
+            feature3Desc: 'بدون سرور، بدون آپلود، بدون جمع‌آوری داده',
+            feature4Title: '📁 هر نوع فایل',
+            feature4Desc: 'اسناد، تصاویر، ویدیوها و موارد دیگر را رمزگذاری کنید',
+            feature5Title: '⚡ فایل‌های متعدد',
+            feature5Desc: 'رمزگذاری/رمزگشایی چندین فایل به‌طور همزمان',
+            feature6Title: '🌍 بیش از 50 زبان',
+            feature6Desc: 'از کاربران چند‌زبانه در سرتاسر جهان حمایت می‌کند',
+            howItWorksTitle: 'نحوه کار',
+            encryptProcessTitle: 'فرآیند رمزگذاری',
+            encryptStep1: 'فایل‌های را انتخاب کنید که می‌خواهید رمزگذاری کنید',
+            encryptStep2: 'یک رمز عبور قوی برای رمزگذاری ایجاد کنید',
+            encryptStep3: 'روی دکمه رمزگذاری کلیک کنید - ابزار یک فایل .encrypted ایجاد می‌کند',
+            encryptStep4: 'به‌طور امن به‌اشتراک بگذارید: فایل رمزگذاری‌شده را به هر جای ارسال کنید',
+            decryptProcessTitle: 'فرآیند رمزگشایی',
+            decryptStep1: 'فایل .encrypted خود را انتخاب کنید',
+            decryptStep2: 'رمز عبور رمزگشایی صحیح را وارد کنید',
+            decryptStep3: 'روی دکمه رمزگشایی کلیک کنید - فایل‌های اصلی فوری بازیابی می‌شوند',
+            decryptStep4: 'فایل‌های خود را به‌طور معمول باز و استفاده کنید',
+            technicalDetailsTitle: 'جزئیات فنی',
+            encryptMethodLabel: 'روش رمزگذاری:',
+            encryptMethodDesc: 'AES-256-GCM (استاندارد رمزگذاری پیشرفته با کلیدهای 256 بیتی در حالت شمارنده گالوا) - محرمانگی و اعتبار را فراهم می‌کند، مقاوم در برابر تمام حملات رمزنگاری شناخته‌شده',
+            keyDerivationLabel: 'مشتق‌سازی کلید:',
+            keyDerivationDesc: 'PBKDF2 (تابع مشتق‌سازی کلید مبتنی بر رمز عبور 2) با 310,000 تکرار HMAC-SHA256 - مقاوم در برابر حملات brute-force و فرهنگ‌لغت',
+            privacyLabel: 'حریم‌خصوصی:',
+            privacyDesc: 'تمام رمزگذاری در مرورگر شما اتفاق می‌افتد. فایل‌های شما هرگز سرور را لمس نمی‌کنند. رمزهای عبور شما هرگز منتقل نمی‌شوند. کنترل کامل داده‌های شما.',
+            securityTitle: 'ملاحظات امنیتی',
+            securityIntro: 'امنیت شما اولویت ما است:',
+            secBadge1: '✓ فقط سمت کلاینت',
+            secBadge2: '✓ بدون نگهداری داده',
+            secBadge3: '✓ متن‌باز',
+            secBadge4: '✓ استانداردهای صنعت',
+            secBadge5: '✓ PBKDF2 تقویت‌شده',
+            bestPracticesTitle: 'بهترین روش‌ها',
+            bestPractice1: 'از رمزهای عبور قوی و منحصر به‌فرد استفاده کنید (بزرگ، کوچک، اعداد، نمادها)',
+            bestPractice2: 'هرگز رمز عبور رمزگذاری خود را به‌اشتراک نگذارید',
+            bestPractice3: 'فایل‌های رمزگذاری‌شده خود را در مکان امن نگه‌دارید',
+            bestPractice4: 'رمزگشایی را روی نسخه‌ای تست کنید قبل از اینکه اصلی را گم‌شده بدانید',
+            bestPractice5: 'رمز عبور خود را به‌خاطر بسپارید - هیچ مکانیزم بازیابی وجود ندارد',
+            pwaTitle: '📱 نصب به‌عنوان برنامه',
+            pwaIntroduction: 'The Salty Scrambler یک برنامه وب پیشرفته (PWA) است که می‌تواند روی گوشی یا کامپیوتر شما برای دسترسی آسان نصب شود.',
+            pwaWindowsTitle: 'نصب در Windows',
+            pwaWindows1: 'برنامه را در Microsoft Edge یا Google Chrome باز کنید',
+            pwaWindows2: 'روی دکمه نصب کلیک کنید (معمولاً در نوار آدرس نمایش داده می‌شود)',
+            pwaWindows3: 'روی "نصب" در دیالوگ بازشونده کلیک کنید',
+            pwaWindows4: 'برنامه به‌عنوان یک برنامه دسک‌تاپ نصب می‌شود',
+            pwaWindows5: 'آن را در منوی شروع یا دسک‌تاپ خود بیابید',
+            pwaIOSTitle: 'نصب در iPhone/iPad (iOS)',
+            pwaIOS1: 'Safari را باز کنید و به برنامه بروید',
+            pwaIOS2: 'روی دکمه به‌اشتراک‌گذاری (نماد با فلش رو به‌بالا) ضربه بزنید',
+            pwaIOS3: 'پایین‌تر بروید و "اضافه کردن به صفحه‌ی خانگی" را ضربه بزنید',
+            pwaIOS4: 'نامی برای برنامه انتخاب کنید (یا پیش‌فرض را نگه‌دارید)',
+            pwaIOS5: 'روی "اضافه" در گوشه بالا سمت راست ضربه بزنید',
+            pwaIOS6: 'برنامه در صفحه‌ی خانگی شما نمایش داده می‌شود',
+            pwaAndroidTitle: 'نصب در Android',
+            pwaAndroid1: 'Google Chrome را باز کنید و به برنامه بروید',
+            pwaAndroid2: 'روی منوی سه نقطه (⋮) در گوشه بالا سمت راست ضربه بزنید',
+            pwaAndroid3: '"نصب برنامه" یا "اضافه کردن به صفحه‌ی خانگی" را انتخاب کنید',
+            pwaAndroid4: 'نصب را تایید کنید',
+            pwaAndroid5: 'برنامه به صفحه‌ی خانگی شما اضافه خواهد شد',
+            pwaMacTitle: 'نصب در Mac',
+            pwaMac1: 'Safari یا Google Chrome را باز کنید',
+            pwaMac2: 'برنامه را در مرورگر خود بازدید کنید',
+            pwaMac3: 'در Safari: فایل → اضافه کردن به Dock، یا در Chrome: روی دکمه نصب کلیک کنید',
+            pwaMac4: 'نامی برای برنامه انتخاب کنید',
+            pwaMac5: 'روی "اضافه" کلیک کنید تا در Dock نصب شود',
+            pwaNoteBold: 'یادداشت:',
+            pwaNoteContinued: 'پس از نصب، برنامه کاملاً بدون اتصال کار می‌کند. برای رمزگذاری یا رمزگشایی فایل‌ها به اتصال اینترنتی نیازی ندارید!',
+            faqTitle: 'سؤالات متکرر',
+            faq1Q: 'پ: آیا داده‌های من کاملاً امن هستند؟',
+            faq1A: 'بلی. تمام رمزگذاری در مرورگر شما اتفاق می‌افتد. فایل‌های شما هرگز کامپیوتر شما را ترک نمی‌کنند یا جای دیگری منتقل نمی‌شوند.',
+            faq2Q: 'پ: اگر رمز عبور خود را فراموش کنم چه؟',
+            faq2A: 'متأسفانه هیچ مکانیزم بازیابی وجود ندارد. اگر رمز عبور خود را فراموش کنید، فایل‌های رمزگذاری‌شده نمی‌توانند رمزگشایی شوند. این به‌طور طراحی است - اطمینان می‌دهد که داده‌های شما توسط شخص دیگری نیز بازیابی نشود.',
+            faq3Q: 'پ: اگر رمز عبور را گم کنم، می‌توانی فایل‌های من را رمزگشایی کنی؟',
+            faq3A: 'خیر. ما به فایل‌های رمزگذاری‌شده یا رمزهای عبور شما دسترسی نداریم. فقط شما می‌توانید داده‌های خود را رمزگشایی کنید.',
+            faq4Q: 'پ: آیا The Salty Scrambler رایگان است؟',
+            faq4A: 'بلی، کاملاً رایگان و متن‌باز. بدون ویژگی‌های حق‌نشان یا هزینه‌های مخفی.',
+            faq5Q: 'پ: می‌توانم از آن در موبایل استفاده کنم؟',
+            faq5A: 'بلی! برنامه کاملاً بازی‌افزودنی است و بر روی دستگاه‌های iOS و Android کار می‌کند.',
+            faq6Q: 'پ: چه نوع فایل‌هایی می‌توانم رمزگذاری کنم؟',
+            faq6A: 'هر نوع فایلی! اسناد، تصاویر، ویدیوها، بایگانی، PDF، صفحات گسترده، پیش‌نمایش‌ها، فایل‌های صوتی، اجرایی‌ها - هر چیزی.',
+            faq7Q: 'پ: می‌توانم فایل‌های را رمزگذاری کنم و در دستگاه متفاوتی رمزگشایی کنم؟',
+            faq7A: 'بلی! فایل .encrypted و رمز عبور را با دیگری به‌اشتراک بگذارید و آن‌ها می‌توانند با استفاده از The Salty Scrambler آن را رمزگشایی کنند.',
+            faq8Q: 'پ: این چگونه با سایر ابزارهای رمزگذاری متفاوت است؟',
+            faq8A: 'The Salty Scrambler کاملاً رایگان است، نیاز به نصب ندارد، مبتنی بر مرورگر است، بیش از 50 زبان را پشتیبانی می‌کند و از رمزگذاری درجه نظامی استفاده می‌کند - همه این‌ها بدون جمع‌آوری داده‌های شخصی.'
           },
           ur: {
             language: 'زبان',
@@ -2558,9 +3428,117 @@
             donation_btn: 'Koop vir ons koffie'
           },
           so: {
+            language: 'Somali',
+            encrypt: 'Cilmiga Faylka',
+            decrypt: 'Oorsiga Faylka',
+            subtitle: 'Cilmiga faylkaaga oo liiska khaas ah - waxaa loogu abuuray baabuurida',
+            selectFiles: 'Xulo Faylka',
+            password: 'Password',
+            confirmPassword: 'Xaqiiji Password',
+            encryptBtn: 'Cilmi Faylka',
+            decryptBtn: 'Oorsi Faylka',
+            or: 'AMA',
+            dragDrop: 'Soo jibo faylka halkan',
+            copyPassword: 'Koobee Password',
+            passwordCopied: 'Password-ga oo lagu koobay clipboard!',
+            downloadEncrypted: 'Urugli Faylka Cilmiga ah',
+            downloadDecrypted: 'Urugli Faylka Oorsiga ah',
+            selectLanguage: 'Xulo Luqad',
             donation_title: 'Ma jeceshahay The Salty Scrambler?',
             donation_subtitle: 'Taageeradaadu waxay naga caawisaa inaan qalabkan ku dhawno bilaash, ammaan ah, oo si joogto ah u hagaagsan. Ka fiirso inaad noo iibsato qahwe si aad u taageerto shaqadeena!',
-            donation_btn: 'Noo iibso qahwe'
+            donation_btn: 'Noo iibso qahwe',
+            aboutTitle: 'Mahadsanida The Salty Scrambler',
+            aboutDescription: 'The Salty Scrambler waa qalab cilmiga faylka oo bilaash ah, oo buufiisu furan yahay, oo asaasga browser-ka ku saleysan. Waxaa lagu abuuray si looga soo safo dhadkii qiyamka diiwaan-gaynta iyo ammaan-gaynta sharakada. Halkaa jirta cilmiga AES-256 oo la diiwaan-gaystay, si loo ogaado in isaaqa laysku sahameyn mayaan dhawr sanno qad.o Qalabkan wuu u qatan doonaa webcam, alaab, iyo faylal kale oo ay jiraan ama jiraato.',
+            featuresTitle: 'Ujeedooyin Muhiim ah',
+            feature1Title: '🔐 Cilmiga Xoog Militri ah',
+            feature1Desc: 'AES-256-GCM cifriga cifriga standard',
+            feature2Title: '🌐 Wixii Lagu Isticmaalo Browser-ka',
+            feature2Desc: 'Yaan lagu wareejinin serverka, dhalinyarada xor ah oo kha ah',
+            feature3Title: '🔑 Isticmaalka Password-ka Xoog',
+            feature3Desc: 'PBKDF2 key derivation leh 310,000 iterations',
+            feature4Title: '📁 Suporta Faylka Dhamaadka ah',
+            feature4Desc: 'Cilmi iyo oorsing faylal kasta oo ah - rasmiyada, sawiro, faylaala',
+            feature5Title: '🌍 50 Luqad',
+            feature5Desc: 'Tijaabo wuxuu ku jira 50 luqad kala duwan',
+            feature6Title: '💻 Progressive Web App',
+            feature6Desc: 'Kubiita telefonika iyo desktop si ay jiraan ama jooga offline',
+            howItWorksTitle: 'Habka u shaqeeya',
+            encryptProcessTitle: 'Halkaa jirta Cilmiga',
+            encryptStep1: '1. Xulid faylkaaga iyo password-kaaga',
+            encryptStep2: '2. Qalabkan waxaa lagu ciyaari doonaa PBKDF2 oo dib loo celceeliya si ay dhawr qaybood key loo samaeeyo',
+            encryptStep3: '3. Waxaa lagu ciyaari doonaa AES-256-GCM si ay faylkaaga looga saarayo',
+            encryptStep4: '4. Urugli faylkaaga oo cilmiga ah ama halkan ka koobee password-kaaga',
+            decryptProcessTitle: 'Halkaa jirta Oorsiga',
+            decryptStep1: '1. Xulid faylkaaga oo cilmiga ah iyo password-kaaga',
+            decryptStep2: '2. Qalabkan waxaa lagu ciyaari doonaa PBKDF2 oo dib loo celceeliya si ay dhawr qaybood key loo samaeeyo',
+            decryptStep3: '3. Waxaa lagu ciyaari doonaa AES-256-GCM si ay faylkaaga looga oorsiyo',
+            decryptStep4: '4. Urugli faylkaada oo oorsi ah',
+            technicalDetailsTitle: 'Fahhanka Teeknikal',
+            encryptMethodLabel: 'Habka Cilmiga',
+            encryptMethodDesc: 'AES-256-GCM (Advanced Encryption Standard leh 256-bit oo keyga iyo Gallagal Authentication Mode)',
+            keyDerivationLabel: 'Samaynta Key',
+            keyDerivationDesc: 'PBKDF2 (Password-Based Key Derivation Function 2) leh 310,000 iterations iyo SHA-256',
+            privacyLabel: 'Diiwaan-gaynta Ammaan ah',
+            privacyDesc: 'Cilmiga waxaa lagu shaqeeyaa browser-ka. Faylkaaga iyo password-kaaga waxaa looga warejeejin mayaan server-kaaga.',
+            securityTitle: 'Ammaan-gaynta Cilmi',
+            securityIntro: 'The Salty Scrambler waxaa lagu dhaalisay leh ammaan-gaynta xoog leh:',
+            secBadge1: '✓ Cilmiga oo lagu shaqeeya browser-ka',
+            secBadge2: '✓ Serverka waxaa looga warejeejin wayaa',
+            secBadge3: '✓ Open-source - waxaa loo ogaado dhamaadka',
+            secBadge4: '✓ Cifriga standard oo la diiwaan-gaystay',
+            secBadge5: '✓ Ammaan-gaynta ay jiraan feedback iyo buuqa',
+            bestPracticesTitle: 'Habaka Ammaan-gaynta Ugu Fiican',
+            bestPractice1: '🔒 Istimaaale Password Xoog Leh - Qoryo password leh xarfo, qaddaaryo, iyo calaamado ah',
+            bestPractice2: '📝 Isticmaal Password Manager - Waxa looga jeclaa si ay password-kaaga looga haroorsho',
+            bestPractice3: '🔄 Iska doorso Password-kaaga - Haddii aad diiwaan-gayn jirtid, ka doorso password-kaaga',
+            bestPractice4: '✅ Dhib-dhib Fayl-kaaga - Haddii aad cilmi-raadis ahaad, xaqiij hiddih faylkaaga',
+            bestPractice5: '🛡️ Istimaaale VPN - Haddii aad kaliya jirtid, istimaaale VPN si looga difaaco isticmaalkaaga',
+            pwaTitle: 'Progressive Web App Installation',
+            pwaIntroduction: 'The Salty Scrambler waxaa loogu abuuray si ay kubiita telefonika iyo desktop looga shaqaasho. Halkan jirta habka loogu kubiito:',
+            pwaWindowsTitle: 'Windows:',
+            pwaWindows1: '1. Fusc Edge iyo qado haatan The Salty Scrambler website-ka',
+            pwaWindows2: '2. Cod "..." menu qada',
+            pwaWindows3: '3. Xulo "Apps" ka dibna "Install this site as an app"',
+            pwaWindows4: '4. Cod "Install" si loo shaqeysiyo alaab',
+            pwaWindows5: '5. Qalabkan waxaa lagu kubiito desktop-kaaga, Start menu, iyo alaab-qaybku',
+            pwaIOSTitle: 'iPhone/iPad:',
+            pwaIOS1: '1. Fusc Safari browser-ka iyo qado The Salty Scrambler website-ka',
+            pwaIOS2: '2. Cod "Share" button qada (icon-ka oo ayaan qodka jiraan)',
+            pwaIOS3: '3. Cod "Add to Home Screen" oo jiraan',
+            pwaIOS4: '4. Qoro magaca qalabkan (example: "Salty Scrambler") iyo cod "Add"',
+            pwaIOS5: '5. Qalabkan waxaa lagu kubiito Home Screen-kaaga',
+            pwaIOS6: '6. Cod app-ka si looga fusto',
+            pwaAndroidTitle: 'Android:',
+            pwaAndroid1: '1. Fusc Chrome iyo qado The Salty Scrambler website-ka',
+            pwaAndroid2: '2. Cod "⋮" menu qada',
+            pwaAndroid3: '3. Xulo "Install app" ama "Add to Home screen"',
+            pwaAndroid4: '4. Dhib-dhib xaqiij iyo cod "Install"',
+            pwaAndroid5: '5. Qalabkan waxaa lagu kubiito home screen-kaaga',
+            pwaMacTitle: 'Mac:',
+            pwaMac1: '1. Fusc Safari iyo qado The Salty Scrambler website-ka',
+            pwaMac2: '2. Cod "Share" icon qada (browser-ka toolbar-ka)',
+            pwaMac3: '3. Xulo "Add to Dock" ama "Add to Home Screen"',
+            pwaMac4: '4. Qoro magaca qalabkan iyo cod "Add"',
+            pwaMac5: '5. Qalabkan waxaa lagu kubiito dock-kaaga',
+            pwaNoteBold: 'Ogeysiis:',
+            pwaNoteContinued: 'Qalabkan wuxuu u qatan doonaa kaliya qaybta browser-kaaga iyo alaab-qaybkaaga si ay jiraan ama jooga offline.',
+            faqTitle: 'Wixii Iska Weydaarso (FAQ)',
+            faq1Q: 'Halkaa jirta qalabkan?',
+            faq1A: 'Qalabkan waxaa lagu shaqeeyaa browser-kaaga. Faylkaaga iyo password-kaaga waxaa looga warejeejin mayaan server-kaaga.',
+            faq2Q: 'Sidee ayaan password-kaaga qafa?',
+            faq2A: 'Istimaaale password xoog leh leh 12 xarfo ama ka badan, leh xarfo yar iyo waaweyn, qaddaaryo, iyo calaamado ah.',
+            faq3Q: 'Halkaa jirta AES-256?',
+            faq3A: 'AES-256 waa cipher-ka oo adkaata oo loogu tixgeliyay NSA leh U.S. Government. Waxaa loogu tixgeliyay ammaan-gaynta si ay qabsan tahay dhawr sanno qadka.',
+            faq4Q: 'Sidee ayaan password-kaaga doorsi?',
+            faq4A: 'Haddii aad diiwaan-gayn jirtid ama aad ka cabsan tahay qofka kale oo ayaad runtaa, ka doorso password-kaaga iyo cilmi faylkaada si loo qaban karo.',
+            faq5Q: 'Halkaa jirta qalabkan offline-ka?',
+            faq5A: 'Hah! Qalabkan waxaa loogu abuuray si ay lagu shaqaasho offline. Kubiito PWA oo shaqeysi offline.',
+            faq6Q: 'Sidee ayaan faylkaaga oorsiga?',
+            faq6A: 'Xulid faylkaada oo cilmiga ah iyo password-kaaga, ka dibna cod "Decrypt" button. Qalabkan waxaa lagu saarayo faylkaada iyo urugli karaa.',
+            faq7Q: 'Maxaad tilmaama password-kaaga?',
+            faq7A: 'Hah! Qalabkan wuxuu ka dib doonaa "Copy Password" button si ay password-kaaga lagu koobay clipboard-kaaga si ay aad u saafran tahay.',
+            faq8Q: 'Halkaa jirta qalabkan ay hawl ku tahay?',
+            faq8A: 'Qalabkan waxaa loogu abuuray si ay lagu shaqaasho qiyamka browser-ka oo ay shaqo ku tahay. Haddii aad xanuun ahaad, fadlan warmar naga.'
           },
           am: {
             donation_title: 'The Salty Scrambler ይወዳሉ?',
@@ -2606,6 +3584,104 @@
           document.getElementById('donationTitle').textContent = tr('donation_title');
           document.getElementById('donationSubtitle').textContent = tr('donation_subtitle');
           document.getElementById('donationBtnText').textContent = tr('donation_btn');
+          // Update about section
+          document.getElementById('aboutTitle').textContent = tr('aboutTitle');
+          document.getElementById('aboutDescription').textContent = tr('aboutDescription');
+          // Update features section
+          document.getElementById('featuresTitle').textContent = tr('featuresTitle');
+          document.getElementById('feature1Title').textContent = tr('feature1Title');
+          document.getElementById('feature1Desc').textContent = tr('feature1Desc');
+          document.getElementById('feature2Title').textContent = tr('feature2Title');
+          document.getElementById('feature2Desc').textContent = tr('feature2Desc');
+          document.getElementById('feature3Title').textContent = tr('feature3Title');
+          document.getElementById('feature3Desc').textContent = tr('feature3Desc');
+          document.getElementById('feature4Title').textContent = tr('feature4Title');
+          document.getElementById('feature4Desc').textContent = tr('feature4Desc');
+          document.getElementById('feature5Title').textContent = tr('feature5Title');
+          document.getElementById('feature5Desc').textContent = tr('feature5Desc');
+          document.getElementById('feature6Title').textContent = tr('feature6Title');
+          document.getElementById('feature6Desc').textContent = tr('feature6Desc');
+          // Update how it works section
+          document.getElementById('howItWorksTitle').textContent = tr('howItWorksTitle');
+          document.getElementById('encryptProcessTitle').textContent = tr('encryptProcessTitle');
+          document.getElementById('encryptStep1').textContent = tr('encryptStep1');
+          document.getElementById('encryptStep2').textContent = tr('encryptStep2');
+          document.getElementById('encryptStep3').textContent = tr('encryptStep3');
+          document.getElementById('encryptStep4').textContent = tr('encryptStep4');
+          document.getElementById('decryptProcessTitle').textContent = tr('decryptProcessTitle');
+          document.getElementById('decryptStep1').textContent = tr('decryptStep1');
+          document.getElementById('decryptStep2').textContent = tr('decryptStep2');
+          document.getElementById('decryptStep3').textContent = tr('decryptStep3');
+          document.getElementById('decryptStep4').textContent = tr('decryptStep4');
+          document.getElementById('technicalDetailsTitle').textContent = tr('technicalDetailsTitle');
+          document.getElementById('encryptMethodLabel').textContent = tr('encryptMethodLabel');
+          document.getElementById('encryptMethodDesc').textContent = tr('encryptMethodDesc');
+          document.getElementById('keyDerivationLabel').textContent = tr('keyDerivationLabel');
+          document.getElementById('keyDerivationDesc').textContent = tr('keyDerivationDesc');
+          document.getElementById('privacyLabel').textContent = tr('privacyLabel');
+          document.getElementById('privacyDesc').textContent = tr('privacyDesc');
+          // Update security section
+          document.getElementById('securityTitle').textContent = tr('securityTitle');
+          document.getElementById('securityIntro').textContent = tr('securityIntro');
+          document.getElementById('secBadge1').textContent = tr('secBadge1');
+          document.getElementById('secBadge2').textContent = tr('secBadge2');
+          document.getElementById('secBadge3').textContent = tr('secBadge3');
+          document.getElementById('secBadge4').textContent = tr('secBadge4');
+          document.getElementById('secBadge5').textContent = tr('secBadge5');
+          document.getElementById('bestPracticesTitle').textContent = tr('bestPracticesTitle');
+          document.getElementById('bestPractice1').textContent = tr('bestPractice1');
+          document.getElementById('bestPractice2').textContent = tr('bestPractice2');
+          document.getElementById('bestPractice3').textContent = tr('bestPractice3');
+          document.getElementById('bestPractice4').textContent = tr('bestPractice4');
+          document.getElementById('bestPractice5').textContent = tr('bestPractice5');
+          // Update PWA section
+          document.getElementById('pwaTitle').textContent = tr('pwaTitle');
+          document.getElementById('pwaIntroduction').textContent = tr('pwaIntroduction');
+          document.getElementById('pwaWindowsTitle').textContent = tr('pwaWindowsTitle');
+          document.getElementById('pwaWindows1').textContent = tr('pwaWindows1');
+          document.getElementById('pwaWindows2').textContent = tr('pwaWindows2');
+          document.getElementById('pwaWindows3').textContent = tr('pwaWindows3');
+          document.getElementById('pwaWindows4').textContent = tr('pwaWindows4');
+          document.getElementById('pwaWindows5').textContent = tr('pwaWindows5');
+          document.getElementById('pwaIOSTitle').textContent = tr('pwaIOSTitle');
+          document.getElementById('pwaIOS1').textContent = tr('pwaIOS1');
+          document.getElementById('pwaIOS2').textContent = tr('pwaIOS2');
+          document.getElementById('pwaIOS3').textContent = tr('pwaIOS3');
+          document.getElementById('pwaIOS4').textContent = tr('pwaIOS4');
+          document.getElementById('pwaIOS5').textContent = tr('pwaIOS5');
+          document.getElementById('pwaIOS6').textContent = tr('pwaIOS6');
+          document.getElementById('pwaAndroidTitle').textContent = tr('pwaAndroidTitle');
+          document.getElementById('pwaAndroid1').textContent = tr('pwaAndroid1');
+          document.getElementById('pwaAndroid2').textContent = tr('pwaAndroid2');
+          document.getElementById('pwaAndroid3').textContent = tr('pwaAndroid3');
+          document.getElementById('pwaAndroid4').textContent = tr('pwaAndroid4');
+          document.getElementById('pwaAndroid5').textContent = tr('pwaAndroid5');
+          document.getElementById('pwaMacTitle').textContent = tr('pwaMacTitle');
+          document.getElementById('pwaMac1').textContent = tr('pwaMac1');
+          document.getElementById('pwaMac2').textContent = tr('pwaMac2');
+          document.getElementById('pwaMac3').textContent = tr('pwaMac3');
+          document.getElementById('pwaMac4').textContent = tr('pwaMac4');
+          document.getElementById('pwaMac5').textContent = tr('pwaMac5');
+          document.getElementById('pwaNoteBold').textContent = tr('pwaNoteBold');
+          document.getElementById('pwaNoteContinued').textContent = tr('pwaNoteContinued');
+          // Update FAQ section
+          document.getElementById('faqTitle').textContent = tr('faqTitle');
+          document.getElementById('faq1Q').textContent = tr('faq1Q');
+          document.getElementById('faq1A').textContent = tr('faq1A');
+          document.getElementById('faq2Q').textContent = tr('faq2Q');
+          document.getElementById('faq2A').textContent = tr('faq2A');
+          document.getElementById('faq3Q').textContent = tr('faq3Q');
+          document.getElementById('faq3A').textContent = tr('faq3A');
+          document.getElementById('faq4Q').textContent = tr('faq4Q');
+          document.getElementById('faq4A').textContent = tr('faq4A');
+          document.getElementById('faq5Q').textContent = tr('faq5Q');
+          document.getElementById('faq5A').textContent = tr('faq5A');
+          document.getElementById('faq6Q').textContent = tr('faq6Q');
+          document.getElementById('faq6A').textContent = tr('faq6A');
+          document.getElementById('faq7Q').textContent = tr('faq7Q');
+          document.getElementById('faq7A').textContent = tr('faq7A');
+          document.getElementById('faq8Q').textContent = tr('faq8Q');
+          document.getElementById('faq8A').textContent = tr('faq8A');
         }
 
         function initLanguageSelector() {
@@ -2895,6 +3971,4 @@
         }
     </script>
 </body>
-
 </html>
-
