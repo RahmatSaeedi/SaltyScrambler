@@ -1,0 +1,2898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ff0000">
+
+    <!-- Primary Meta Tags -->
+    <title>The Salty Scrambler - Free Online File Encryption | Secure Document Protection</title>
+    <meta name="title" content="The Salty Scrambler - Free Online File Encryption | Secure Document Protection">
+    <meta name="description" content="Encrypt your sensitive documents instantly with military-grade security. The Salty Scrambler uses PBKDF2 (310,000 iterations) and AES-256-GCM encryption. 100% secure - data never leaves your browser. No upload, no servers. Free and open-source.">
+    <meta name="keywords" content="file encryption, secure encryption, document protection, AES-256 encryption, PBKDF2, secure file scrambler, local encryption, privacy protection, confidential documents, free encryption tool, end-to-end encryption, no upload encryption">
+    <meta name="author" content="Rahmat Saeedi">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://RahmatSaeedi.github.io/SaltyScrambler/">
+    <meta property="og:title" content="The Salty Scrambler - Secure File Encryption">
+    <meta property="og:description" content="Encrypt sensitive documents with military-grade AES-256-GCM security. Zero-knowledge, browser-based encryption. Your data never leaves your computer.">
+    <meta property="og:image" content="https://RahmatSaeedi.github.io/SaltyScrambler/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="The Salty Scrambler">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://RahmatSaeedi.github.io/SaltyScrambler/">
+    <meta name="twitter:title" content="The Salty Scrambler - Secure File Encryption">
+    <meta name="twitter:description" content="Encrypt sensitive documents with military-grade security. 100% secure - data never leaves your browser.">
+    <meta name="twitter:image" content="https://RahmatSaeedi.github.io/SaltyScrambler/og-image.png">
+    <meta name="twitter:creator" content="@RahmatSaeedi">
+
+    <!-- Additional SEO Meta Tags -->
+    <meta name="subject" content="Secure File Encryption and Document Protection">
+    <meta name="copyright" content="2025 Rahmat Saeedi. All rights reserved.">
+    <meta name="category" content="Technology, Security, Privacy, Encryption">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://RahmatSaeedi.github.io/SaltyScrambler/">
+
+    <!-- Alternate Links for Multilingual Content -->
+    <link rel="alternate" hreflang="en" href="https://RahmatSaeedi.github.io/SaltyScrambler/">
+    <link rel="alternate" hreflang="x-default" href="https://RahmatSaeedi.github.io/SaltyScrambler/">
+
+    <!-- Preconnect to External Resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Manifest and Icon -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='12' fill='%23ff0000'/%3E%3Cpath d='M16 10V9a4 4 0 0 0-8 0v1H6a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-7a1 1 0 0 0-1-1h-2zM9 9a3 3 0 0 1 6 0v1H9V9z' fill='%23fff'/%3E%3C/svg%3E" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Ccircle cx='90' cy='90' r='90' fill='%23ff0000'/%3E%3Cpath d='M128 80V72a32 32 0 0 0-64 0v8H48a8 8 0 0 0-8 8v56a8 8 0 0 0 8 8h96a8 8 0 0 0 8-8V88a8 8 0 0 0-8-8h-16zM72 72a24 24 0 0 1 48 0v8H72V72z' fill='%23fff'/%3E%3C/svg%3E">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body: remove horizontal padding so full-width elements can match 100vw */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;      /* stack children vertically */
+            align-items: stretch;        /* let full-width children fill horizontally */
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            padding-left: 0;
+            padding-right: 0;
+            background-color: #f0f0f0;
+            position: relative;
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600"><rect fill="%23FF0000" width="225" height="600"/><rect fill="%23FFFFFF" x="225" y="0" width="450" height="600"/><rect fill="%23FF0000" x="675" width="225" height="600"/></svg>');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            z-index: -1;
+            animation: subtleWave 6s ease-in-out infinite;
+            filter: brightness(0.7);
+        }
+
+        @keyframes subtleWave {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(1px);
+            }
+        }
+
+        /* Outer container becomes full width and should grow to fill available vertical space */
+        .container {
+            width: 100%;       /* fill available width (prevents horizontal scroll) */
+            max-width: none;
+            margin: 0;
+            border-radius: 0;
+            background: transparent;
+            box-shadow: none;
+            padding: 0;
+            position: relative;
+            z-index: 1;
+            flex: 1; /* ensure container grows to push footer to bottom when content is short */
+        }
+
+        /* Inner card keeps previous look and centers content */
+        .container-inner {
+            background: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            padding: 2.5rem 2rem;
+            max-width: 550px;
+            width: 90%;
+            margin: 0 auto;
+            border: 1px solid rgba(255, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        @media (max-width: 768px) {
+            .container-inner {
+                padding: 1.75rem 1.5rem;
+                max-width: 100%;
+                margin: 0 1rem;
+                border-radius: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container-inner {
+                padding: 1.5rem 1rem;
+                margin: 0 0.75rem;
+            }
+        }
+
+        h1 {
+            color: #1f2937;
+            font-size: 2.21rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+            background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            color: #6b7280;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            color: #374151;
+            font-weight: 600;
+            margin-bottom: 0.65rem;
+            font-size: 1.05rem;
+            letter-spacing: 0.3px;
+        }
+
+        input[type="file"],
+        input[type="password"] {
+            width: 100%;
+            padding: 0.85rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 0.7rem;
+            font-size: 1.105rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: #f9fafb;
+        }
+
+        input[type="file"]:focus,
+        input[type="password"]:focus {
+            outline: none;
+            border-color: #dc2626;
+            box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.12);
+            background: white;
+        }
+
+        input[type="file"]::file-selector-button {
+            background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.4rem;
+            cursor: pointer;
+            font-weight: 500;
+            transition: transform 0.2s;
+        }
+
+        input[type="file"]::file-selector-button:hover {
+            transform: scale(1.02);
+        }
+
+        button:not(.tab-btn):not(.lang-btn) {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+            color: white;
+            border: none;
+            border-radius: 0.7rem;
+            font-size: 1.105rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-top: 1rem;
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.2);
+            letter-spacing: 0.3px;
+        }
+
+        button:not(.tab-btn):not(.lang-btn):hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(255, 0, 0, 0.35);
+        }
+
+        button:not(.tab-btn):not(.lang-btn):active {
+            transform: translateY(-2px);
+        }
+
+        button:not(.tab-btn):not(.lang-btn):disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        #status, #decryptStatus {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            border-radius: 0.7rem;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.935rem;
+            display: none;
+            animation: slideIn 0.3s ease-out;
+            border-left: 5px solid transparent;
+        }
+
+        #status.show, #decryptStatus.show {
+            display: block;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #status.success, #decryptStatus.success {
+            background-color: #ecfdf5;
+            color: #065f46;
+            border-left-color: #10b981;
+        }
+
+        #status.error, #decryptStatus.error {
+            background-color: #fef2f2;
+            color: #991b1b;
+            border-left-color: #ef4444;
+        }
+
+        #status.info, #decryptStatus.info {
+            background-color: #eff6ff;
+            color: #0c4a6e;
+            border-left-color: #0ea5e9;
+        }
+
+        .file-count {
+            color: #6b7280;
+            font-size: 0.88rem;
+            margin-top: 0.25rem;
+        }
+
+        /* Tabs (updated for visibility & accessibility) */
+        .tabs {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            justify-content: center;
+            z-index: 2;
+            flex-wrap: wrap;
+        }
+        .tab-btn {
+            background: rgba(255,255,255,0.98);
+            border: 2px solid #e5e7eb;
+            padding: 0.8rem 1.5rem;
+            border-radius: 0.7rem;
+            cursor: pointer;
+            font-weight: 700;
+            color: #374151;
+            box-shadow: 0 4px 12px rgba(15,23,42,0.08);
+            transition: all 0.2s ease;
+            min-width: 120px;
+            text-align: center;
+            outline: none;
+            font-size: 1.105rem;
+        }
+        .tab-btn:hover {
+            transform: translateY(-3px);
+            border-color: #dc2626;
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.15);
+        }
+        .tab-btn:focus {
+            box-shadow: 0 0 0 4px rgba(220,38,38,0.2);
+        }
+        .tab-btn.active {
+            background: linear-gradient(135deg,#ff0000 0%,#cc0000 100%);
+            color: #fff;
+            border-color: #990000;
+            box-shadow: 0 8px 28px rgba(204,0,0,0.25);
+            transform: scale(1.02);
+        }
+
+        /* Language selector - Custom Dropdown */
+        .lang-select-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            padding: 0 0.5rem;
+        }
+
+        .custom-dropdown-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .custom-dropdown-toggle {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.85rem 1.25rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 0.85rem;
+            background: linear-gradient(135deg, rgba(255,255,255,0.99) 0%, rgba(255,255,255,0.95) 100%);
+            cursor: pointer;
+            font-size: 1.105rem;
+            font-weight: 600;
+            color: #374151;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            position: relative;
+            outline: none;
+        }
+
+        .custom-dropdown-toggle:hover {
+            border-color: #dc2626;
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .custom-dropdown-toggle:focus {
+            outline: none;
+            border-color: #dc2626;
+            box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.15);
+        }
+
+        .custom-dropdown-toggle.open {
+            border-color: #dc2626;
+            box-shadow: 0 8px 24px rgba(220, 38, 38, 0.2);
+            background: white;
+        }
+
+        .dropdown-flag {
+            font-size: 1.5rem;
+            line-height: 1;
+            display: inline-flex;
+            align-items: center;
+            min-width: 1.5rem;
+        }
+
+        .dropdown-label {
+            flex: 1;
+            text-align: left;
+            font-weight: 600;
+            color: #dae6df;
+        }
+
+        .dropdown-arrow {
+            width: 20px;
+            height: 20px;
+            color: #dc2626;
+            stroke: currentColor;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .custom-dropdown-toggle.open .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        /* Dropdown Menu */
+        .custom-dropdown-menu {
+            position: absolute;
+            top: calc(100% + 0.5rem);
+            left: 0;
+            right: 0;
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 0.85rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            max-height: 320px;
+            overflow-y: auto;
+            z-index: 1000;
+            display: none;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.2s ease;
+            animation: dropdownFadeIn 0.2s ease forwards;
+        }
+
+        .custom-dropdown-menu.open {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes dropdownFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .dropdown-option {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.85rem 1.25rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid #e5e7eb;
+            user-select: none;
+            background-color: #ffffff;
+        }
+
+        .dropdown-option:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-option:hover {
+            background-color: #eff6ff;
+            transform: translateX(4px);
+            border-left: 3px solid #93c5fd;
+            padding-left: calc(1.25rem - 3px);
+        }
+
+        .dropdown-option.selected {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            border-left: 3px solid #0284c7;
+            padding-left: calc(1.25rem - 3px);
+            color: #0c4a6e;
+            font-weight: 700;
+        }
+
+        .dropdown-option-flag {
+            font-size: 1.6rem;
+            line-height: 1;
+            min-width: 1.8rem;
+            text-align: center;
+        }
+
+        .dropdown-option-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .dropdown-option-name {
+            font-weight: 600;
+            color: #edfcff;
+            font-size: 0.935rem;
+        }
+
+        .dropdown-option-region {
+            font-size: 0.765rem;
+            color: #ecffeb;
+        }
+
+        .dropdown-option:hover .dropdown-option-name {
+            color: #e0f4ff;
+        }
+
+        .dropdown-option:hover .dropdown-option-region {
+            color: #e0f4ff;
+        }
+
+        .dropdown-option.selected .dropdown-option-name {
+            color: #e0f4ff;
+        }
+
+        .dropdown-option.selected .dropdown-option-region {
+            color: #e0f4ff;
+        }
+
+        .lang-dropdown-hidden {
+            display: none;
+        }
+
+        /* Scrollbar styling for dropdown */
+        .custom-dropdown-menu::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .custom-dropdown-menu::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .custom-dropdown-menu::-webkit-scrollbar-thumb {
+            background: #d1d5db;
+            border-radius: 3px;
+        }
+
+        .custom-dropdown-menu::-webkit-scrollbar-thumb:hover {
+            background: #9ca3af;
+        }
+
+        @media (max-width: 768px) {
+            .custom-dropdown-wrapper {
+                max-width: 100%;
+            }
+
+            .custom-dropdown-toggle {
+                padding: 0.75rem 1rem;
+                font-size: 0.95rem;
+            }
+
+            .dropdown-option {
+                padding: 0.75rem 1rem;
+            }
+
+            .dropdown-option.selected {
+                padding-left: calc(1rem - 3px);
+            }
+
+            .dropdown-flag {
+                font-size: 1.3rem;
+            }
+
+            .dropdown-option-flag {
+                font-size: 1.4rem;
+            }
+
+            .custom-dropdown-menu {
+                max-height: 280px;
+            }
+        }
+
+        /* Gallery images */
+        #gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+            gap: .75rem;
+            margin-top: 1rem;
+        }
+        #gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: .5rem;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            object-fit: cover;
+            background: #f3f4f6;
+        }
+
+        /* Footer */
+        .salty-footer {
+            width: 100%;      /* full width of content flow */
+            max-width: none;
+            margin: 0;
+            border-radius: 0;
+            background: rgba(255,255,255,0.06);
+            backdrop-filter: blur(6px);
+            box-shadow: none;
+            padding: 0;
+        }
+        .salty-footer-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0.6rem 1rem;
+            border-radius: 0.75rem;
+            display: flex;
+            gap: 0.6rem;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            font-size: 0.995rem;
+            color: #fff;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+            background: transparent; /* visual preserved by containing .salty-footer-inner */
+        }
+        .salty-footer a {
+            color: #fff;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            font-weight: 600;
+        }
+        .salty-footer a:hover,
+        .salty-footer a:focus {
+            opacity: 0.95;
+            text-decoration: none;
+        }
+        @media (max-width:480px){
+            .salty-footer { font-size: 0.85rem; padding: 0.5rem 0.75rem; }
+        }
+
+        /* Donation CTA Section */
+        .donation-cta {
+            margin-top: 3rem;
+            padding: 2.5rem 1.5rem;
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.08) 0%, rgba(220, 38, 38, 0.04) 100%);
+            border: 2px solid rgba(220, 38, 38, 0.2);
+            border-radius: 1.2rem;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(220, 38, 38, 0.1);
+            animation: donationPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes donationPulse {
+            0%, 100% {
+                box-shadow: 0 10px 40px rgba(220, 38, 38, 0.1);
+            }
+            50% {
+                box-shadow: 0 15px 50px rgba(220, 38, 38, 0.2);
+            }
+        }
+
+        .donation-emoji {
+            font-size: 3.5rem;
+            margin-bottom: 0.75rem;
+            display: block;
+            animation: donationBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes donationBounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .donation-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #dc2626;
+            margin-bottom: 0.5rem;
+        }
+
+        .donation-subtitle {
+            font-size: 0.95rem;
+            color: #004912;
+            margin-bottom: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .donation-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 0.8rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(220, 38, 38, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .donation-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 36px rgba(220, 38, 38, 0.5);
+            background: linear-gradient(135deg, #ff1a1a 0%, #dd0000 100%);
+        }
+
+        .donation-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .donation-heart {
+            display: inline-block;
+            margin-left: 0.5rem;
+            animation: heartBeat 1.2s ease-in-out infinite;
+        }
+
+        @keyframes heartBeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            25% {
+                transform: scale(1.3);
+            }
+            50% {
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .donation-cta {
+                margin-top: 2rem;
+                padding: 2rem 1rem;
+            }
+
+            .donation-title {
+                font-size: 1.5rem;
+            }
+
+            .donation-emoji {
+                font-size: 3rem;
+            }
+
+            .donation-btn {
+                padding: 0.9rem 1.8rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "The Salty Scrambler",
+      "description": "A secure, browser-based file encryption tool using military-grade AES-256-GCM encryption with PBKDF2 key derivation",
+      "url": "https://RahmatSaeedi.github.io/SaltyScrambler/",
+      "author": {
+        "@type": "Person",
+        "name": "Rahmat Saeedi",
+        "url": "https://www.linkedin.com/in/rahmat-saeedi"
+      },
+      "applicationCategory": "SecurityApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "1"
+      },
+      "features": [
+        "AES-256-GCM Encryption",
+        "PBKDF2 Key Derivation (310,000 iterations)",
+        "Zero-Knowledge Architecture",
+        "Browser-Based Processing",
+        "No Server Upload",
+        "No Data Transmission",
+        "Free and Open Source",
+        "Multi-Language Support (50+ languages)",
+        "Mobile Responsive"
+      ]
+    }
+    </script>
+
+    <!-- Organization Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "The Salty Scrambler",
+      "description": "Secure file encryption and document protection service",
+      "url": "https://RahmatSaeedi.github.io/SaltyScrambler/",
+      "logo": "https://RahmatSaeedi.github.io/SaltyScrambler/logo.png",
+      "contact": {
+        "@type": "ContactPoint",
+        "contactType": "Support",
+        "url": "https://RahmatSaeedi.github.io/SaltyScrambler/"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/rahmat-saeedi",
+        "https://github.com/RahmatSaeedi"
+      ]
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="container-inner">
+
+            <!-- Language selector -->
+            <div class="lang-select-container">
+                <div class="custom-dropdown-wrapper">
+                    <button class="custom-dropdown-toggle" id="langDropdownToggle" aria-label="Select language" aria-haspopup="listbox" aria-expanded="false">
+                        <span class="dropdown-flag" id="currentFlag">🌍</span>
+                        <span class="dropdown-label" id="currentLangLabel">English</span>
+                        <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="custom-dropdown-menu" id="langDropdownMenu" role="listbox">
+                        <!-- Options populated by JavaScript -->
+                    </div>
+                    <select id="langSelect" class="lang-dropdown-hidden" aria-label="Select language"></select>
+                </div>
+            </div>
+
+            <div class="tabs" role="tablist" aria-label="Encrypt or Decrypt">
+                <!-- added role/aria attributes and tabindex for accessibility -->
+                <button class="tab-btn active" id="tabEncrypt" role="tab" aria-selected="true" aria-controls="encryptSection" tabindex="0" onclick="showTab('encrypt')">Encrypt</button>
+                <button class="tab-btn" id="tabDecrypt" role="tab" aria-selected="false" aria-controls="decryptSection" tabindex="-1" onclick="showTab('decrypt')">Decrypt</button>
+            </div>
+
+            <!-- ENCRYPT SECTION (keeps existing index.html inputs & button) -->
+            <section id="encryptSection">
+                <h1>🔒 The Salty Scrambler</h1>
+                <p class="subtitle" id="subtitle">Secure file encryption with PBKDF2 (310,000 iterations) and AES-256-GCM</p>
+                
+                <div class="form-group">
+                    <label for="fileInput" id="labelFileInput">Select Files</label>
+                    <input type="file" id="fileInput" accept="*" multiple />
+                    <div class="file-count" id="fileCount"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="passwordInput" id="labelPasswordInput">Encryption Key</label>
+                    <input type="password" id="passwordInput" placeholder="Enter a strong password" />
+                </div>
+
+                <button onclick="startEncryption()" id="encryptBtn">Encrypt & Download</button>
+
+                <p id="status"></p>
+            </section>
+
+            <!-- DECRYPT SECTION (new) -->
+            <section id="decryptSection" style="display:none;">
+                <h2 id="decryptHeading" style="text-align:center;margin-bottom:.5rem;">🖼️ Decryption Gallery</h2>
+                <p class="subtitle" id="decryptSubtitle" style="margin-bottom:1rem;">Enter the decryption key and select one or more <code>.enc</code> files to display decrypted images.</p>
+
+                <div class="form-group">
+                    <label for="decryptPassword" id="labelDecryptPassword">Decryption Key</label>
+                    <input type="password" id="decryptPassword" placeholder="Enter decryption key" />
+                </div>
+
+                <div class="form-group">
+                    <label for="encryptedFiles" id="labelEncryptedFiles">Select Encrypted Files (.enc)</label>
+                    <input type="file" id="encryptedFiles" accept=".enc" multiple />
+                    <div class="file-count" id="decryptFileCount"></div>
+                </div>
+
+                <button onclick="startDecryption()" id="decryptBtn">Load & Decrypt</button>
+
+                <p id="decryptStatus"></p>
+                <div id="gallery" aria-live="polite"></div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Donation CTA Section -->
+    <div class="donation-cta">
+        <div style="width: 50%; margin: 0 auto;">
+            <span class="donation-emoji">☕</span>
+            <h2 class="donation-title" id="donationTitle">Love The Salty Scrambler?</h2>
+            <p class="donation-subtitle" id="donationSubtitle">Your support helps us keep developing tools free, secure, and continuously improving. Consider buying us a coffee to fuel our work!</p>
+            <a href="https://buymeacoffee.com/rahmatsaeedi" class="donation-btn" id="donationBtn" target="_blank" rel="noopener noreferrer">
+                <span id="donationBtnText">Buy me a Coffee</span> <span class="donation-heart">
+                    <svg width="40" height="40" viewBox="0 0 884 1279" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M791.109 297.518L790.231 297.002L788.201 296.383C789.018 297.072 790.04 297.472 791.109 297.518Z" fill="#0D0C22"></path>
+                        <path d="M803.896 388.891L802.916 389.166L803.896 388.891Z" fill="#0D0C22"></path>
+                        <path d="M791.484 297.377C791.359 297.361 791.237 297.332 791.118 297.29C791.111 297.371 791.111 297.453 791.118 297.534C791.252 297.516 791.379 297.462 791.484 297.377Z" fill="#0D0C22"></path>
+                        <path d="M791.113 297.529H791.244V297.447L791.113 297.529Z" fill="#0D0C22"></path>
+                        <path d="M803.111 388.726L804.591 387.883L805.142 387.573L805.641 387.04C804.702 387.444 803.846 388.016 803.111 388.726Z" fill="#0D0C22"></path>
+                        <path d="M793.669 299.515L792.223 298.138L791.243 297.605C791.77 298.535 792.641 299.221 793.669 299.515Z" fill="#0D0C22"></path>
+                        <path d="M430.019 1186.18C428.864 1186.68 427.852 1187.46 427.076 1188.45L427.988 1187.87C428.608 1187.3 429.485 1186.63 430.019 1186.18Z" fill="#0D0C22"></path>
+                        <path d="M641.187 1144.63C641.187 1143.33 640.551 1143.57 640.705 1148.21C640.705 1147.84 640.86 1147.46 640.929 1147.1C641.015 1146.27 641.084 1145.46 641.187 1144.63Z" fill="#0D0C22"></path>
+                        <path d="M619.284 1186.18C618.129 1186.68 617.118 1187.46 616.342 1188.45L617.254 1187.87C617.873 1187.3 618.751 1186.63 619.284 1186.18Z" fill="#0D0C22"></path>
+                        <path d="M281.304 1196.06C280.427 1195.3 279.354 1194.8 278.207 1194.61C279.136 1195.06 280.065 1195.51 280.684 1195.85L281.304 1196.06Z" fill="#0D0C22"></path>
+                        <path d="M247.841 1164.01C247.704 1162.66 247.288 1161.35 246.619 1160.16C247.093 1161.39 247.489 1162.66 247.806 1163.94L247.841 1164.01Z" fill="#0D0C22"></path>
+                        <path d="M472.623 590.836C426.682 610.503 374.546 632.802 306.976 632.802C278.71 632.746 250.58 628.868 223.353 621.274L270.086 1101.08C271.74 1121.13 280.876 1139.83 295.679 1153.46C310.482 1167.09 329.87 1174.65 349.992 1174.65C349.992 1174.65 416.254 1178.09 438.365 1178.09C462.161 1178.09 533.516 1174.65 533.516 1174.65C553.636 1174.65 573.019 1167.08 587.819 1153.45C602.619 1139.82 611.752 1121.13 613.406 1101.08L663.459 570.876C641.091 563.237 618.516 558.161 593.068 558.161C549.054 558.144 513.591 573.303 472.623 590.836Z" fill="#FFDD00"></path>
+                        <path d="M78.6885 386.132L79.4799 386.872L79.9962 387.182C79.5987 386.787 79.1603 386.435 78.6885 386.132Z" fill="#0D0C22"></path>
+                        <path d="M879.567 341.849L872.53 306.352C866.215 274.503 851.882 244.409 819.19 232.898C808.711 229.215 796.821 227.633 788.786 220.01C780.751 212.388 778.376 200.55 776.518 189.572C773.076 169.423 769.842 149.257 766.314 129.143C763.269 111.85 760.86 92.4243 752.928 76.56C742.604 55.2584 721.182 42.8009 699.88 34.559C688.965 30.4844 677.826 27.0375 666.517 24.2352C613.297 10.1947 557.342 5.03277 502.591 2.09047C436.875 -1.53577 370.983 -0.443234 305.422 5.35968C256.625 9.79894 205.229 15.1674 158.858 32.0469C141.91 38.224 124.445 45.6399 111.558 58.7341C95.7448 74.8221 90.5829 99.7026 102.128 119.765C110.336 134.012 124.239 144.078 138.985 150.737C158.192 159.317 178.251 165.846 198.829 170.215C256.126 182.879 315.471 187.851 374.007 189.968C438.887 192.586 503.87 190.464 568.44 183.618C584.408 181.863 600.347 179.758 616.257 177.304C634.995 174.43 647.022 149.928 641.499 132.859C634.891 112.453 617.134 104.538 597.055 107.618C594.095 108.082 591.153 108.512 588.193 108.942L586.06 109.252C579.257 110.113 572.455 110.915 565.653 111.661C551.601 113.175 537.515 114.414 523.394 115.378C491.768 117.58 460.057 118.595 428.363 118.647C397.219 118.647 366.058 117.769 334.983 115.722C320.805 114.793 306.661 113.611 292.552 112.177C286.134 111.506 279.733 110.801 273.333 110.009L267.241 109.235L265.917 109.046L259.602 108.134C246.697 106.189 233.792 103.953 221.025 101.251C219.737 100.965 218.584 100.249 217.758 99.2193C216.932 98.1901 216.482 96.9099 216.482 95.5903C216.482 94.2706 216.932 92.9904 217.758 91.9612C218.584 90.9319 219.737 90.2152 221.025 89.9293H221.266C232.33 87.5721 243.479 85.5589 254.663 83.8038C258.392 83.2188 262.131 82.6453 265.882 82.0832H265.985C272.988 81.6186 280.026 80.3625 286.994 79.5366C347.624 73.2301 408.614 71.0801 469.538 73.1014C499.115 73.9618 528.676 75.6996 558.116 78.6935C564.448 79.3474 570.746 80.0357 577.043 80.8099C579.452 81.1025 581.878 81.4465 584.305 81.7391L589.191 82.4445C603.438 84.5667 617.61 87.1419 631.708 90.1703C652.597 94.7128 679.422 96.1925 688.713 119.077C691.673 126.338 693.015 134.408 694.649 142.03L696.732 151.752C696.786 151.926 696.826 152.105 696.852 152.285C701.773 175.227 706.7 198.169 711.632 221.111C711.994 222.806 712.002 224.557 711.657 226.255C711.312 227.954 710.621 229.562 709.626 230.982C708.632 232.401 707.355 233.6 705.877 234.504C704.398 235.408 702.75 235.997 701.033 236.236H700.895L697.884 236.649L694.908 237.044C685.478 238.272 676.038 239.419 666.586 240.486C647.968 242.608 629.322 244.443 610.648 245.992C573.539 249.077 536.356 251.102 499.098 252.066C480.114 252.57 461.135 252.806 442.162 252.771C366.643 252.712 291.189 248.322 216.173 239.625C208.051 238.662 199.93 237.629 191.808 236.58C198.106 237.389 187.231 235.96 185.029 235.651C179.867 234.928 174.705 234.177 169.543 233.397C152.216 230.798 134.993 227.598 117.7 224.793C96.7944 221.352 76.8005 223.073 57.8906 233.397C42.3685 241.891 29.8055 254.916 21.8776 270.735C13.7217 287.597 11.2956 305.956 7.64786 324.075C4.00009 342.193 -1.67805 361.688 0.472751 380.288C5.10128 420.431 33.165 453.054 73.5313 460.35C111.506 467.232 149.687 472.807 187.971 477.556C338.361 495.975 490.294 498.178 641.155 484.129C653.44 482.982 665.708 481.732 677.959 480.378C681.786 479.958 685.658 480.398 689.292 481.668C692.926 482.938 696.23 485.005 698.962 487.717C701.694 490.429 703.784 493.718 705.08 497.342C706.377 500.967 706.846 504.836 706.453 508.665L702.633 545.797C694.936 620.828 687.239 695.854 679.542 770.874C671.513 849.657 663.431 928.434 655.298 1007.2C653.004 1029.39 650.71 1051.57 648.416 1073.74C646.213 1095.58 645.904 1118.1 641.757 1139.68C635.218 1173.61 612.248 1194.45 578.73 1202.07C548.022 1209.06 516.652 1212.73 485.161 1213.01C450.249 1213.2 415.355 1211.65 380.443 1211.84C343.173 1212.05 297.525 1208.61 268.756 1180.87C243.479 1156.51 239.986 1118.36 236.545 1085.37C231.957 1041.7 227.409 998.039 222.9 954.381L197.607 711.615L181.244 554.538C180.968 551.94 180.693 549.376 180.435 546.76C178.473 528.023 165.207 509.681 144.301 510.627C126.407 511.418 106.069 526.629 108.168 546.76L120.298 663.214L145.385 904.104C152.532 972.528 159.661 1040.96 166.773 1109.41C168.15 1122.52 169.44 1135.67 170.885 1148.78C178.749 1220.43 233.465 1259.04 301.224 1269.91C340.799 1276.28 381.337 1277.59 421.497 1278.24C472.979 1279.07 524.977 1281.05 575.615 1271.72C650.653 1257.95 706.952 1207.85 714.987 1130.13C717.282 1107.69 719.576 1085.25 721.87 1062.8C729.498 988.559 737.115 914.313 744.72 840.061L769.601 597.451L781.009 486.263C781.577 480.749 783.905 475.565 787.649 471.478C791.392 467.391 796.352 464.617 801.794 463.567C823.25 459.386 843.761 452.245 859.023 435.916C883.318 409.918 888.153 376.021 879.567 341.849ZM72.4301 365.835C72.757 365.68 72.1548 368.484 71.8967 369.792C71.8451 367.813 71.9483 366.058 72.4301 365.835ZM74.5121 381.94C74.6842 381.819 75.2003 382.508 75.7337 383.334C74.925 382.576 74.4089 382.009 74.4949 381.94H74.5121ZM76.5597 384.641C77.2996 385.897 77.6953 386.689 76.5597 384.641V384.641ZM80.672 387.979H80.7752C80.7752 388.1 80.9645 388.22 81.0333 388.341C80.9192 388.208 80.7925 388.087 80.6548 387.979H80.672ZM800.796 382.989C793.088 390.319 781.473 393.726 769.996 395.43C641.292 414.529 510.713 424.199 380.597 419.932C287.476 416.749 195.336 406.407 103.144 393.382C94.1102 392.109 84.3197 390.457 78.1082 383.798C66.4078 371.237 72.1548 345.944 75.2003 330.768C77.9878 316.865 83.3218 298.334 99.8572 296.355C125.667 293.327 155.64 304.218 181.175 308.09C211.917 312.781 242.774 316.538 273.745 319.36C405.925 331.405 540.325 329.529 671.92 311.91C695.906 308.686 719.805 304.941 743.619 300.674C764.835 296.871 788.356 289.731 801.175 311.703C809.967 326.673 811.137 346.701 809.778 363.615C809.359 370.984 806.139 377.915 800.779 382.989H800.796Z" fill="#0D0C22"></path>
+                </svg>
+            </span>
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Footer: creator -->
+    <footer class="salty-footer" role="contentinfo" aria-label="Site footer">
+        <div class="salty-footer-inner">
+            <span> Rahmat Saeedi, 2025</span>
+            <span aria-hidden="true">•</span>
+            <a href="https://www.linkedin.com/in/rahmat-saeedi" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/RahmatSaeedi" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+    </footer>
+
+    <!-- Add translations and language UI script (insert before existing scripts or at file end) -->
+    <script>
+        const PBKDF2_ITERATIONS = 310000;
+
+        // --- Core Cryptographic Functions (SubtleCrypto) ---
+
+        /** Derives an AES-GCM key from password and salt using PBKDF2. */
+        async function deriveKey(password, salt, usage) {
+            // It's safer to handle the password as a Uint8Array immediately
+            const encoder = new TextEncoder();
+            const keyMaterial = await window.crypto.subtle.importKey(
+                "raw",
+                encoder.encode(password),
+                { name: "PBKDF2" },
+                false,
+                ["deriveKey"]
+            );
+            return window.crypto.subtle.deriveKey(
+                {
+                    name: "PBKDF2",
+                    salt: salt,
+                    iterations: PBKDF2_ITERATIONS, // Use constant
+                    hash: "SHA-256",
+                },
+                keyMaterial,
+                { name: "AES-GCM", length: 256 },
+                false,
+                [usage]
+            );
+        }
+
+        /** Encrypts data using the derived key and a newly generated IV (12 bytes). */
+        async function encryptData(key, data) {
+            const iv = window.crypto.getRandomValues(new Uint8Array(12));
+            const encryptedData = await window.crypto.subtle.encrypt(
+                { name: "AES-GCM", iv: iv },
+                key,
+                data
+            );
+            return { encryptedData: new Uint8Array(encryptedData), iv };
+        }
+
+        /** Encrypts a single file and triggers download. */
+        async function encryptAndDownloadFile(file, password, status) {
+            try {
+                // 1. Read File Data
+                const fileData = await file.arrayBuffer();
+
+                // 2. Generate Salt (16 bytes)
+                const salt = window.crypto.getRandomValues(new Uint8Array(16));
+                
+                // 3. Derive Key
+                const encKey = await deriveKey(password, salt, 'encrypt');
+
+                // 4. Encrypt Data
+                const { encryptedData, iv } = await encryptData(encKey, fileData);
+
+                // 5. Bundle Data
+                const bundledData = new Uint8Array(salt.length + iv.length + encryptedData.byteLength);
+                bundledData.set(salt, 0); 
+                bundledData.set(iv, salt.length);
+                bundledData.set(encryptedData, salt.length + iv.length);
+
+                // 6. Create Download Link and initiate download
+                const blob = new Blob([bundledData], { type: 'application/octet-stream' });
+                const url = URL.createObjectURL(blob);
+                
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = file.name.replace(/\.jpe?g$/i, '') + '.enc';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                
+                // --- Security: Revoke URL immediately ---
+                URL.revokeObjectURL(url);
+
+                return a.download;
+            } catch (error) {
+                throw new Error(`Failed to encrypt ${file.name}: ${error.message}`);
+            }
+        }
+
+        // --- Main Workflow ---
+
+        // Update file count display
+        document.getElementById('fileInput').addEventListener('change', function() {
+            const count = this.files.length;
+            const fileCount = document.getElementById('fileCount');
+            if (count > 0) {
+                fileCount.textContent = `${count} file${count !== 1 ? 's' : ''} selected`;
+            } else {
+                fileCount.textContent = '';
+            }
+        });
+
+        function updateStatus(message, type) {
+            const status = document.getElementById('status');
+            status.textContent = message;
+            status.className = `show ${type}`;
+        }
+
+        async function startEncryption() {
+            const passwordInput = document.getElementById('passwordInput');
+            const fileInput = document.getElementById('fileInput');
+            const password = passwordInput.value;
+            const files = fileInput.files;
+            const encryptBtn = document.getElementById('encryptBtn');
+
+            updateStatus('Starting encryption... (This may take a moment)', 'info');
+            encryptBtn.disabled = true;
+
+            if (!password || files.length === 0) {
+                updateStatus('Please select one or more files and enter a password.', 'error');
+                encryptBtn.disabled = false;
+                return;
+            }
+
+            try {
+                const downloadedFiles = [];
+
+                for (let i = 0; i < files.length; i++) {
+                    const file = files[i];
+                    const downloadedName = await encryptAndDownloadFile(file, password, updateStatus);
+                    downloadedFiles.push(downloadedName);
+                    updateStatus(`Encrypted ${i + 1} of ${files.length} file(s)...`, 'info');
+                }
+
+                passwordInput.value = '';
+                fileInput.value = '';
+                document.getElementById('fileCount').textContent = '';
+
+                updateStatus(`✓ Encryption complete. ${downloadedFiles.length} file${downloadedFiles.length !== 1 ? 's' : ''} encrypted and downloaded.`, 'success');
+                encryptBtn.disabled = false;
+
+            } catch (error) {
+                updateStatus(`✗ Encryption failed: ${error.message}`, 'error');
+                encryptBtn.disabled = false;
+            }
+        }
+
+        // --- Tab switching (updated) ---
+        function showTab(name) {
+            const encBtn = document.getElementById('tabEncrypt');
+            const decBtn = document.getElementById('tabDecrypt');
+            const encSection = document.getElementById('encryptSection');
+            const decSection = document.getElementById('decryptSection');
+
+            const activeEncrypt = name === 'encrypt';
+
+            // Toggle visibility
+            encSection.style.display = activeEncrypt ? '' : 'none';
+            decSection.style.display = activeEncrypt ? 'none' : '';
+
+            // Update classes
+            encBtn.classList.toggle('active', activeEncrypt);
+            decBtn.classList.toggle('active', !activeEncrypt);
+
+            // Accessibility attrs
+            encBtn.setAttribute('aria-selected', activeEncrypt ? 'true' : 'false');
+            decBtn.setAttribute('aria-selected', activeEncrypt ? 'false' : 'true');
+            encBtn.setAttribute('tabindex', activeEncrypt ? '0' : '-1');
+            decBtn.setAttribute('tabindex', activeEncrypt ? '-1' : '0');
+
+            // Move focus to active tab for keyboard users
+            if (activeEncrypt) encBtn.focus();
+            else decBtn.focus();
+
+            // clear status on switch
+            const s1 = document.getElementById('status');
+            if (s1) { s1.textContent = ''; s1.className = ''; }
+            const s2 = document.getElementById('decryptStatus');
+            if (s2) { s2.textContent = ''; s2.className = ''; }
+        }
+
+        // Keyboard navigation for tabs: Left / Right arrows
+        (function initTabKeyboard() {
+            const encBtn = document.getElementById('tabEncrypt');
+            const decBtn = document.getElementById('tabDecrypt');
+            [encBtn, decBtn].forEach(btn => {
+                btn.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        // switch to the other tab
+                        if (btn.id === 'tabEncrypt') showTab('decrypt'); else showTab('encrypt');
+                    }
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        btn.click();
+                    }
+                });
+            });
+        })();
+
+        // Update decrypt file count
+        document.getElementById('encryptedFiles').addEventListener('change', function() {
+            const count = this.files.length;
+            const fileCount = document.getElementById('decryptFileCount');
+            fileCount.textContent = count ? `${count} file${count !== 1 ? 's' : ''} selected` : '';
+        });
+
+        // --- Decryption helpers ---
+        const SALT_LENGTH = 16;
+        const IV_LENGTH = 12;
+        // deriveKey already exists above; reuse it (same PBKDF2_ITERATIONS)
+
+        async function decryptData(key, encryptedData, iv) {
+            try {
+                const decryptedData = await window.crypto.subtle.decrypt(
+                    { name: "AES-GCM", iv: iv },
+                    key,
+                    encryptedData
+                );
+                return new Uint8Array(decryptedData);
+            } catch (e) {
+                throw new Error("Decryption failed (wrong key or corrupted file).");
+            }
+        }
+
+        // Replaced: decrypt & display -> decrypt & download
+        async function startDecryption() {
+            const password = document.getElementById('decryptPassword').value;
+            const files = document.getElementById('encryptedFiles').files;
+            const status = document.getElementById('decryptStatus');
+            const gallery = document.getElementById('gallery');
+            const decryptBtn = document.getElementById('decryptBtn');
+
+            gallery.innerHTML = '';
+            status.textContent = 'Starting decryption...';
+            status.className = 'info';
+            decryptBtn.disabled = true;
+
+            if (!password || !files || files.length === 0) {
+                status.textContent = 'Please enter a decryption key and select files.';
+                status.className = 'error';
+                decryptBtn.disabled = false;
+                return;
+            }
+
+            try {
+                for (let i = 0; i < files.length; i++) {
+                    const file = files[i];
+                    status.textContent = `Decrypting ${i + 1} of ${files.length}...`;
+
+                    const bundledArrayBuffer = await file.arrayBuffer();
+                    const bundledData = new Uint8Array(bundledArrayBuffer);
+
+                    if (bundledData.length < SALT_LENGTH + IV_LENGTH) {
+                        throw new Error(`${file.name}: invalid or corrupt file.`);
+                    }
+
+                    const salt = bundledData.slice(0, SALT_LENGTH);
+                    const iv = bundledData.slice(SALT_LENGTH, SALT_LENGTH + IV_LENGTH);
+                    const encryptedData = bundledData.slice(SALT_LENGTH + IV_LENGTH);
+
+                    const decKey = await deriveKey(password, salt, 'decrypt');
+                    const decryptedBytes = await decryptData(decKey, encryptedData.buffer || encryptedData, iv);
+
+                    // Create blob
+                    const blob = new Blob([decryptedBytes], { type: 'image/jpeg' });
+                    const downloadName = file.name.replace(/\.enc$/i, '') + '.jpg';
+
+                    // Create two separate object URLs:
+                    //  - urlAuto: used only for the automatic download and revoked quickly
+                    //  - urlManual: used for the manual link and revoked on click (and via fallback timer)
+                    const urlAuto = URL.createObjectURL(blob);
+                    const urlManual = URL.createObjectURL(blob);
+
+                    // Add manual link to gallery (persists until clicked or fallback timer)
+                    const link = document.createElement('a');
+                    link.href = urlManual;
+                    link.download = downloadName;
+                    link.textContent = `Download ${downloadName}`;
+                    link.style.display = 'block';
+                    link.style.marginBottom = '0.5rem';
+
+                    // Fallback: revoke the manual URL after 10 minutes if not used
+                    const manualRevokeTimer = setTimeout(() => {
+                        try { URL.revokeObjectURL(urlManual); } catch (e) {}
+                        try { link.remove(); } catch (e) {}
+                    }, 10 * 60 * 1000);
+
+                    // When link is clicked: allow download to start, then revoke URL and remove link
+                    link.addEventListener('click', (e) => {
+                        // let the browser start the download, then clean up
+                        setTimeout(() => {
+                            try { URL.revokeObjectURL(urlManual); } catch (e) {}
+                            try { link.remove(); } catch (e) {}
+                        }, 1500);
+                        clearTimeout(manualRevokeTimer);
+                    });
+
+                    gallery.appendChild(link);
+
+                    // Trigger automatic download using urlAuto
+                    const a = document.createElement('a');
+                    a.href = urlAuto;
+                    a.download = downloadName;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+
+                    // Revoke the auto URL shortly after to free memory
+                    setTimeout(() => {
+                        try { URL.revokeObjectURL(urlAuto); } catch (e) {}
+                    }, 2000);
+                }
+
+                status.textContent = `✓ Decryption complete. ${files.length} file${files.length !== 1 ? 's' : ''} processed; downloads started.`;
+                status.className = 'success';
+
+            } catch (err) {
+                status.textContent = `✗ ${err.message}`;
+                status.className = 'error';
+            } finally {
+                // clear sensitive inputs
+                document.getElementById('decryptPassword').value = '';
+                document.getElementById('encryptedFiles').value = '';
+                document.getElementById('decryptFileCount').textContent = '';
+                decryptBtn.disabled = false;
+            }
+        }
+
+        // Top 50 languages (code:name:flag:region)
+        const LANGS = [
+          ['en','English','🇬🇧','English'],['zh','中文','🇨🇳','Chinese'],['hi','हिन्दी','🇮🇳','Hindi'],['es','Español','🇪🇸','Spanish'],['fr','Français','🇫🇷','French'],
+          ['ar','العربية','🇸🇦','Arabic'],['bn','বাংলা','🇧🇩','Bengali'],['ru','Русский','🇷🇺','Russian'],['pt','Português','🇧🇷','Portuguese'],['id','Bahasa Indonesia','🇮🇩','Indonesian'],
+          ['ur','اردو','🇵🇰','Urdu'],['de','Deutsch','🇩🇪','German'],['ja','日本語','🇯🇵','Japanese'],['sw','Kiswahili','🇹🇿','Swahili'],['mr','मराठी','🇮🇳','Marathi'],
+          ['te','తెలుగు','🇮🇳','Telugu'],['ta','தமிழ்','🇮🇳','Tamil'],['tr','Türkçe','🇹🇷','Turkish'],['vi','Tiếng Việt','🇻🇳','Vietnamese'],['ko','한국어','🇰🇷','Korean'],
+          ['it','Italiano','🇮🇹','Italian'],['th','ไทย','🇹🇭','Thai'],['gu','ગુજરાતી','🇮🇳','Gujarati'],['pl','Polski','🇵🇱','Polish'],['uk','Українська','🇺🇦','Ukrainian'],
+          ['ro','Română','🇷🇴','Romanian'],['nl','Nederlands','🇳🇱','Dutch'],['kn','ಕನ್ನಡ','🇮🇳','Kannada'],['ms','Bahasa Melayu','🇲🇾','Malay'],['fa','فارسی','🇮🇷','Farsi'],
+          ['he','עברית','🇮🇱','Hebrew'],['el','Ελληνικά','🇬🇷','Greek'],['cs','Čeština','🇨🇿','Czech'],['sv','Svenska','🇸🇪','Swedish'],['da','Dansk','🇩🇰','Danish'],
+          ['fi','Suomi','🇫🇮','Finnish'],['no','Norsk','🇳🇴','Norwegian'],['hu','Magyar','🇭🇺','Hungarian'],['sk','Slovenčina','🇸🇰','Slovak'],['sl','Slovenščina','🇸🇮','Slovenian'],
+          ['et','Eesti','🇪🇪','Estonian'],['lv','Latvian','🇱🇻','Latvian'],['lt','Lietuvių','🇱🇹','Lithuanian'],['bg','Български','🇧🇬','Bulgarian'],['hr','Hrvatski','🇭🇷','Croatian'],
+          ['sr','Српски','🇷🇸','Serbian'],['mk','Македонски','🇲🇰','Macedonian'],['af','Afrikaans','🇿🇦','Afrikaans'],['so','Somali','🇸🇴','Somali'],['am','አማርኛ','🇪🇹','Amharic']
+        ];
+
+        // Comprehensive translations for all UI strings
+        const T = {
+          en: {
+            language: 'Language',
+            encrypt: 'Encrypt',
+            decrypt: 'Decrypt',
+            subtitle: 'Secure file encryption with PBKDF2 (310,000 iterations) and AES-256-GCM',
+            selectFiles: 'Select Files',
+            encryptionKey: 'Encryption Key',
+            encryptKeyPlaceholder: 'Enter a strong password',
+            encryptBtn: 'Encrypt & Download',
+            decryptHeading: '📦 Decryption Manager',
+            decryptSubtitle: 'Enter the decryption key and select one or more .enc files to download decrypted files.',
+            decryptionKey: 'Decryption Key',
+            decryptKeyPlaceholder: 'Enter decryption key',
+            selectEncFiles: 'Select Encrypted Files (.enc)',
+            decryptBtn: 'Load & Decrypt',
+            downloadPrefix: 'Download ',
+            fileSelected: 'file selected',
+            filesSelected: 'files selected',
+            status_starting: 'Starting encryption... (This may take a moment)',
+            status_starting_decrypt: 'Starting decryption...',
+            status_no_password_file: 'Please select one or more files and enter a password.',
+            status_no_password_files_decrypt: 'Please enter a decryption key and select files.',
+            status_encrypt_progress: 'Encrypted {0} of {1} file(s)...',
+            status_decrypt_progress: 'Decrypting {0} of {1}...',
+            status_encrypt_complete: '✓ Encryption complete.',
+            status_decrypt_complete: '✓ Decryption complete.',
+            status_files_processed: '{0} file{1} encrypted and downloaded.',
+            status_files_downloaded: '{0} file{1} processed; downloads started.',
+            status_failed: '✗ {0}',
+            error_encrypt_failed: 'Failed to encrypt {0}: {1}',
+            error_decrypt_failed: 'Decryption failed (wrong key or corrupted file).',
+            error_invalid_file: '{0}: invalid or corrupt file.',
+            donation_title: 'Love The Salty Scrambler?',
+            donation_subtitle: 'Your support helps us keep this tool free, secure, and continuously improving. Consider buying us a coffee to fuel our work!',
+            donation_btn: 'Buy Us a Coffee'
+          },
+          zh: {
+            language: '语言',
+            encrypt: '加密',
+            decrypt: '解密',
+            subtitle: '使用 PBKDF2（310,000 次）和 AES-256-GCM 进行安全文件加密',
+            selectFiles: '选择文件',
+            encryptionKey: '加密密钥',
+            encryptKeyPlaceholder: '输入强密码',
+            encryptBtn: '加密并下载',
+            decryptHeading: '📦 解密管理器',
+            decryptSubtitle: '输入解密密钥并选择一个或多个 .enc 文件以下载解密后的文件。',
+            decryptionKey: '解密密钥',
+            decryptKeyPlaceholder: '输入解密密钥',
+            selectEncFiles: '选择加密文件（.enc）',
+            decryptBtn: '加载并解密',
+            downloadPrefix: '下载 ',
+            fileSelected: '个文件已选择',
+            filesSelected: '个文件已选择',
+            status_starting: '开始加密...（可能需要一点时间）',
+            status_starting_decrypt: '开始解密...',
+            status_no_password_file: '请选择一个或多个文件并输入密码。',
+            status_no_password_files_decrypt: '请输入解密密钥并选择文件。',
+            status_encrypt_progress: '已加密 {0} / {1} 个文件...',
+            status_decrypt_progress: '正在解密 {0} / {1}...',
+            status_encrypt_complete: '✓ 加密完成。',
+            status_decrypt_complete: '✓ 解密完成。',
+            status_files_processed: '{0} 个文件已加密并下载。',
+            status_files_downloaded: '{0} 个文件已处理；开始下载。',
+            status_failed: '✗ {0}',
+            error_encrypt_failed: '加密失败 {0}：{1}',
+            error_decrypt_failed: '解密失败（密钥错误或文件损坏）。',
+            error_invalid_file: '{0}：无效或损坏的文件。',
+            donation_title: '喜欢 The Salty Scrambler 吗？',
+            donation_subtitle: '您的支持帮助我们保持此工具免费、安全并不断改进。请考虑请我们喝杯咖啡，为我们的工作加油！',
+            donation_btn: '请我们喝咖啡'
+          },
+          es: {
+            language: 'Idioma',
+            encrypt: 'Cifrar',
+            decrypt: 'Descifrar',
+            subtitle: 'Cifrado de archivos seguro con PBKDF2 (310,000 iteraciones) y AES-256-GCM',
+            selectFiles: 'Seleccionar archivos',
+            encryptionKey: 'Clave de cifrado',
+            encryptKeyPlaceholder: 'Ingrese una contraseña fuerte',
+            encryptBtn: 'Cifrar y descargar',
+            decryptHeading: '📦 Gestor de desencriptado',
+            decryptSubtitle: 'Introduzca la clave y seleccione uno o más archivos .enc para descargar los archivos desencriptados.',
+            decryptionKey: 'Clave de desencriptado',
+            decryptKeyPlaceholder: 'Ingrese la clave de desencriptado',
+            selectEncFiles: 'Seleccionar archivos encriptados (.enc)',
+            decryptBtn: 'Cargar y desencriptar',
+            downloadPrefix: 'Descargar ',
+            fileSelected: 'archivo seleccionado',
+            filesSelected: 'archivos seleccionados',
+            status_starting: 'Iniciando cifrado... (Esto puede tardar un momento)',
+            status_starting_decrypt: 'Iniciando desencriptado...',
+            status_no_password_file: 'Por favor seleccione uno o más archivos e introduzca una contraseña.',
+            status_no_password_files_decrypt: 'Por favor introduzca una clave de desencriptado y seleccione archivos.',
+            status_encrypt_progress: 'Cifrado {0} de {1} archivo(s)...',
+            status_decrypt_progress: 'Desencriptando {0} de {1}...',
+            status_encrypt_complete: '✓ Cifrado completado.',
+            status_decrypt_complete: '✓ Desencriptado completado.',
+            status_files_processed: '{0} archivo{1} cifrado{1} y descargado{1}.',
+            status_files_downloaded: '{0} archivo{1} procesado{1}; descargas iniciadas.',
+            status_failed: '✗ {0}',
+            error_encrypt_failed: 'Error al cifrar {0}: {1}',
+            error_decrypt_failed: 'El desencriptado falló (clave incorrecta o archivo dañado).',
+            error_invalid_file: '{0}: archivo inválido o dañado.',
+            donation_title: '¿Te encanta The Salty Scrambler?',
+            donation_subtitle: 'Tu apoyo nos ayuda a mantener esta herramienta gratuita, segura y en constante mejora. ¡Considera invitarnos un café para impulsar nuestro trabajo!',
+            donation_btn: 'Invítanos un Café'
+          },
+          fr: {
+            language: 'Langue',
+            encrypt: 'Chiffrer',
+            decrypt: 'Déchiffrer',
+            subtitle: 'Chiffrement de fichiers sécurisé avec PBKDF2 (310 000 itérations) et AES-256-GCM',
+            selectFiles: 'Sélectionner des fichiers',
+            encryptionKey: 'Clé de chiffrement',
+            encryptKeyPlaceholder: 'Entrez un mot de passe fort',
+            encryptBtn: 'Chiffrer et télécharger',
+            decryptHeading: '📦 Gestionnaire de déchiffrement',
+            decryptSubtitle: 'Entrez la clé et sélectionnez un ou plusieurs fichiers .enc pour télécharger les fichiers déchiffrés.',
+            decryptionKey: 'Clé de déchiffrement',
+            decryptKeyPlaceholder: 'Entrez la clé de déchiffrement',
+            selectEncFiles: 'Sélectionner des fichiers chiffrés (.enc)',
+            decryptBtn: 'Charger et déchiffrer',
+            downloadPrefix: 'Télécharger ',
+            fileSelected: 'fichier sélectionné',
+            filesSelected: 'fichiers sélectionnés',
+            status_starting: 'Démarrage du chiffrement... (Cela peut prendre un instant)',
+            status_starting_decrypt: 'Démarrage du déchiffrement...',
+            status_no_password_file: 'Veuillez sélectionner un ou plusieurs fichiers et entrer un mot de passe.',
+            status_no_password_files_decrypt: 'Veuillez entrer une clé de déchiffrement et sélectionner des fichiers.',
+            status_encrypt_progress: 'Fichier {0} sur {1} chiffré...',
+            status_decrypt_progress: 'Déchiffrement {0} sur {1}...',
+            status_encrypt_complete: '✓ Chiffrement terminé.',
+            status_decrypt_complete: '✓ Déchiffrement terminé.',
+            status_files_processed: '{0} fichier(s) chiffré(s) et téléchargé(s).',
+            status_files_downloaded: '{0} fichier(s) traité(s); téléchargements démarrés.',
+            status_failed: '✗ {0}',
+            error_encrypt_failed: 'Erreur lors du chiffrement de {0}: {1}',
+            error_decrypt_failed: 'Le déchiffrement a échoué (clé incorrecte ou fichier corrompu).',
+            error_invalid_file: '{0}: fichier invalide ou corrompu.',
+            donation_title: 'Vous aimez The Salty Scrambler ?',
+            donation_subtitle: 'Votre soutien nous aide à garder cet outil gratuit, sécurisé et en constante amélioration. Offrez-nous un café pour alimenter notre travail !',
+            donation_btn: 'Offrir un Café'
+          },
+          ar: {
+            language: 'اللغة',
+            encrypt: 'تشفير',
+            decrypt: 'فك التشفير',
+            subtitle: 'تشفير ملفات آمن باستخدام PBKDF2 (310,000 تكرار) و AES-256-GCM',
+            selectFiles: 'اختر ملفات',
+            encryptionKey: 'مفتاح التشفير',
+            encryptKeyPlaceholder: 'أدخل كلمة مرور قوية',
+            encryptBtn: 'تشفير وتنزيل',
+            decryptHeading: '📦 مدير فك التشفير',
+            decryptSubtitle: 'أدخل مفتاح فك التشفير وحدد ملفًا واحدًا أو أكثر (.enc) لتحميل الملفات المفكوكة.',
+            decryptionKey: 'مفتاح فك التشفير',
+            decryptKeyPlaceholder: 'أدخل مفتاح فك التشفير',
+            selectEncFiles: 'اختر الملفات المشفرة (.enc)',
+            decryptBtn: 'تحميل وفك التشفير',
+            downloadPrefix: 'تحميل ',
+            fileSelected: 'ملف واحد محدد',
+            filesSelected: 'ملفات محددة',
+            status_starting: 'بدء التشفير... (قد يستغرق بعض الوقت)',
+            status_starting_decrypt: 'بدء فك التشفير...',
+            status_no_password_file: 'يرجى تحديد ملف واحد أو أكثر وإدخال كلمة المرور.',
+            status_no_password_files_decrypt: 'يرجى إدخال مفتاح فك التشفير وتحديد الملفات.',
+            status_encrypt_progress: 'تم تشفير {0} من {1} ملف...',
+            status_decrypt_progress: 'جاري فك التشفير {0} من {1}...',
+            status_encrypt_complete: '✓ اكتمل التشفير.',
+            status_decrypt_complete: '✓ اكتمل فك التشفير.',
+            status_files_processed: '{0} ملف تم تشفيره وتنزيله.',
+            status_files_downloaded: '{0} ملف تمت معالجته؛ بدأت التنزيلات.',
+            status_failed: '✗ {0}',
+            error_encrypt_failed: 'فشل تشفير {0}: {1}',
+            error_decrypt_failed: 'فك التشفير فشل (مفتاح خاطئ أو ملف تالف).',
+            error_invalid_file: '{0}: ملف غير صحيح أو تالف.',
+            donation_title: 'هل تحب The Salty Scrambler؟',
+            donation_subtitle: 'دعمك يساعدنا في الحفاظ على هذه الأداة مجانية وآمنة ومحسنة باستمرار. فكر في شراء قهوة لنا لدعم عملنا!',
+            donation_btn: 'اشترِ لنا قهوة'
+          },
+          ru: {
+            language: 'Язык',
+            encrypt: 'Зашифровать',
+            decrypt: 'Расшифровать',
+            subtitle: 'Безопасное шифрование файлов с PBKDF2 (310 000 итераций) и AES-256-GCM',
+            selectFiles: 'Выбрать файлы',
+            encryptionKey: 'Ключ шифрования',
+            encryptKeyPlaceholder: 'Введите надежный пароль',
+            encryptBtn: 'Зашифровать и скачать',
+            decryptHeading: '📦 Менеджер расшифровки',
+            decryptSubtitle: 'Введите ключ и выберите один или несколько файлов .enc для загрузки расшифрованных файлов.',
+            decryptionKey: 'Ключ расшифровки',
+            decryptKeyPlaceholder: 'Введите ключ расшифровки',
+            selectEncFiles: 'Выбрать зашифрованные файлы (.enc)',
+            decryptBtn: 'Загрузить и расшифровать',
+            downloadPrefix: 'Скачать ',
+            fileSelected: 'файл выбран',
+            filesSelected: 'файлов выбрано',
+            status_starting: 'Запуск шифрования... (это может занять некоторое время)',
+            status_starting_decrypt: 'Запуск расшифровки...',
+            status_no_password_file: 'Пожалуйста, выберите один или несколько файлов и введите пароль.',
+            status_no_password_files_decrypt: 'Пожалуйста, введите ключ расшифровки и выберите файлы.',
+            status_encrypt_progress: 'Зашифровано {0} из {1} файла...',
+            status_decrypt_progress: 'Расшифровка {0} из {1}...',
+            status_encrypt_complete: '✓ Шифрование завершено.',
+            status_decrypt_complete: '✓ Расшифровка завершена.',
+            status_files_processed: '{0} файл(ов) зашифровано и загружено.',
+            status_files_downloaded: '{0} файл(ов) обработано; загрузки начались.',
+            status_failed: '✗ {0}',
+            error_encrypt_failed: 'Ошибка при шифровании {0}: {1}',
+            error_decrypt_failed: 'Расшифровка не удалась (неверный ключ или поврежденный файл).',
+            error_invalid_file: '{0}: неверный или поврежденный файл.',
+            donation_title: 'Нравится The Salty Scrambler?',
+            donation_subtitle: 'Ваша поддержка помогает нам сохранять этот инструмент бесплатным, безопасным и постоянно совершенствующимся. Купите нам кофе, чтобы поддержать нашу работу!',
+            donation_btn: 'Купить нам кофе'
+          },
+          pt: {
+            language: 'Idioma',
+            encrypt: 'Criptografar',
+            decrypt: 'Descriptografar',
+            subtitle: 'Criptografia de arquivos segura com PBKDF2 (310.000 iterações) e AES-256-GCM',
+            selectFiles: 'Selecionar arquivos',
+            encryptionKey: 'Chave de encriptação',
+            encryptKeyPlaceholder: 'Insira uma senha forte',
+            encryptBtn: 'Encriptar e baixar',
+            decryptHeading: '📦 Gerenciador de desencriptação',
+            decryptSubtitle: 'Insira a chave e selecione um ou mais arquivos .enc para baixar os arquivos desencriptados.',
+            decryptionKey: 'Chave de desencriptação',
+            decryptKeyPlaceholder: 'Insira a chave de desencriptação',
+            selectEncFiles: 'Selecionar arquivos encriptados (.enc)',
+            decryptBtn: 'Carregar e desencriptar',
+            downloadPrefix: 'Baixar ',
+            fileSelected: 'arquivo selecionado',
+            filesSelected: 'arquivos selecionados',
+            status_starting: 'Iniciando criptografia... (Isto pode levar um momento)',
+            status_starting_decrypt: 'Iniciando descriptografia...',
+            status_no_password_file: 'Por favor selecione um ou mais arquivos e insira uma senha.',
+            status_no_password_files_decrypt: 'Por favor insira uma chave de desencriptação e selecione arquivos.',
+            status_encrypt_progress: 'Criptografado {0} de {1} arquivo(s)...',
+            status_decrypt_progress: 'Descriptografando {0} de {1}...',
+            status_encrypt_complete: '✓ Criptografia concluída.',
+            status_decrypt_complete: '✓ Descriptografia concluída.',
+            status_files_processed: '{0} arquivo(s) criptografado(s) e baixado(s).',
+            status_files_downloaded: '{0} arquivo(s) processado(s); downloads iniciados.',
+            status_failed: '✗ {0}',
+            error_encrypt_failed: 'Falha ao criptografar {0}: {1}',
+            error_decrypt_failed: 'Descriptografia falhou (chave incorreta ou arquivo danificado).',
+            error_invalid_file: '{0}: arquivo inválido ou danificado.',
+            donation_title: 'Adora o The Salty Scrambler?',
+            donation_subtitle: 'O seu apoio ajuda-nos a manter esta ferramenta gratuita, segura e em constante melhoria. Considere comprar-nos um café para apoiar o nosso trabalho!',
+            donation_btn: 'Compre-nos um Café'
+          },
+          id: {
+            language: 'Bahasa',
+            encrypt: 'Enkripsi',
+            decrypt: 'Dekripsi',
+            subtitle: 'Enkripsi file aman dengan PBKDF2 (310.000 iterasi) dan AES-256-GCM',
+            selectFiles: 'Pilih File',
+            encryptionKey: 'Kunci Enkripsi',
+            encryptKeyPlaceholder: 'Masukkan kata sandi yang kuat',
+            encryptBtn: 'Enkripsi & Unduh',
+            decryptHeading: '📦 Pengelola Dekripsi',
+            decryptSubtitle: 'Masukkan kunci dan pilih satu atau lebih file .enc untuk mengunduh file yang didekripsi.',
+            decryptionKey: 'Kunci Dekripsi',
+            decryptKeyPlaceholder: 'Masukkan kunci dekripsi',
+            selectEncFiles: 'Pilih File terenkripsi (.enc)',
+            decryptBtn: 'Muat & Dekripsi',
+            downloadPrefix: 'Unduh ',
+            fileSelected: 'file dipilih',
+            filesSelected: 'file dipilih',
+            status_starting: 'Memulai enkripsi... (Ini mungkin memakan waktu)',
+            status_starting_decrypt: 'Memulai dekripsi...',
+            status_no_password_file: 'Silakan pilih satu atau lebih file dan masukkan kata sandi.',
+            status_no_password_files_decrypt: 'Silakan masukkan kunci dekripsi dan pilih file.',
+            status_encrypt_progress: 'Dienkripsi {0} dari {1} file...',
+            status_decrypt_progress: 'Mendekripsi {0} dari {1}...',
+            status_encrypt_complete: '✓ Enkripsi selesai.',
+            status_decrypt_complete: '✓ Dekripsi selesai.',
+            status_files_processed: '{0} file dienkripsi dan diunduh.',
+            status_files_downloaded: '{0} file diproses; unduhan dimulai.',
+            status_failed: '✗ {0}',
+            error_encrypt_failed: 'Gagal mengenkripsi {0}: {1}',
+            error_decrypt_failed: 'Dekripsi gagal (kunci salah atau file rusak).',
+            error_invalid_file: '{0}: file tidak valid atau rusak.',
+            donation_title: 'Suka The Salty Scrambler?',
+            donation_subtitle: 'Dukungan Anda membantu kami menjaga alat ini tetap gratis, aman, dan terus berkembang. Pertimbangkan untuk membelikan kami kopi untuk mendukung pekerjaan kami!',
+            donation_btn: 'Belikan Kami Kopi'
+          },
+          de: {
+            language: 'Sprache',
+            encrypt: 'Verschlüsseln',
+            decrypt: 'Entschlüsseln',
+            subtitle: 'Sichere Dateiverschlüsselung mit PBKDF2 (310.000 Iterationen) und AES-256-GCM',
+            selectFiles: 'Dateien auswählen',
+            encryptionKey: 'Verschlüsselungsschlüssel',
+            encryptKeyPlaceholder: 'Geben Sie ein starkes Passwort ein',
+            encryptBtn: 'Verschlüsseln & Herunterladen',
+            decryptHeading: '📦 Entschlüsselungsmanager',
+            decryptSubtitle: 'Geben Sie den Schlüssel ein und wählen Sie eine oder mehrere .enc-Dateien aus, um entschlüsselte Dateien herunterzuladen.',
+            decryptionKey: 'Entschlüsselungsschlüssel',
+            decryptKeyPlaceholder: 'Geben Sie den Entschlüsselungsschlüssel ein',
+            selectEncFiles: 'Verschlüsselte Dateien auswählen (.enc)',
+            decryptBtn: 'Laden & Entschlüsseln',
+            downloadPrefix: 'Herunterladen ',
+            fileSelected: 'Datei ausgewählt',
+            filesSelected: 'Dateien ausgewählt',
+            status_starting: 'Verschlüsselung wird gestartet... (Dies kann einen Moment dauern)',
+            status_starting_decrypt: 'Entschlüsselung wird gestartet...',
+            status_no_password_file: 'Bitte wählen Sie eine oder mehrere Dateien aus und geben Sie ein Passwort ein.',
+            status_no_password_files_decrypt: 'Bitte geben Sie einen Entschlüsselungsschlüssel ein und wählen Sie Dateien aus.',
+            status_encrypt_progress: '{0} von {1} Datei(en) verschlüsselt...',
+            status_decrypt_progress: 'Entschlüsseln {0} von {1}...',
+            status_encrypt_complete: '✓ Verschlüsselung abgeschlossen.',
+            status_decrypt_complete: '✓ Entschlüsselung abgeschlossen.',
+            status_files_processed: '{0} Datei(en) verschlüsselt und heruntergeladen.',
+            status_files_downloaded: '{0} Datei(en) verarbeitet; Downloads gestartet.',
+            status_failed: '✗ {0}',
+            error_encrypt_failed: 'Fehler beim Verschlüsseln von {0}: {1}',
+            error_decrypt_failed: 'Entschlüsselung fehlgeschlagen (falscher Schlüssel oder beschädigte Datei).',
+            error_invalid_file: '{0}: ungültige oder beschädigte Datei.',
+            donation_title: 'Gefällt dir The Salty Scrambler?',
+            donation_subtitle: 'Deine Unterstützung hilft uns, dieses Tool kostenlos, sicher und ständig zu verbessern. Spendiere uns einen Kaffee, um unsere Arbeit zu unterstützen!',
+            donation_btn: 'Spendiere uns einen Kaffee'
+          },
+          ja: {
+            language: '言語',
+            encrypt: '暗号化',
+            decrypt: '復号化',
+            subtitle: 'PBKDF2（310,000回）およびAES-256-GCMによるセキュアなファイル暗号化',
+            selectFiles: 'ファイルを選択',
+            encryptionKey: '暗号化キー',
+            encryptKeyPlaceholder: '強力なパスワードを入力',
+            encryptBtn: '暗号化とダウンロード',
+            decryptHeading: '📦 復号化マネージャー',
+            decryptSubtitle: '復号化キーを入力し、1つ以上の.encファイルを選択して、復号化されたファイルをダウンロードします。',
+            decryptionKey: '復号化キー',
+            decryptKeyPlaceholder: '復号化キーを入力',
+            selectEncFiles: '暗号化されたファイルを選択（.enc）',
+            decryptBtn: '読み込みと復号化',
+            downloadPrefix: 'ダウンロード ',
+            fileSelected: 'ファイルが選択されました',
+            filesSelected: 'ファイルが選択されました',
+            status_starting: '暗号化を開始しています...（少し時間がかかる場合があります）',
+            status_starting_decrypt: '復号化を開始しています...',
+            status_no_password_file: '1つ以上のファイルを選択し、パスワードを入力してください。',
+            status_no_password_files_decrypt: '復号化キーを入力し、ファイルを選択してください。',
+            status_encrypt_progress: '{0}個中{1}個のファイルを暗号化...',
+            status_decrypt_progress: '{0}個中{1}個を復号化...',
+            status_encrypt_complete: '✓ 暗号化が完了しました。',
+            status_decrypt_complete: '✓ 復号化が完了しました。',
+            status_files_processed: '{0}個のファイルが暗号化およびダウンロードされました。',
+            status_files_downloaded: '{0}個のファイルが処理されました。ダウンロードが開始されました。',
+            status_failed: '✗ {0}',
+            error_encrypt_failed: '{0}の暗号化に失敗しました：{1}',
+            error_decrypt_failed: '復号化に失敗しました（キーが間違っているか、ファイルが破損しています）。',
+            error_invalid_file: '{0}：無効または破損したファイル。',
+            donation_title: 'The Salty Scrambler が気に入りましたか？',
+            donation_subtitle: 'あなたのサポートにより、このツールを無料で安全、かつ継続的に改善し続けることができます。私たちの活動を支援するため、コーヒーをおごっていただけませんか！',
+            donation_btn: 'コーヒーをおごる'
+          },
+          hi: {
+            language: 'भाषा',
+            encrypt: 'एन्क्रिप्ट करें',
+            decrypt: 'डिक्रिप्ट करें',
+            subtitle: 'PBKDF2 (310,000 पुनरावृत्ति) और AES-256-GCM के साथ सुरक्षित फ़ाइल एन्क्रिप्शन',
+            selectFiles: 'फ़ाइलें चुनें',
+            encryptionKey: 'एन्क्रिप्शन कुंजी',
+            encryptKeyPlaceholder: 'मजबूत पासवर्ड दर्ज करें',
+            encryptBtn: 'एन्क्रिप्ट करें और डाउनलोड करें',
+            decryptHeading: '📦 डिक्रिप्शन मैनेजर',
+            decryptSubtitle: 'डिक्रिप्शन कुंजी दर्ज करें और डिक्रिप्टेड फ़ाइलों को डाउनलोड करने के लिए एक या अधिक .enc फ़ाइलें चुनें।',
+            decryptionKey: 'डिक्रिप्शन कुंजी',
+            decryptKeyPlaceholder: 'डिक्रिप्शन कुंजी दर्ज करें',
+            selectEncFiles: 'एन्क्रिप्टेड फ़ाइलें चुनें (.enc)',
+            decryptBtn: 'लोड और डिक्रिप्ट',
+            downloadPrefix: 'डाउनलोड ',
+            fileSelected: 'फ़ाइल चुनी गई',
+            filesSelected: 'फ़ाइलें चुनी गईं',
+            status_starting: 'एन्क्रिप्शन शुरू हो रहा है... (यह समय ले सकता है)',
+            status_starting_decrypt: 'डिक्रिप्शन शुरू हो रहा है...',
+            status_no_password_file: 'कृपया एक या अधिक फ़ाइलें चुनें और पासवर्ड दर्ज करें।',
+            status_no_password_files_decrypt: 'कृपया डिक्रिप्शन कुंजी दर्ज करें और फ़ाइलें चुनें।',
+            status_encrypt_progress: '{1} में से {0} फ़ाइलें एन्क्रिप्ट की गई...',
+            status_decrypt_progress: '{1} में से {0} को डिक्रिप्ट किया जा रहा है...',
+            status_encrypt_complete: '✓ एन्क्रिप्शन पूरा हुआ।',
+            status_decrypt_complete: '✓ डिक्रिप्शन पूरा हुआ।',
+            status_files_processed: '{0} फ़ाइलें एन्क्रिप्ट और डाउनलोड की गईं।',
+            status_files_downloaded: '{0} फ़ाइलें संसाधित; डाउनलोड शुरू।',
+            status_failed: '✗ {0}',
+            error_encrypt_failed: '{0} को एन्क्रिप्ट करने में विफल: {1}',
+            error_decrypt_failed: 'डिक्रिप्शन विफल (गलत कुंजी या क्षतिग्रस्त फ़ाइल)।',
+            error_invalid_file: '{0}: अमान्य या क्षतिग्रस्त फ़ाइल।',
+            donation_title: 'The Salty Scrambler पसंद है?',
+            donation_subtitle: 'आपका समर्थन हमें इस टूल को मुफ्त, सुरक्षित और लगातार बेहतर बनाए रखने में मदद करता है। हमारे काम को प्रोत्साहित करने के लिए हमें एक कॉफी खरीदने पर विचार करें!',
+            donation_btn: 'हमें कॉफी खरीदें'
+          },
+          bn: {
+            language: 'ভাষা',
+            encrypt: 'এনক্রিপ্ট করুন',
+            decrypt: 'ডিক্রিপ্ট করুন',
+            subtitle: 'PBKDF2 (310,000 পুনরাবৃত্তি) এবং AES-256-GCM সহ সুরক্ষিত ফাইল এনক্রিপশন',
+            selectFiles: 'ফাইলগুলি নির্বাচন করুন',
+            encryptionKey: 'এনক্রিপশন কী',
+            encryptKeyPlaceholder: 'একটি শক্তিশালী পাসওয়ার্ড প্রবেশ করুন',
+            encryptBtn: 'এনক্রিপ্ট এবং ডাউনলোড করুন',
+            decryptHeading: '📦 ডিক্রিপশন ম্যানেজার',
+            decryptSubtitle: 'ডিক্রিপশন কী প্রবেশ করুন এবং ডিক্রিপ্ট করা ফাইলগুলি ডাউনলোড করতে এক বা একাধিক .enc ফাইল নির্বাচন করুন।',
+            decryptionKey: 'ডিক্রিপশন কী',
+            decryptKeyPlaceholder: 'ডিক্রিপশন কী প্রবেশ করুন',
+            selectEncFiles: 'এনক্রিপ্ট করা ফাইলগুলি নির্বাচন করুন (.enc)',
+            decryptBtn: 'লোড এবং ডিক্রিপ্ট করুন',
+            downloadPrefix: 'ডাউনলোড করুন ',
+            fileSelected: 'ফাইল নির্বাচিত',
+            filesSelected: 'ফাইলগুলি নির্বাচিত',
+            status_starting: 'এনক্রিপশন শুরু করা হচ্ছে... (এটি একটি মুহূর্ত সময় নিতে পারে)',
+            status_starting_decrypt: 'ডিক্রিপশন শুরু করা হচ্ছে...',
+            status_no_password_file: 'অনুগ্রহ করে এক বা একাধিক ফাইল নির্বাচন করুন এবং একটি পাসওয়ার্ড প্রবেশ করুন।',
+            status_no_password_files_decrypt: 'অনুগ্রহ করে একটি ডিক্রিপশন কী প্রবেশ করুন এবং ফাইলগুলি নির্বাচন করুন।',
+            status_encrypt_progress: 'এনক্রিপ্ট করা হয়েছে {0} এর {1} ফাইল...',
+            status_decrypt_progress: 'ডিক্রিপ্ট করা হচ্ছে {0} এর {1}...',
+            status_encrypt_complete: '✓ এনক্রিপশন সম্পূর্ণ।',
+            status_decrypt_complete: '✓ ডিক্রিপশন সম্পূর্ণ।',
+            status_files_processed: '{0} ফাইল এনক্রিপ্ট এবং ডাউনলোড করা হয়েছে।',
+            status_files_downloaded: '{0} ফাইল প্রক্রিয়া করা হয়েছে; ডাউনলোড শুরু হয়েছে।',
+            status_failed: '✗ {0}',
+            error_encrypt_failed: 'এনক্রিপ্ট করতে ব্যর্থ {0}: {1}',
+            error_decrypt_failed: 'ডিক্রিপশন ব্যর্থ (ভুল কী বা ক্ষতিগ্রস্ত ফাইল)।',
+            error_invalid_file: '{0}: অবৈধ বা ক্ষতিগ্রস্ত ফাইল।',
+            donation_title: 'The Salty Scrambler পছন্দ করেন?',
+            donation_subtitle: 'আপনার সমর্থন আমাদের এই টুলটি বিনামূল্যে, নিরাপদ এবং ক্রমাগত উন্নত রাখতে সাহায্য করে। আমাদের কাজে শক্তি যোগাতে আমাদের একটি কফি কিনে দেওয়ার কথা বিবেচনা করুন!',
+            donation_btn: 'আমাদের কফি কিনুন'
+          },
+          sw: {
+            language: 'Lugha',
+            encrypt: 'Sambaza',
+            decrypt: 'Kusambaza',
+            subtitle: 'Usimbaji salama wa faili kwa kutumia PBKDF2 (iteresheni 310,000) na AES-256-GCM',
+            selectFiles: 'Chagua Faili',
+            encryptionKey: 'Ufunguo wa Usimbaji',
+            encryptKeyPlaceholder: 'Ingiza nenosiri lenye nguvu',
+            encryptBtn: 'Sambaza & Pakua',
+            decryptHeading: '📦 Meneja wa Kusambaza',
+            decryptSubtitle: 'Ingiza ufunguo wa kusambaza na chagua faili moja au zaidi ya .enc ili kupakulia faili zilizosambazwa.',
+            decryptionKey: 'Ufunguo wa Kusambaza',
+            decryptKeyPlaceholder: 'Ingiza ufunguo wa kusambaza',
+            selectEncFiles: 'Chagua Faili Zilizosambazwa (.enc)',
+            decryptBtn: 'Pakia & Kusambaza',
+            downloadPrefix: 'Pakua ',
+            fileSelected: 'faili limechaguliwa',
+            filesSelected: 'faili limechaguliwa',
+            status_starting: 'Inaanza usimbaji... (Hii inaweza kuchukua muda)',
+            status_starting_decrypt: 'Inaanza kusambaza...',
+            status_no_password_file: 'Tafadhali chagua faili moja au zaidi na ingiza nenosiri.',
+            status_no_password_files_decrypt: 'Tafadhali ingiza ufunguo wa kusambaza na chagua faili.',
+            status_encrypt_progress: 'Sambazwa {0} ya {1} faili...',
+            status_decrypt_progress: 'Inasambaza {0} ya {1}...',
+            status_encrypt_complete: '✓ Usimbaji umekamilika.',
+            status_decrypt_complete: '✓ Kusambaza kumekamilika.',
+            status_files_processed: '{0} faili sambazwa na kupakuliwa.',
+            status_files_downloaded: '{0} faili zilizoshughulikiwa; maunonuo yalianza.',
+            status_failed: '✗ {0}',
+            error_encrypt_failed: 'Imeshindwa kusambaza {0}: {1}',
+            error_decrypt_failed: 'Kusambaza kumeshindwa (ufunguo usiotaka au faili lililoharibika).',
+            error_invalid_file: '{0}: faili lisililo halali au lililoharibika.',
+            donation_title: 'Unapenda The Salty Scrambler?',
+            donation_subtitle: 'Msaada wako unatusaidia kuweka zana hii bure, salama, na kuboresha mara kwa mara. Fikiria kututununulia kahawa ili kuimarisha kazi yetu!',
+            donation_btn: 'Tununulie Kahawa'
+          },
+          mr: {
+            language: 'भाषा',
+            encrypt: 'एनक्रिप्ट करा',
+            decrypt: 'डिक्रिप्ट करा',
+            subtitle: 'PBKDF2 (310,000 पुनरावृत्ती) आणि AES-256-GCM सह सुरक्षित फाइल एन्क्रिप्शन',
+            selectFiles: 'फाइलींची निवड करा',
+            encryptionKey: 'एन्क्रिप्शन की',
+            encryptKeyPlaceholder: 'मजबूत पासवर्ड प्रविष्ट करा',
+            encryptBtn: 'एनक्रिप्ट आणि डाउनलोड करा',
+            decryptHeading: '📦 डिक्रिप्शन व्यवस्थापक',
+            decryptSubtitle: 'डिक्रिप्शन की प्रविष्ट करा आणि डिक्रिप्ट केलेल्या फाइली डाउनलोड करण्यासाठी एक किंवा अधिक .enc फाइली निवडा.',
+            decryptionKey: 'डिक्रिप्शन की',
+            decryptKeyPlaceholder: 'डिक्रिप्शन की प्रविष्ट करा',
+            selectEncFiles: 'एन्क्रिप्ट केलेल्या फाइली निवडा (.enc)',
+            decryptBtn: 'लोड आणि डिक्रिप्ट करा',
+            downloadPrefix: 'डाउनलोड करा ',
+            fileSelected: 'फाइल निवडली',
+            filesSelected: 'फाइली निवडल्या',
+            status_starting: 'एन्क्रिप्शन सुरू होत आहे... (यात काही वेळ लागू शकतो)',
+            status_starting_decrypt: 'डिक्रिप्शन सुरू होत आहे...',
+            status_no_password_file: 'कृपया एक किंवा अधिक फाइली निवडा आणि पासवर्ड प्रविष्ट करा.',
+            status_no_password_files_decrypt: 'कृपया डिक्रिप्शन की प्रविष्ट करा आणि फाइली निवडा.',
+            status_encrypt_progress: 'एन्क्रिप्ट केली गेली {0} / {1} फाइली...',
+            status_decrypt_progress: 'डिक्रिप्ट केली जात आहे {0} / {1}...',
+            status_encrypt_complete: '✓ एन्क्रिप्शन पूर्ण.',
+            status_decrypt_complete: '✓ डिक्रिप्शन पूर्ण.',
+            status_files_processed: '{0} फाइली एन्क्रिप्ट आणि डाउनलोड केल्या गेल्या.',
+            status_files_downloaded: '{0} फाइली प्रक्रिया केल्या गेल्या; डाउनलोड सुरू.',
+            status_failed: '✗ {0}',
+            error_encrypt_failed: 'एन्क्रिप्ट करण्यात अपयश {0}: {1}',
+            error_decrypt_failed: 'डिक्रिप्शन अपयश (चुकीची की किंवा खराब फाइल)।',
+            error_invalid_file: '{0}: अमान्य किंवा खराब फाइल।',
+            donation_title: 'The Salty Scrambler आवडले?',
+            donation_subtitle: 'तुमचा पाठिंबा आम्हाला हे साधन मोफत, सुरक्षित आणि सतत सुधारत ठेवण्यास मदत करतो. आमच्या कामाला चालना देण्यासाठी आम्हाला कॉफी विकत घेण्याचा विचार करा!',
+            donation_btn: 'आम्हाला कॉफी विकत घ्या'
+          },
+          te: {
+            language: 'భాష',
+            encrypt: 'గుప్తీకరించు',
+            decrypt: 'డిక్రిప్ట్ చేయు',
+            subtitle: 'PBKDF2 (310,000 పునరావృత్తులు) మరియు AES-256-GCM ఉపయోగించి సురక్షిత ఫైల్ గుప్తీకరణ',
+            selectFiles: 'ఫైళ్లను ఎంచుకోండి',
+            encryptionKey: 'గుప్తీకరణ కీ',
+            encryptKeyPlaceholder: 'బలమైన పాస్‌వర్డ్‌ను నమోదు చేయండి',
+            encryptBtn: 'గుప్తీకరించు & డౌన్‌లోడ్ చేయు',
+            decryptHeading: '📦 డిక్రిప్షన్ మేనేజర్',
+            decryptSubtitle: 'డిక్రిప్షన్ కీని నమోదు చేయండి మరియు డిక్రిప్ట్ చేయిన ఫైళ్లను డౌన్‌లోడ్ చేయడానికి ఒకటి లేదా అంతకంటే ఎక్కువ .enc ఫైళ్లను ఎంచుకోండి.',
+            decryptionKey: 'డిక్రిప్షన్ కీ',
+            decryptKeyPlaceholder: 'డిక్రిప్షన్ కీని నమోదు చేయండి',
+            selectEncFiles: 'గుప్తీకరించిన ఫైళ్లను ఎంచుకోండి (.enc)',
+            decryptBtn: 'లోడ్ & డిక్రిప్ట్ చేయు',
+            downloadPrefix: 'డౌన్‌లోడ్ చేయు ',
+            fileSelected: 'ఫైల్ ఎంచుకోబడినది',
+            filesSelected: 'ఫైళ్లను ఎంచుకోబడినవి',
+            status_starting: 'గుప్తీకరణ ప్రారంభమవుతోంది... (ఇది కాసేపట్లు కట్టుబడుకోవచ్చు)',
+            status_starting_decrypt: 'డిక్రిప్షన్ ప్రారంభమవుతోంది...',
+            status_no_password_file: 'దయచేసి ఒకటి లేదా అంతకంటే ఎక్కువ ఫైళ్లను ఎంచుకుని పాస్‌వర్డ్‌ను నమోదు చేయండి.',
+            status_no_password_files_decrypt: 'దయచేసి డిక్రిప్షన్ కీని నమోదు చేయండి మరియు ఫైళ్లను ఎంచుకోండి.',
+            status_encrypt_progress: 'గుప్తీకరించిన {0} యొక్క {1} ఫైళ్లు...',
+            status_decrypt_progress: 'డిక్రిప్ట్ చేస్తున్న {0} యొక్క {1}...',
+            status_encrypt_complete: '✓ గుప్తీకరణ పూర్తయైంది.',
+            status_decrypt_complete: '✓ డిక్రిప్షన్ పూర్తయైంది.',
+            status_files_processed: '{0} ఫైళ్లు గుప్తీకరించబడ్డాయి మరియు డౌన్‌లోడ్ చేయబడ్డాయి.',
+            status_files_downloaded: '{0} ఫైళ్లను ప్రాసెస్ చేశారు; డౌన్‌లోడ్‌లు ప్రారంభమయ్యాయి.',
+            status_failed: '✗ {0}',
+            error_encrypt_failed: 'గుప్తీకరించడంలో విఫలమైంది {0}: {1}',
+            error_decrypt_failed: 'డిక్రిప్షన్ విఫలమైంది (తప్పుడు కీ లేదా చెడ్డ ఫైల్).',
+            error_invalid_file: '{0}: చెల్లని లేదా చెడ్డ ఫైల్.',
+            donation_title: 'The Salty Scrambler నచ్చిందా?',
+            donation_subtitle: 'మీ మద్దతు ఈ సాధనాన్ని ఉచితంగా, సురక్షితంగా మరియు నిరంతరం మెరుగుపరుస్తూ ఉంచడంలో మాకు సహాయపడుతుంది. మా పనికి శక్తినివ్వడానికి మాకు కాఫీ కొనడాన్ని పరిగణించండి!',
+            donation_btn: 'మాకు కాఫీ కొనండి'
+          },
+          ta: {
+            language: 'மொழி',
+            encrypt: 'மறைக்க',
+            decrypt: 'மறைப்பு விலக்க',
+            subtitle: 'PBKDF2 (310,000 மறு செய்கைகள்) மற்றும் AES-256-GCM உடன் பாதுகாப்பான கோப்பு குறிப்பாக்கம்',
+            selectFiles: 'கோப்புகளைத் தேர்ந்தெடுக்கவும்',
+            encryptionKey: 'குறிப்பாக்க விசை',
+            encryptKeyPlaceholder: 'வலுவான கடவுச்சொல்லை உள்ளிடவும்',
+            encryptBtn: 'மறைக்கவும் & பதிவிறக்கவும்',
+            decryptHeading: '📦 மறைப்பு விலக்க மேலாளர்',
+            decryptSubtitle: 'மறைப்பு விலக்க விசையை உள்ளிட்டு, மறைப்பு விலக்கப்பட்ட கோப்புகளைப் பதிவிறக்க ஒன்று அல்லது அதற்கு மேற்பட்ட .enc கோப்புகளைத் தேர்ந்தெடுக்கவும்.',
+            decryptionKey: 'மறைப்பு விலக்க விசை',
+            decryptKeyPlaceholder: 'மறைப்பு விலக்க விசையை உள்ளிடவும்',
+            selectEncFiles: 'குறிப்பாக்கப்பட்ட கோப்புகளைத் தேர்ந்தெடுக்கவும் (.enc)',
+            decryptBtn: 'ஏற்றவும் & மறைப்பு விலக்கவும்',
+            downloadPrefix: 'பதிவிறக்கவும் ',
+            fileSelected: 'கோப்பு தேர்ந்தெடுக்கப்பட்டுள்ளது',
+            filesSelected: 'கோப்புகள் தேர்ந்தெடுக்கப்பட்டுள்ளன',
+            status_starting: 'குறிப்பாக்கம் தொடங்குகிறது... (இது ஒரு தருணம் ஆகலாம்)',
+            status_starting_decrypt: 'மறைப்பு விலக்கம் தொடங்குகிறது...',
+            status_no_password_file: 'தயவுசெய்து ஒன்று அல்லது அதற்கு மேற்பட்ட கோப்புகளைத் தேர்ந்தெடுக்கவும் மற்றும் கடவுச்சொல்லை உள்ளிடவும்.',
+            status_no_password_files_decrypt: 'தயவுசெய்து மறைப்பு விலக்க விசையை உள்ளிட்டு கோப்புகளைத் தேர்ந்தெடுக்கவும்.',
+            status_encrypt_progress: 'குறிப்பாக்கப்பட்ட {0} / {1} கோப்புகள்...',
+            status_decrypt_progress: 'மறைப்பு விலக்குகிறது {0} / {1}...',
+            status_encrypt_complete: '✓ குறிப்பாக்கம் முடிந்தது.',
+            status_decrypt_complete: '✓ மறைப்பு விலக்கம் முடிந்தது.',
+            status_files_processed: '{0} கோப்புகள் குறிப்பாக்கப்பட்டு பதிவிறக்கப்பட்டுள்ளன.',
+            status_files_downloaded: '{0} கோப்புகள் செயல்பட்டுவிட்டன; பதிவிறக்கங்கள் தொடங்கியুள்ளன.',
+            status_failed: '✗ {0}',
+            error_encrypt_failed: 'குறிப்பாக்க முடியவில்லை {0}: {1}',
+            error_decrypt_failed: 'மறைப்பு விலக்கம் தெரியவில்லை (தவறான விசை அல்லது சேதமடைந்த கோப்பு).',
+            error_invalid_file: '{0}: தெரியாத அல்லது சேதமடைந்த கோப்பு।',
+            donation_title: 'The Salty Scrambler பிடித்திருக்கிறதா?',
+            donation_subtitle: 'உங்கள் ஆதரவு இந்த கருவியை இலவசமாகவும், பாதுகாப்பானதாகவும், தொடர்ந்து மேம்படுத்துவதாகவும் வைத்திருக்க எங்களுக்கு உதவுகிறது. எங்கள் வேலைக்கு ஊக்கமளிக்க எங்களுக்கு காபி வாங்குவதைக் கருத்தில் கொள்ளுங்கள்!',
+            donation_btn: 'எங்களுக்கு காபி வாங்குங்கள்'
+          },
+          tr: {
+            language: 'Dil',
+            encrypt: 'Şifrele',
+            decrypt: 'Şifresini Çöz',
+            subtitle: 'PBKDF2 (310.000 yineleme) ve AES-256-GCM ile güvenli dosya şifreleme',
+            selectFiles: 'Dosya Seçin',
+            encryptionKey: 'Şifreleme Anahtarı',
+            encryptKeyPlaceholder: 'Güçlü bir şifre girin',
+            encryptBtn: 'Şifrele ve İndir',
+            decryptHeading: '📦 Şifre Çözme Yöneticisi',
+            decryptSubtitle: 'Şifre çözme anahtarını girin ve şifreleme çözülmüş dosyaları indirmek için bir veya daha fazla .enc dosyası seçin.',
+            decryptionKey: 'Şifre Çözme Anahtarı',
+            decryptKeyPlaceholder: 'Şifre çözme anahtarını girin',
+            selectEncFiles: 'Şifrelenmiş Dosyaları Seçin (.enc)',
+            decryptBtn: 'Yükle ve Şifresini Çöz',
+            downloadPrefix: 'İndir ',
+            fileSelected: 'dosya seçildi',
+            filesSelected: 'dosya seçildi',
+            status_starting: 'Şifreleme başlatılıyor... (Bu bir an sürebilir)',
+            status_starting_decrypt: 'Şifre çözme başlatılıyor...',
+            status_no_password_file: 'Lütfen bir veya daha fazla dosya seçin ve bir şifre girin.',
+            status_no_password_files_decrypt: 'Lütfen şifre çözme anahtarını girin ve dosyaları seçin.',
+            status_encrypt_progress: '{0} / {1} dosya şifrele...',
+            status_decrypt_progress: 'Şifre çözülüyor {0} / {1}...',
+            status_encrypt_complete: '✓ Şifreleme tamamlandı.',
+            status_decrypt_complete: '✓ Şifre çözme tamamlandı.',
+            status_files_processed: '{0} dosya şifrelendi ve indirildi.',
+            status_files_downloaded: '{0} dosya işlendi; indirmeler başladı.',
+            status_failed: '✗ {0}',
+            error_encrypt_failed: 'Şifreleme başarısız {0}: {1}',
+            error_decrypt_failed: 'Şifre çözme başarısız oldu (yanlış anahtar veya bozuk dosya).',
+            error_invalid_file: '{0}: geçersiz veya bozuk dosya.',
+            donation_title: 'The Salty Scrambler\'ı seviyor musunuz?',
+            donation_subtitle: 'Desteğiniz bu aracı ücretsiz, güvenli ve sürekli gelişen tutmamıza yardımcı oluyor. Çalışmalarımıza güç vermek için bize bir kahve ısmarlamayı düşünün!',
+            donation_btn: 'Bize Kahve Ismarla'
+          },
+          vi: {
+            language: 'Ngôn ngữ',
+            encrypt: 'Mã hóa',
+            decrypt: 'Giải mã',
+            subtitle: 'Mã hóa tệp an toàn với PBKDF2 (310.000 lần lặp) và AES-256-GCM',
+            selectFiles: 'Chọn Tệp',
+            encryptionKey: 'Khóa mã hóa',
+            encryptKeyPlaceholder: 'Nhập mật khẩu mạnh',
+            encryptBtn: 'Mã hóa & Tải xuống',
+            decryptHeading: '📦 Trình Quản Lý Giải Mã',
+            decryptSubtitle: 'Nhập khóa giải mã và chọn một hoặc nhiều tệp .enc để tải xuống các tệp đã giải mã.',
+            decryptionKey: 'Khóa Giải mã',
+            decryptKeyPlaceholder: 'Nhập khóa giải mã',
+            selectEncFiles: 'Chọn Tệp Được Mã hóa (.enc)',
+            decryptBtn: 'Tải & Giải mã',
+            downloadPrefix: 'Tải xuống ',
+            fileSelected: 'tệp được chọn',
+            filesSelected: 'tệp được chọn',
+            status_starting: 'Bắt đầu mã hóa... (Điều này có thể mất chút thời gian)',
+            status_starting_decrypt: 'Bắt đầu giải mã...',
+            status_no_password_file: 'Vui lòng chọn một hoặc nhiều tệp và nhập mật khẩu.',
+            status_no_password_files_decrypt: 'Vui lòng nhập khóa giải mã và chọn tệp.',
+            status_encrypt_progress: 'Mã hóa {0} của {1} tệp...',
+            status_decrypt_progress: 'Giải mã {0} của {1}...',
+            status_encrypt_complete: '✓ Mã hóa hoàn tất.',
+            status_decrypt_complete: '✓ Giải mã hoàn tất.',
+            status_files_processed: '{0} tệp được mã hóa và tải xuống.',
+            status_files_downloaded: '{0} tệp được xử lý; tải xuống đã bắt đầu.',
+            status_failed: '✗ {0}',
+            error_encrypt_failed: 'Không thể mã hóa {0}: {1}',
+            error_decrypt_failed: 'Giải mã không thành công (khóa sai hoặc tệp bị hỏng).',
+            error_invalid_file: '{0}: tệp không hợp lệ hoặc bị hỏng.',
+            donation_title: 'Yêu thích The Salty Scrambler?',
+            donation_subtitle: 'Sự hỗ trợ của bạn giúp chúng tôi giữ công cụ này miễn phí, an toàn và liên tục cải tiến. Hãy cân nhắc mua cho chúng tôi một tách cà phê để tiếp thêm động lực cho công việc của chúng tôi!',
+            donation_btn: 'Mua cà phê cho chúng tôi'
+          },
+          ko: {
+            language: '언어',
+            encrypt: '암호화',
+            decrypt: '복호화',
+            subtitle: 'PBKDF2(310,000회 반복) 및 AES-256-GCM을 사용한 안전한 파일 암호화',
+            selectFiles: '파일 선택',
+            encryptionKey: '암호화 키',
+            encryptKeyPlaceholder: '강력한 비밀번호 입력',
+            encryptBtn: '암호화 및 다운로드',
+            decryptHeading: '📦 복호화 관리자',
+            decryptSubtitle: '복호화 키를 입력하고 복호화된 파일을 다운로드하려면 하나 이상의 .enc 파일을 선택하세요.',
+            decryptionKey: '복호화 키',
+            decryptKeyPlaceholder: '복호화 키 입력',
+            selectEncFiles: '암호화된 파일 선택 (.enc)',
+            decryptBtn: '로드 및 복호화',
+            downloadPrefix: '다운로드 ',
+            fileSelected: '파일 선택됨',
+            filesSelected: '파일 선택됨',
+            status_starting: '암호화 시작 중... (이 작업은 시간이 걸릴 수 있습니다)',
+            status_starting_decrypt: '복호화 시작 중...',
+            status_no_password_file: '하나 이상의 파일을 선택하고 비밀번호를 입력하십시오.',
+            status_no_password_files_decrypt: '복호화 키를 입력하고 파일을 선택하세요.',
+            status_encrypt_progress: '{0} / {1} 파일 암호화됨...',
+            status_decrypt_progress: '{0} / {1} 복호화 중...',
+            status_encrypt_complete: '✓ 암호화 완료.',
+            status_decrypt_complete: '✓ 복호화 완료.',
+            status_files_processed: '{0} 파일이 암호화되고 다운로드되었습니다.',
+            status_files_downloaded: '{0} 파일 처리됨; 다운로드 시작됨.',
+            status_failed: '✗ {0}',
+            error_encrypt_failed: '암호화 실패 {0}: {1}',
+            error_decrypt_failed: '복호화 실패 (잘못된 키 또는 손상된 파일).',
+            error_invalid_file: '{0}: 잘못되었거나 손상된 파일.',
+            donation_title: 'The Salty Scrambler가 마음에 드시나요?',
+            donation_subtitle: '여러분의 지원은 이 도구를 무료로, 안전하게, 그리고 지속적으로 개선하는 데 도움이 됩니다. 저희 작업에 활력을 불어넣기 위해 커피 한 잔 사주시는 것을 고려해 주세요!',
+            donation_btn: '커피 사주기'
+          },
+          it: {
+            language: 'Lingua',
+            encrypt: 'Crittografa',
+            decrypt: 'Decrittografa',
+            subtitle: 'Crittografia file sicura con PBKDF2 (310.000 iterazioni) e AES-256-GCM',
+            selectFiles: 'Seleziona File',
+            encryptionKey: 'Chiave di crittografia',
+            encryptKeyPlaceholder: 'Inserisci una password forte',
+            encryptBtn: 'Crittografa e Scarica',
+            decryptHeading: '📦 Gestore di decrittografia',
+            decryptSubtitle: 'Inserisci la chiave di decrittografia e seleziona uno o più file .enc per scaricare i file decrittografati.',
+            decryptionKey: 'Chiave di decrittografia',
+            decryptKeyPlaceholder: 'Inserisci la chiave di decrittografia',
+            selectEncFiles: 'Seleziona File Crittografati (.enc)',
+            decryptBtn: 'Carica e Decrittografa',
+            downloadPrefix: 'Scarica ',
+            fileSelected: 'file selezionato',
+            filesSelected: 'file selezionati',
+            status_starting: 'Avvio della crittografia... (Potrebbe richiedere un momento)',
+            status_starting_decrypt: 'Avvio della decrittografia...',
+            status_no_password_file: 'Seleziona uno o più file e inserisci una password.',
+            status_no_password_files_decrypt: 'Inserisci una chiave di decrittografia e seleziona file.',
+            status_encrypt_progress: 'Crittografati {0} di {1} file...',
+            status_decrypt_progress: 'Decrittografia {0} di {1}...',
+            status_encrypt_complete: '✓ Crittografia completata.',
+            status_decrypt_complete: '✓ Decrittografia completata.',
+            status_files_processed: '{0} file crittografati e scaricati.',
+            status_files_downloaded: '{0} file elaborati; download avviati.',
+            status_failed: '✗ {0}',
+            error_encrypt_failed: 'Errore nella crittografia di {0}: {1}',
+            error_decrypt_failed: 'Decrittografia non riuscita (chiave errata o file danneggiato).',
+            error_invalid_file: '{0}: file non valido o danneggiato.',
+            donation_title: 'Ti piace The Salty Scrambler?',
+            donation_subtitle: 'Il tuo supporto ci aiuta a mantenere questo strumento gratuito, sicuro e in continuo miglioramento. Considera di offrirci un caffè per alimentare il nostro lavoro!',
+            donation_btn: 'Offrici un Caffè'
+          },
+          th: {
+            language: 'ภาษา',
+            encrypt: 'เข้ารหัส',
+            decrypt: 'ถอดรหัส',
+            subtitle: 'การเข้ารหัสไฟล์อย่างปลอดภัยด้วย PBKDF2 (310,000 ครั้ง) และ AES-256-GCM',
+            selectFiles: 'เลือกไฟล์',
+            encryptionKey: 'คีย์การเข้ารหัส',
+            encryptKeyPlaceholder: 'ป้อนรหัสผ่านที่แข็งแรง',
+            encryptBtn: 'เข้ารหัสและดาวน์โหลด',
+            decryptHeading: '📦 ตัวจัดการถอดรหัส',
+            decryptSubtitle: 'ป้อนคีย์ถอดรหัสและเลือกไฟล์ .enc หนึ่งไฟล์ขึ้นไปเพื่อดาวน์โหลดไฟล์ที่ถอดรหัส',
+            decryptionKey: 'คีย์ถอดรหัส',
+            decryptKeyPlaceholder: 'ป้อนคีย์ถอดรหัส',
+            selectEncFiles: 'เลือกไฟล์ที่เข้ารหัส (.enc)',
+            decryptBtn: 'โหลดและถอดรหัส',
+            downloadPrefix: 'ดาวน์โหลด ',
+            fileSelected: 'เลือกไฟล์',
+            filesSelected: 'เลือกไฟล์',
+            status_starting: 'กำลังเริ่มการเข้ารหัส... (อาจใช้เวลาสักครู่)',
+            status_starting_decrypt: 'กำลังเริ่มการถอดรหัส...',
+            status_no_password_file: 'โปรดเลือกไฟล์หนึ่งไฟล์ขึ้นไปและป้อนรหัสผ่าน',
+            status_no_password_files_decrypt: 'โปรดป้อนคีย์ถอดรหัสและเลือกไฟล์',
+            status_encrypt_progress: 'เข้ารหัส {0} จาก {1} ไฟล์...',
+            status_decrypt_progress: 'ถอดรหัส {0} จาก {1}...',
+            status_encrypt_complete: '✓ การเข้ารหัสเสร็จสิ้น',
+            status_decrypt_complete: '✓ การถอดรหัสเสร็จสิ้น',
+            status_files_processed: 'เข้ารหัสและดาวน์โหลด {0} ไฟล์',
+            status_files_downloaded: 'ประมวลผล {0} ไฟล์ ดาวน์โหลดเริ่มต้นแล้ว',
+            status_failed: '✗ {0}',
+            error_encrypt_failed: 'ไม่สามารถเข้ารหัส {0}: {1}',
+            error_decrypt_failed: 'ถอดรหัสล้มเหลว (รหัสผ่านผิดหรือไฟล์เสียหาย)',
+            error_invalid_file: '{0}: ไฟล์ไม่ถูกต้องหรือเสียหาย',
+            donation_title: 'ชอบ The Salty Scrambler ไหม?',
+            donation_subtitle: 'การสนับสนุนของคุณช่วยให้เราทำให้เครื่องมือนี้ฟรี ปลอดภัย และพัฒนาอย่างต่อเนื่อง พิจารณาซื้อกาแฟให้เราเพื่อเติมพลังให้กับงานของเรา!',
+            donation_btn: 'ซื้อกาแฟให้เรา'
+          },
+          gu: {
+            language: 'ભાષા',
+            encrypt: 'એનક્રિપ્ટ કરો',
+            decrypt: 'ડિક્રિપ્ટ કરો',
+            subtitle: 'PBKDF2 (310,000 પુનરાવૃત્તિ) અને AES-256-GCM સાથે સુરક્ષિત ફાઈલ એનક્રિપશન',
+            selectFiles: 'ફાઈલો પસંદ કરો',
+            encryptionKey: 'એનક્રિપશન કી',
+            encryptKeyPlaceholder: 'મજબૂત પાસવર્ડ દાખલ કરો',
+            encryptBtn: 'એનક્રિપ્ટ કરો અને ડાઉનલોડ કરો',
+            decryptHeading: '🖼️ ડિક્રિપશન ગેલેરી',
+            decryptSubtitle: 'ડિક્રિપશન કી દાખલ કરો અને ડિક્રિપ્ટ કરેલી ઈમેજો ડાউનલોડ કરવા માટે એક અથવા વધુ .enc ફાઈલો પસંદ કરો.',
+            decryptionKey: 'ડિક્રિપશન કી',
+            decryptKeyPlaceholder: 'ડિક્રિપશન કી દાખલ કરો',
+            selectEncFiles: 'એનક્રિપ્ટ કરેલી ફાઈલો પસંદ કરો (.enc)',
+            decryptBtn: 'લોડ કરો અને ડિક્રિપ્ટ કરો',
+            downloadPrefix: 'ડાઉનલોડ કરો ',
+            fileSelected: 'ફાઈલ પસંદ કરવામાં આવી',
+            filesSelected: 'ફાઈલો પસંદ કરવામાં આવી',
+            status_starting: 'એનક્રિપશન શરૂ કરી રહ્યા છીએ... (આ થોડો સમય લઈ શકે છે)',
+            status_starting_decrypt: 'ડિક્રિપશન શરૂ કરી રહ્યા છીએ...',
+            status_no_password_file: 'કૃપા કરીને એક અથવા વધુ ફાઈલો પસંદ કરો અને પાસવર્ડ દાખલ કરો.',
+            status_no_password_files_decrypt: 'કૃપા કરીને ડિક્રિપશન કી દાખલ કરો અને ફાઈલો પસંદ કરો.',
+            status_encrypt_progress: 'એનક્રિપ્ટ કર્યું {0} / {1} ફાઈલો...',
+            status_decrypt_progress: 'ડિક્રિપ્ટ કરી રહ્યા છીએ {0} / {1}...',
+            status_encrypt_complete: '✓ એનક્રિપશન સમાપ્ત.',
+            status_decrypt_complete: '✓ ડિક્રિપશન સમાપ્ત.',
+            status_files_processed: '{0} ફાઈલો એનક્રિપ્ટ અને ડાઉનલોડ કરવામાં આવી.',
+            status_files_downloaded: '{0} ફાઈલોનો પ્રક્રિયા કરવામાં આવ્યો; ડાઉનલોડ શરૂ.',
+            status_failed: '✗ {0}',
+            error_encrypt_failed: 'એનક્રિપ્ટ કરવામાં નિષ્ફળ {0}: {1}',
+            error_decrypt_failed: 'ડિક્રિપશન નિષ્ફળ (ખોટી કી અથવા દૂષિત ફાઈલ).',
+            error_invalid_file: '{0}: અમાન્ય અથવા દૂષિત ફાઈલ.',
+            donation_title: 'The Salty Scrambler પસંદ છે?',
+            donation_subtitle: 'તમારો સમર્થન અમને આ ટૂલને મફત, સુરક્ષિત અને સતત સુધારતા રાખવામાં મદદ કરે છે. અમારા કામને પ્રોત્સાહન આપવા માટે અમને કોફી ખરીદવાનું વિચારો!',
+            donation_btn: 'અમને કોફી ખરીદો'
+          },
+          pl: {
+            language: 'Język',
+            encrypt: 'Zaszyfruj',
+            decrypt: 'Odszyfruj',
+            subtitle: 'Bezpieczne szyfrowanie plików za pomocą PBKDF2 (310.000 iteracji) i AES-256-GCM',
+            selectFiles: 'Wybierz Pliki',
+            encryptionKey: 'Klucz szyfrowania',
+            encryptKeyPlaceholder: 'Wpisz silne hasło',
+            encryptBtn: 'Zaszyfruj i Pobierz',
+            decryptHeading: '📦 Menedżer deszyfrowania',
+            decryptSubtitle: 'Wpisz klucz deszyfrowania i wybierz jeden lub więcej plików .enc, aby pobrać odszyfrowane pliki.',
+            decryptionKey: 'Klucz deszyfrowania',
+            decryptKeyPlaceholder: 'Wpisz klucz deszyfrowania',
+            selectEncFiles: 'Wybierz zaszyfrowane pliki (.enc)',
+            decryptBtn: 'Załaduj i Odszyfruj',
+            downloadPrefix: 'Pobierz ',
+            fileSelected: 'plik wybrany',
+            filesSelected: 'pliki wybrane',
+            status_starting: 'Uruchamianie szyfrowania... (Może to chwilę potrwać)',
+            status_starting_decrypt: 'Uruchamianie deszyfrowania...',
+            status_no_password_file: 'Proszę wybrać jeden lub więcej plików i wpisać hasło.',
+            status_no_password_files_decrypt: 'Proszę wpisać klucz deszyfrowania i wybrać pliki.',
+            status_encrypt_progress: 'Zaszyfrowano {0} z {1} pliku(ów)...',
+            status_decrypt_progress: 'Deszyfrowanie {0} z {1}...',
+            status_encrypt_complete: '✓ Szyfrowanie zakończone.',
+            status_decrypt_complete: '✓ Deszyfrowanie zakończone.',
+            status_files_processed: '{0} plik(ów) zaszyfrowany(ch) i pobrany(ch).',
+            status_files_downloaded: '{0} plik(ów) przetworzono; pobieranie rozpoczęte.',
+            status_failed: '✗ {0}',
+            error_encrypt_failed: 'Błąd szyfrowania {0}: {1}',
+            error_decrypt_failed: 'Deszyfrowanie nie powiodło się (zły klucz lub uszkodzony plik).',
+            error_invalid_file: '{0}: nieprawidłowy lub uszkodzony plik.',
+            donation_title: 'Podoba Ci się The Salty Scrambler?',
+            donation_subtitle: 'Twoje wsparcie pomaga nam utrzymać to narzędzie darmowe, bezpieczne i stale ulepszane. Rozważ postawienie nam kawy, aby wspomóc naszą pracę!',
+            donation_btn: 'Postaw nam kawę'
+          },
+          uk: {
+            language: 'Мова',
+            encrypt: 'Зашифрувати',
+            decrypt: 'Розшифрувати',
+            subtitle: 'Безпечне шифрування файлів за допомогою PBKDF2 (310 000 ітерацій) та AES-256-GCM',
+            selectFiles: 'Виберіть файли',
+            encryptionKey: 'Ключ шифрування',
+            encryptKeyPlaceholder: 'Введіть надійний пароль',
+            encryptBtn: 'Зашифрувати та завантажити',
+            decryptHeading: '📦 Менеджер розшифрування',
+            decryptSubtitle: 'Введіть ключ розшифрування та виберіть один або більше файлів .enc для завантаження розшифрованих файлів.',
+            decryptionKey: 'Ключ розшифрування',
+            decryptKeyPlaceholder: 'Введіть ключ розшифрування',
+            selectEncFiles: 'Виберіть зашифровані файли (.enc)',
+            decryptBtn: 'Завантажити та розшифрувати',
+            downloadPrefix: 'Завантажити ',
+            fileSelected: 'файл вибрано',
+            filesSelected: 'файли вибрано',
+            status_starting: 'Запуск шифрування... (це може зайняти деякий час)',
+            status_starting_decrypt: 'Запуск розшифрування...',
+            status_no_password_file: 'Будь ласка, виберіть один або більше файлів та введіть пароль.',
+            status_no_password_files_decrypt: 'Будь ласка, введіть ключ розшифрування та виберіть файли.',
+            status_encrypt_progress: 'Зашифровано {0} з {1} файла(ів)...',
+            status_decrypt_progress: 'Розшифрування {0} з {1}...',
+            status_encrypt_complete: '✓ Шифрування завершено.',
+            status_decrypt_complete: '✓ Розшифрування завершено.',
+            status_files_processed: '{0} файла(ів) зашифровано та завантажено.',
+            status_files_downloaded: '{0} файла(ів) оброблено; завантаження розпочато.',
+            status_failed: '✗ {0}',
+            error_encrypt_failed: 'Не вдалося зашифрувати {0}: {1}',
+            error_decrypt_failed: 'Розшифрування не вдалося (неправильний ключ або пошкоджений файл).',
+            error_invalid_file: '{0}: невалідний або пошкоджений файл.',
+            donation_title: 'Подобається The Salty Scrambler?',
+            donation_subtitle: 'Ваша підтримка допомагає нам зберігати цей інструмент безкоштовним, безпечним і постійно вдосконалюваним. Купіть нам каву, щоб підтримати нашу роботу!',
+            donation_btn: 'Купити нам каву'
+          },
+          ro: {
+            language: 'Limbă',
+            encrypt: 'Criptează',
+            decrypt: 'Decriptează',
+            subtitle: 'Criptare secură de fișiere cu PBKDF2 (310.000 iterații) și AES-256-GCM',
+            selectFiles: 'Selectare fișiere',
+            encryptionKey: 'Cheie de criptare',
+            encryptKeyPlaceholder: 'Introduceți o parolă puternică',
+            encryptBtn: 'Criptează și descarcă',
+            decryptHeading: '📦 Gestionar de decriptare',
+            decryptSubtitle: 'Introduceți cheia de decriptare și selectați uno sau mai mulți fișiere .enc pentru a descărca fișiere decriptate.',
+            decryptionKey: 'Cheie de decriptare',
+            decryptKeyPlaceholder: 'Introduceți cheia de decriptare',
+            selectEncFiles: 'Selectare fișiere criptate (.enc)',
+            decryptBtn: 'Încarcă și decriptează',
+            downloadPrefix: 'Descarcă ',
+            fileSelected: 'fișier selectat',
+            filesSelected: 'fișiere selectate',
+            status_starting: 'Se inițiază criptarea... (Aceasta poate dura un moment)',
+            status_starting_decrypt: 'Se inițiază decriptarea...',
+            status_no_password_file: 'Vă rugăm selectați uno sau mai mulți fișiere și introduceți o parolă.',
+            status_no_password_files_decrypt: 'Vă rugăm introduceți o cheie de decriptare și selectați fișiere.',
+            status_encrypt_progress: 'Criptat {0} din {1} fișiere...',
+            status_decrypt_progress: 'Decriptare {0} din {1}...',
+            status_encrypt_complete: '✓ Criptare finalizată.',
+            status_decrypt_complete: '✓ Decriptare finalizată.',
+            status_files_processed: '{0} fișier(e) criptat(e) și descărcat(e).',
+            status_files_downloaded: '{0} fișier(e) procesat(e); descărcări inițiate.',
+            status_failed: '✗ {0}',
+            error_encrypt_failed: 'Criptare eșuată {0}: {1}',
+            error_decrypt_failed: 'Decriptare eșuată (cheie incorectă sau fișier corupt).',
+            error_invalid_file: '{0}: fișier nevalid sau corupt.',
+            donation_title: 'Îți place The Salty Scrambler?',
+            donation_subtitle: 'Sprijinul tău ne ajută să menținem acest instrument gratuit, sigur și în continuă îmbunătățire. Ia în considerare să ne cumperi o cafea pentru a susține munca noastră!',
+            donation_btn: 'Cumpără-ne o cafea'
+          },
+          nl: {
+            language: 'Taal',
+            encrypt: 'Versleutelen',
+            decrypt: 'Ontsleutelen',
+            subtitle: 'Veilige bestandsversleuteling met PBKDF2 (310.000 iteraties) en AES-256-GCM',
+            selectFiles: 'Selecteer bestanden',
+            encryptionKey: 'Versleutelingssleutel',
+            encryptKeyPlaceholder: 'Voer een sterk wachtwoord in',
+            encryptBtn: 'Versleutelen en downloaden',
+            decryptHeading: '📦 Ontsleutelingsmanager',
+            decryptSubtitle: 'Voer de ontsleutelingssleutel in en selecteer één of meer .enc-bestanden om ontsleutelde bestanden te downloaden.',
+            decryptionKey: 'Ontsleutelingssleutel',
+            decryptKeyPlaceholder: 'Voer de ontsleutelingssleutel in',
+            selectEncFiles: 'Selecteer versleutelde bestanden (.enc)',
+            decryptBtn: 'Laden en ontsleutelen',
+            downloadPrefix: 'Download ',
+            fileSelected: 'bestand geselecteerd',
+            filesSelected: 'bestanden geselecteerd',
+            status_starting: 'Versleuteling starten... (Dit kan even duren)',
+            status_starting_decrypt: 'Ontsleuteling starten...',
+            status_no_password_file: 'Selecteer één of meer bestanden en voer een wachtwoord in.',
+            status_no_password_files_decrypt: 'Voer een ontsleutelingssleutel in en selecteer bestanden.',
+            status_encrypt_progress: '{0} van {1} bestanden versleuteld...',
+            status_decrypt_progress: '{0} van {1} ontsleutelen...',
+            status_encrypt_complete: '✓ Versleuteling voltooid.',
+            status_decrypt_complete: '✓ Ontsleuteling voltooid.',
+            status_files_processed: '{0} bestand(en) versleuteld en gedownload.',
+            status_files_downloaded: '{0} bestand(en) verwerkt; downloads gestart.',
+            status_failed: '✗ {0}',
+            error_encrypt_failed: 'Versleuteling mislukt {0}: {1}',
+            error_decrypt_failed: 'Ontsleuteling mislukt (onjuiste sleutel of beschadigd bestand).',
+            error_invalid_file: '{0}: ongeldig of beschadigd bestand.',
+            donation_title: 'Hou je van The Salty Scrambler?',
+            donation_subtitle: 'Jouw steun helpt ons deze tool gratis, veilig en voortdurend verbeterend te houden. Overweeg om ons een koffie te kopen om ons werk te ondersteunen!',
+            donation_btn: 'Koop ons een koffie'
+          },
+          kn: {
+            language: 'ಭಾಷೆ',
+            encrypt: 'ಎನ್‌ಕ್ರಿಪ್ಟ್ ಮಾಡಿ',
+            decrypt: 'ಡಿಕ್ರಿಪ್ಟ್ ಮಾಡಿ',
+            subtitle: 'PBKDF2 (310,000 ಪುನರಾವರ್ತನೆಗಳು) ಮತ್ತು AES-256-GCM ಜೊತೆಗೆ ಸುರಕ್ಷಿತ ಫೈಲ್ ಎನ್‌ಕ್ರಿಪ್ಶನ್',
+            selectFiles: 'ಫೈಲ್‌ಗಳನ್ನು ಆರಿಸಿ',
+            encryptionKey: 'ಎನ್‌ಕ್ರಿಪ್ಶನ್ ಕೀ',
+            encryptKeyPlaceholder: 'ಶಕ್ತಿಶಾಲಿ ಪಾಸ್‌ವರ್ಡ್ ನಮೂದಿಸಿ',
+            encryptBtn: 'ಎನ್‌ಕ್ರಿಪ್ಟ್ ಮಾಡಿ ಮತ್ತು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ',
+            decryptHeading: '📦 ಡಿಕ್ರಿಪ್ಶನ್ ಮ್ಯಾನೇಜರ್',
+            decryptSubtitle: 'ಡಿಕ್ರಿಪ್ಶನ್ ಕೀ ನಮೂದಿಸಿ ಮತ್ತು ಡಿಕ್ರಿಪ್ಟ್ ಮಾಡಿದ ಫೈಲ್‌ಗಳನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಒಂದು ಅಥವಾ ಹೆಚ್ಚಿನ .enc ಫೈಲ್‌ಗಳನ್ನು ಆರಿಸಿ.',
+            decryptionKey: 'ಡಿಕ್ರಿಪ್ಶನ್ ಕೀ',
+            decryptKeyPlaceholder: 'ಡಿಕ್ರಿಪ್ಶನ್ ಕೀ ನಮೂದಿಸಿ',
+            selectEncFiles: 'ಎನ್‌ಕ್ರಿಪ್ಟ್ ಮಾಡಿದ ಫೈಲ್‌ಗಳನ್ನು ಆರಿಸಿ (.enc)',
+            decryptBtn: 'ಲೋಡ್ ಮಾಡಿ ಮತ್ತು ಡಿಕ್ರಿಪ್ಟ್ ಮಾಡಿ',
+            downloadPrefix: 'ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ ',
+            fileSelected: 'ಫೈಲ್ ಆಯ್ಕೆ ಮಾಡಲಾಯಿತು',
+            filesSelected: 'ಫೈಲ್‌ಗಳನ್ನು ಆಯ್ಕೆ ಮಾಡಲಾಯಿತು',
+            status_starting: 'ಎನ್‌ಕ್ರಿಪ್ಶನ್ ಪ್ರಾರಂಭ ಮಾಡುತ್ತಿದೆ... (ಇದು ಸ್ವಲ್ಪ ಸಮಯ ತೆಗೆದುಕೊಳ್ಳಬಹುದು)',
+            status_starting_decrypt: 'ಡಿಕ್ರಿಪ್ಶನ್ ಪ್ರಾರಂಭ ಮಾಡುತ್ತಿದೆ...',
+            status_no_password_file: 'ದಯವಿಟ್ಟು ಒಂದು ಅಥವಾ ಹೆಚ್ಚಿನ ಫೈಲ್‌ಗಳನ್ನು ಆರಿಸಿ ಮತ್ತು ಪಾಸ್‌ವರ್ಡ್ ನಮೂದಿಸಿ.',
+            status_no_password_files_decrypt: 'ದಯವಿಟ್ಟು ಡಿಕ್ರಿಪ್ಶನ್ ಕೀ ನಮೂದಿಸಿ ಮತ್ತು ಫೈಲ್‌ಗಳನ್ನು ಆರಿಸಿ.',
+            status_encrypt_progress: 'ಎನ್‌ಕ್ರಿಪ್ಟ್ ಮಾಡಲಾಯಿತು {0} ಕ್ಕೆ {1} ಫೈಲ್‌ಗಳು...',
+            status_decrypt_progress: 'ಡಿಕ್ರಿಪ್ಟ್ ಮಾಡುತ್ತಿದೆ {0} ಕ್ಕೆ {1}...',
+            status_encrypt_complete: '✓ ಎನ್‌ಕ್ರಿಪ್ಶನ್ ಪೂರ್ಣ.',
+            status_decrypt_complete: '✓ ಡಿಕ್ರಿಪ್ಶನ್ ಪೂರ್ಣ.',
+            status_files_processed: '{0} ಫೈಲ್‌ಗಳನ್ನು ಎನ್‌ಕ್ರಿಪ್ಟ್ ಮಾಡಿ ಮತ್ತು ಡೌನ್‌ಲೋಡ್ ಮಾಡಲಾಯಿತು.',
+            status_files_downloaded: '{0} ಫೈಲ್‌ಗಳನ್ನು ಪ್ರಕ್ರಿಯೆ ಮಾಡಲಾಯಿತು; ಡೌನ್‌ಲೋಡ್‌ಗಳು ಪ್ರಾರಂಭವಾಯಿತು.',
+            status_failed: '✗ {0}',
+            error_encrypt_failed: 'ಎನ್‌ಕ್ರಿಪ್ಟ್ ಮಾಡಲು ವಿಫಲ {0}: {1}',
+            error_decrypt_failed: 'ಡಿಕ್ರಿಪ್ಶನ್ ವಿಫಲ (ತಪ್ಪುದದ ಕೀ ಅಥವಾ ಖಿನ್ನ ಫೈಲ್)।',
+            error_invalid_file: '{0}: ಅಸಿದ್ಧ ಅಥವಾ ಖಿನ್ನ ಫೈಲ್।',
+            donation_title: 'The Salty Scrambler ಇಷ್ಟವಾಯಿತೇ?',
+            donation_subtitle: 'ನಿಮ್ಮ ಬೆಂಬಲವು ಈ ಸಾಧನವನ್ನು ಉಚಿತ, ಸುರಕ್ಷಿತ ಮತ್ತು ನಿರಂತರವಾಗಿ ಸುಧಾರಿಸುತ್ತಿರುವಂತೆ ಇರಿಸಿಕೊಳ್ಳಲು ನಮಗೆ ಸಹಾಯ ಮಾಡುತ್ತದೆ. ನಮ್ಮ ಕೆಲಸಕ್ಕೆ ಚೈತನ್ಯ ತುಂಬಲು ನಮಗೆ ಕಾಫಿ ಕೊಡುವುದನ್ನು ಪರಿಗಣಿಸಿ!',
+            donation_btn: 'ನಮಗೆ ಕಾಫಿ ಕೊಡಿ'
+          },
+          ms: {
+            language: 'Bahasa',
+            encrypt: 'Enkripsi',
+            decrypt: 'Dekripsi',
+            subtitle: 'Enkripsi file yang aman dengan PBKDF2 (310.000 iterasi) dan AES-256-GCM',
+            selectFiles: 'Pilih File',
+            encryptionKey: 'Kunci Enkripsi',
+            encryptKeyPlaceholder: 'Masukkan kata sandi yang kuat',
+            encryptBtn: 'Enkripsi & Muat turun',
+            decryptHeading: '📦 Penurus Dekripsi',
+            decryptSubtitle: 'Masukkan kunci dekripsi dan pilih satu atau lebih fail .enc untuk memuat turun fail yang didekripsi.',
+            decryptionKey: 'Kunci Dekripsi',
+            decryptKeyPlaceholder: 'Masukkan kunci dekripsi',
+            selectEncFiles: 'Pilih Fail Disulitkan (.enc)',
+            decryptBtn: 'Muatkan & Dekripsi',
+            downloadPrefix: 'Muat turun ',
+            fileSelected: 'fail dipilih',
+            filesSelected: 'fail dipilih',
+            status_starting: 'Memulai enkripsi... (Ini mungkin memakan waktu)',
+            status_starting_decrypt: 'Memulai dekripsi...',
+            status_no_password_file: 'Sila pilih satu atau lebih fail dan masukkan kata sandi.',
+            status_no_password_files_decrypt: 'Sila masukkan kunci dekripsi dan pilih fail.',
+            status_encrypt_progress: 'Disulitkan {0} daripada {1} fail...',
+            status_decrypt_progress: 'Mendekripsi {0} daripada {1}...',
+            status_encrypt_complete: '✓ Enkripsi selesai.',
+            status_decrypt_complete: '✓ Dekripsi selesai.',
+            status_files_processed: '{0} fail disulitkan dan dimuat turun.',
+            status_files_downloaded: '{0} fail diproses; muat turun dimulai.',
+            status_failed: '✗ {0}',
+            error_encrypt_failed: 'Gagal enkripsi {0}: {1}',
+            error_decrypt_failed: 'Dekripsi gagal (kunci salah atau fail rosak).',
+            error_invalid_file: '{0}: fail tidak sah atau rosak.',
+            donation_title: 'Suka The Salty Scrambler?',
+            donation_subtitle: 'Sokongan anda membantu kami mengekalkan alat ini percuma, selamat, dan terus bertambah baik. Pertimbangkan untuk membelikan kami kopi bagi menyemarakkan kerja kami!',
+            donation_btn: 'Belikan Kami Kopi'
+          },
+          fa: {
+            language: 'زبان',
+            encrypt: 'رمزگذاری',
+            decrypt: 'رمزگشایی',
+            subtitle: 'رمزگذاری فایل محمی با PBKDF2 (310000 تکرار) و AES-256-GCM',
+            selectFiles: 'انتخاب فایل',
+            encryptionKey: 'کلید رمزگذاری',
+            encryptKeyPlaceholder: 'رمز عبور قوی وارد کنید',
+            encryptBtn: 'رمزگذاری و دانلود',
+            decryptHeading: '📦 مدیر رمزگشایی',
+            decryptSubtitle: 'کلید رمزگشایی را وارد کنید و یک یا چند فایل .enc را انتخاب کنید تا فایل‌های رمزگشایی شده را دانلود کنید.',
+            decryptionKey: 'کلید رمزگشایی',
+            decryptKeyPlaceholder: 'کلید رمزگشایی را وارد کنید',
+            selectEncFiles: 'فایل های رمزگذاری شده را انتخاب کنید (.enc)',
+            decryptBtn: 'بارگذاری و رمزگشایی',
+            downloadPrefix: 'دانلود ',
+            fileSelected: 'فایل انتخاب شد',
+            filesSelected: 'فایل های انتخاب شدند',
+            status_starting: 'شروع رمزگذاری... (ممکن است مدتی طول بکشد)',
+            status_starting_decrypt: 'شروع رمزگشایی...',
+            status_no_password_file: 'لطفا یک یا چند فایل را انتخاب کنید و رمز عبور را وارد کنید.',
+            status_no_password_files_decrypt: 'لطفا کلید رمزگشایی را وارد کنید و فایل ها را انتخاب کنید.',
+            status_encrypt_progress: '{0} از {1} فایل رمزگذاری شد...',
+            status_decrypt_progress: 'رمزگشایی {0} از {1}...',
+            status_encrypt_complete: '✓ رمزگذاری کامل شد.',
+            status_decrypt_complete: '✓ رمزگشایی کامل شد.',
+            status_files_processed: '{0} فایل رمزگذاری و دانلود شدند.',
+            status_files_downloaded: '{0} فایل پردازش شد؛ دانلود شروع شد.',
+            status_failed: '✗ {0}',
+            error_encrypt_failed: 'رمزگذاری ناموفق {0}: {1}',
+            error_decrypt_failed: 'رمزگشایی ناموفق (کلید اشتباه یا فایل خراب).',
+            error_invalid_file: '{0}: فایل نامعتبر یا خراب.',
+            donation_title: 'The Salty Scrambler را دوست دارید؟',
+            donation_subtitle: 'حمایت شما به ما کمک می‌کند این ابزار را رایگان، امن و دائماً در حال بهبود نگه داریم. برای حمایت از کار ما، یک قهوه برای ما بخرید!',
+            donation_btn: 'برای ما قهوه بخرید'
+          },
+          ur: {
+            language: 'زبان',
+            encrypt: 'Encrypt کریں',
+            decrypt: 'Decrypt کریں',
+            subtitle: 'PBKDF2 (310,000 تکرار) اور AES-256-GCM کے ساتھ محفوظ فائل کوڈنگ',
+            selectFiles: 'فائلیں منتخب کریں',
+            encryptionKey: 'Encryption کی',
+            encryptKeyPlaceholder: 'مضبوط پاس ورڈ درج کریں',
+            encryptBtn: 'Encrypt اور ڈاؤن لوڈ کریں',
+            decryptHeading: '📦 Decryption مینیجر',
+            decryptSubtitle: 'Decryption کی درج کریں اور Decrypt شدہ فائلیں ڈاؤن لوڈ کرنے کے لیے ایک یا ایک سے زیادہ .enc فائلیں منتخب کریں۔',
+            decryptionKey: 'Decryption کی',
+            decryptKeyPlaceholder: 'Decryption کی درج کریں',
+            selectEncFiles: 'Encrypted فائلیں منتخب کریں (.enc)',
+            decryptBtn: 'لوڈ اور Decrypt کریں',
+            downloadPrefix: 'ڈاؤن لوڈ کریں ',
+            fileSelected: 'فائل منتخب',
+            filesSelected: 'فائلیں منتخب',
+            status_starting: 'Encryption شروع ہو رہی ہے... (یہ کچھ وقت لے سکتا ہے)',
+            status_starting_decrypt: 'Decryption شروع ہو رہی ہے...',
+            status_no_password_file: 'براہ کرم ایک یا ایک سے زیادہ فائلیں منتخب کریں اور پاس ورڈ درج کریں۔',
+            status_no_password_files_decrypt: 'براہ کرم Decryption کی درج کریں اور فائلیں منتخب کریں۔',
+            status_encrypt_progress: 'Encrypt شدہ {0} / {1} فائلیں...',
+            status_decrypt_progress: 'Decrypt کیا جا رہا ہے {0} / {1}...',
+            status_encrypt_complete: '✓ Encryption مکمل۔',
+            status_decrypt_complete: '✓ Decryption مکمل۔',
+            status_files_processed: '{0} فائلیں Encrypt اور ڈاؤن لوڈ کی گئیں۔',
+            status_files_downloaded: '{0} فائلیں منظم ہوگئیں; ڈاؤن لوڈ شروع ہوگئے۔',
+            status_failed: '✗ {0}',
+            error_encrypt_failed: 'Encrypt کرنے میں ناکام {0}: {1}',
+            error_decrypt_failed: 'Decryption ناکام (غلط کی یا نقصان دہ فائل)۔',
+            error_invalid_file: '{0}: غلط یا نقصان دہ فائل۔',
+            donation_title: 'The Salty Scrambler پسند ہے؟',
+            donation_subtitle: 'آپ کی حمایت ہمیں اس ٹول کو مفت، محفوظ اور مسلسل بہتر بنانے میں مدد کرتی ہے۔ ہمارے کام کو فروغ دینے کے لیے ہمیں کافی خریدنے پر غور کریں!',
+            donation_btn: 'ہمیں کافی خریدیں'
+          },
+          he: {
+            language: 'עברית',
+            encrypt: 'הצפין',
+            decrypt: 'פענח',
+            subtitle: 'הצפנה מאובטחת של קבצים עם PBKDF2 (310,000 איטרציות) ו-AES-256-GCM',
+            selectFiles: 'בחר קבצים',
+            encryptionKey: 'מפתח הצפנה',
+            encryptKeyPlaceholder: 'הזן סיסמה חזקה',
+            encryptBtn: 'הצפן והורד',
+            decryptHeading: '📦 מנהל פענוח',
+            decryptSubtitle: 'הזן את מפתח הפענוח ובחר קובץ אחד או יותר של .enc כדי להוריד קבצים שפוענחו.',
+            decryptionKey: 'מפתח פענוח',
+            decryptKeyPlaceholder: 'הזן את מפתח הפענוח',
+            selectEncFiles: 'בחר קבצים מוצפנים (.enc)',
+            decryptBtn: 'טען ופענח',
+            downloadPrefix: 'הורד ',
+            fileSelected: 'קובץ נבחר',
+            filesSelected: 'קבצים נבחרו',
+            status_starting: 'התחל הצפנה... (זה עשוי לקחת זמן)',
+            status_starting_decrypt: 'התחל פענוח...',
+            status_no_password_file: 'אנא בחר קובץ אחד או יותר והזן סיסמה.',
+            status_no_password_files_decrypt: 'אנא הזן מפתח פענוח ובחר קבצים.',
+            status_encrypt_progress: 'הוצפן {0} מ- {1} קבצים...',
+            status_decrypt_progress: 'פענוח {0} מ- {1}...',
+            status_encrypt_complete: '✓ הצפנה הושלמה.',
+            status_decrypt_complete: '✓ פענוח הושלם.',
+            status_files_processed: '{0} קבצים הוצפנו והורדו.',
+            status_files_downloaded: '{0} קבצים עובדו; הורדות החלו.',
+            status_failed: '✗ {0}',
+            error_encrypt_failed: 'הצפנה נכשלה {0}: {1}',
+            error_decrypt_failed: 'פענוח נכשל (מפתח שגוי או קובץ פגום).',
+            error_invalid_file: '{0}: קובץ לא חוקי או פגום.',
+            donation_title: 'אוהבים את The Salty Scrambler?',
+            donation_subtitle: 'התמיכה שלכם עוזרת לנו לשמור על הכלי הזה חינמי, מאובטח ומשתפר باستمرار. שקלו לקנות לנו קפה כדי לתדלק את העבודה שלנו!',
+            donation_btn: 'קנו לנו קפה'
+          },
+          el: {
+            language: 'Ελληνικά',
+            encrypt: 'Κρυπτογράφηση',
+            decrypt: 'Αποκρυπτογράφηση',
+            subtitle: 'Ασφαλή κρυπτογράφηση αρχείων με PBKDF2 (310.000 επαναλήψεις) και AES-256-GCM',
+            selectFiles: 'Επιλέξτε αρχεία',
+            encryptionKey: 'Κλειδί κρυπτογράφησης',
+            encryptKeyPlaceholder: 'Εισαγάγετε ισχυρό κωδικό πρόσβασης',
+            encryptBtn: 'Κρυπτογράφηση & Λήψη',
+            decryptHeading: '📦 Διαχείριση αποκρυπτογράφησης',
+            decryptSubtitle: 'Εισαγάγετε το κλειδί αποκρυπτογράφησης και επιλέξτε ένα ή περισσότερα αρχεία .enc για λήψη των αποκρυπτογραφημένων αρχείων.',
+            decryptionKey: 'Κλειδί αποκρυπτογράφησης',
+            decryptKeyPlaceholder: 'Εισαγάγετε το κλειδί αποκρυπτογράφησης',
+            selectEncFiles: 'Επιλέξτε κρυπτογραφημένα αρχεία (.enc)',
+            decryptBtn: 'Φόρτωση & Αποκρυπτογράφηση',
+            downloadPrefix: 'Λήψη ',
+            fileSelected: 'Αρχείο επιλεγμένο',
+            filesSelected: 'Αρχεία επιλεγμένα',
+            status_starting: 'Έναρξη κρυπτογράφησης... (Αυτό μπορεί να πάρει λίγο χρόνο)',
+            status_starting_decrypt: 'Έναρξη αποκρυπτογράφησης...',
+            status_no_password_file: 'Επιλέξτε ένα ή περισσότερα αρχεία και εισαγάγετε ένα κωδικό πρόσβασης.',
+            status_no_password_files_decrypt: 'Εισαγάγετε ένα κλειδί αποκρυπτογράφησης και επιλέξτε αρχεία.',
+            status_encrypt_progress: 'Κρυπτογραφήθηκαν {0} από {1} αρχεία...',
+            status_decrypt_progress: 'Αποκρυπτογράφηση {0} από {1}...',
+            status_encrypt_complete: '✓ Η κρυπτογράφηση ολοκληρώθηκε.',
+            status_decrypt_complete: '✓ Η αποκρυπτογράφηση ολοκληρώθηκε.',
+            status_files_processed: '{0} αρχεία κρυπτογραφήθηκαν και λήφθηκαν.',
+            status_files_downloaded: '{0} αρχεία επεξεργάστηκαν; οι λήψεις ξεκίνησαν.',
+            status_failed: '✗ {0}',
+            error_encrypt_failed: 'Αποτυχία κρυπτογράφησης {0}: {1}',
+            error_decrypt_failed: 'Η αποκρυπτογράφηση απέτυχε (λανθασμένο κλειδί ή κατεστραμμένο αρχείο).',
+            error_invalid_file: '{0}: μη έγκυρο ή κατεστραμμένο αρχείο.',
+            donation_title: 'Αγαπάτε το The Salty Scrambler;',
+            donation_subtitle: 'Η υποστήριξή σας μας βοηθά να διατηρήσουμε αυτό το εργαλείο δωρεάν, ασφαλές και συνεχώς βελτιωμένο. Σκεφτείτε να μας κεράσετε έναν καφέ για να τροφοδοτήσετε τη δουλειά μας!',
+            donation_btn: 'Κεράστε μας έναν καφέ'
+          },
+          cs: {
+            language: 'Čeština',
+            encrypt: 'Šifrovat',
+            decrypt: 'Dešifrovat',
+            subtitle: 'Bezpečné šifrování souborů pomocí PBKDF2 (310 000 iterací) a AES-256-GCM',
+            selectFiles: 'Vybrat soubory',
+            encryptionKey: 'Šifrovací klíč',
+            encryptKeyPlaceholder: 'Zadejte silné heslo',
+            encryptBtn: 'Šifrovat & Stáhnout',
+            decryptHeading: '📦 Správce dešifrování',
+            decryptSubtitle: 'Zadejte klíč dešifrování a vyberte jeden nebo více souborů .enc ke stažení dešifrovaných souborů.',
+            decryptionKey: 'Klíč dešifrování',
+            decryptKeyPlaceholder: 'Zadejte klíč dešifrování',
+            selectEncFiles: 'Vybrat zašifrované soubory (.enc)',
+            decryptBtn: 'Načíst & Dešifrovat',
+            downloadPrefix: 'Stáhnout ',
+            fileSelected: 'Soubor vybrán',
+            filesSelected: 'Soubory vybrány',
+            status_starting: 'Spuštění šifrování... (Může to chvíli trvat)',
+            status_starting_decrypt: 'Spuštění dešifrování...',
+            status_no_password_file: 'Vyberte jeden nebo více souborů a zadejte heslo.',
+            status_no_password_files_decrypt: 'Zadejte klíč dešifrování a vyberte soubory.',
+            status_encrypt_progress: 'Zašifrováno {0} z {1} souborů...',
+            status_decrypt_progress: 'Dešifrování {0} z {1}...',
+            status_encrypt_complete: '✓ Šifrování dokončeno.',
+            status_decrypt_complete: '✓ Dešifrování dokončeno.',
+            status_files_processed: '{0} souborů šifrováno a staženo.',
+            status_files_downloaded: '{0} souborů zpracováno; stahování zahájeno.',
+            status_failed: '✗ {0}',
+            error_encrypt_failed: 'Šifrování selhalo {0}: {1}',
+            error_decrypt_failed: 'Dešifrování selhalo (nesprávný klíč nebo poškozený soubor).',
+            error_invalid_file: '{0}: neplatný nebo poškozený soubor.',
+            donation_title: 'Líbí se vám The Salty Scrambler?',
+            donation_subtitle: 'Vaše podpora nám pomáhá udržet tento nástroj zdarma, bezpečný a neustále se zlepšující. Zvažte, že nám koupíte kávu na podporu naší práce!',
+            donation_btn: 'Kupte nám kávu'
+          },
+          sv: {
+            language: 'Svenska',
+            encrypt: 'Kryptera',
+            decrypt: 'Dekryptera',
+            subtitle: 'Säker filkryptering med PBKDF2 (310 000 iterationer) och AES-256-GCM',
+            selectFiles: 'Välj filer',
+            encryptionKey: 'Krypteringsnyckel',
+            encryptKeyPlaceholder: 'Ange ett starkt lösenord',
+            encryptBtn: 'Kryptera & Hämta',
+            decryptHeading: '📦 Dekrypteringshanterare',
+            decryptSubtitle: 'Ange dekrypteringsnyckeln och välj en eller flera .enc-filer för att hämta dekrypterade filer.',
+            decryptionKey: 'Dekrypteringsnyckel',
+            decryptKeyPlaceholder: 'Ange dekrypteringsnyckeln',
+            selectEncFiles: 'Välj krypterade filer (.enc)',
+            decryptBtn: 'Ladda & Dekryptera',
+            downloadPrefix: 'Hämta ',
+            fileSelected: 'Fil vald',
+            filesSelected: 'Filer valda',
+            status_starting: 'Startar kryptering... (Detta kan ta en stund)',
+            status_starting_decrypt: 'Startar dekryptering...',
+            status_no_password_file: 'Välj en eller flera filer och ange ett lösenord.',
+            status_no_password_files_decrypt: 'Ange en dekrypteringsnyckel och välj filer.',
+            status_encrypt_progress: 'Krypterad {0} av {1} filer...',
+            status_decrypt_progress: 'Dekrypterar {0} av {1}...',
+            status_encrypt_complete: '✓ Kryptering slutförd.',
+            status_decrypt_complete: '✓ Dekryptering slutförd.',
+            status_files_processed: '{0} filer krypterad och hämtade.',
+            status_files_downloaded: '{0} filer behandlade; nedladdningar startade.',
+            status_failed: '✗ {0}',
+            error_encrypt_failed: 'Kryptering misslyckades {0}: {1}',
+            error_decrypt_failed: 'Dekryptering misslyckades (felaktig nyckel eller skadad fil).',
+            error_invalid_file: '{0}: ogiltig eller skadad fil.',
+            donation_title: 'Älskar du The Salty Scrambler?',
+            donation_subtitle: 'Ditt stöd hjälper oss att hålla detta verktyg gratis, säkert och ständigt förbättrat. Överväg att bjuda oss på ett kaffe för att driva vårt arbete!',
+            donation_btn: 'Bjud oss på kaffe'
+          },
+          da: {
+            donation_title: 'Elsker du The Salty Scrambler?',
+            donation_subtitle: 'Din støtte hjælper os med at holde dette værktøj gratis, sikkert og konstant forbedret. Overvej at købe os en kaffe for at give energi til vores arbejde!',
+            donation_btn: 'Køb os en kaffe'
+          },
+          fi: {
+            donation_title: 'Pidätkö The Salty Scramblerista?',
+            donation_subtitle: 'Tukesi auttaa meitä pitämään tämän työkalun ilmaisena, turvallisena ja jatkuvasti kehittyvänä. Harkitse kahvin ostamista meille työmme tukemiseksi!',
+            donation_btn: 'Osta meille kahvi'
+          },
+          no: {
+            donation_title: 'Elsker du The Salty Scrambler?',
+            donation_subtitle: 'Din støtte hjelper oss å holde dette verktøyet gratis, sikkert og kontinuerlig forbedret. Vurder å kjøpe oss en kaffe for å gi energi til arbeidet vårt!',
+            donation_btn: 'Kjøp oss en kaffe'
+          },
+          hu: {
+            donation_title: 'Tetszik a The Salty Scrambler?',
+            donation_subtitle: 'A támogatásod segít abban, hogy ezt az eszközt ingyenesen, biztonságosan és folyamatosan fejlesztve tartsuk. Fontold meg, hogy vegyél nekünk egy kávét a munkánk támogatására!',
+            donation_btn: 'Vegyél nekünk kávét'
+          },
+          sk: {
+            donation_title: 'Páči sa vám The Salty Scrambler?',
+            donation_subtitle: 'Vaša podpora nám pomáha udržať tento nástroj bezplatný, bezpečný a neustále sa zlepšujúci. Zvážte, že nám kúpite kávu na podporu našej práce!',
+            donation_btn: 'Kúpte nám kávu'
+          },
+          sl: {
+            donation_title: 'Vam je všeč The Salty Scrambler?',
+            donation_subtitle: 'Vaša podpora nam pomaga ohranjati to orodje brezplačno, varno in nenehno izboljšano. Razmislite o tem, da nam kupite kavo za spodbudo našega dela!',
+            donation_btn: 'Kupite nam kavo'
+          },
+          et: {
+            donation_title: 'Meeldib The Salty Scrambler?',
+            donation_subtitle: 'Teie tugi aitab meil hoida seda tööriista tasuta, turvalisena ja pidevalt täiustuvana. Kaaluge meile kohvi ostmist, et toetada meie tööd!',
+            donation_btn: 'Osta meile kohvi'
+          },
+          lv: {
+            donation_title: 'Patīk The Salty Scrambler?',
+            donation_subtitle: 'Jūsu atbalsts palīdz mums uzturēt šo rīku bezmaksas, drošu un pastāvīgi uzlabotu. Apsveriet iespēju nopirkt mums kafiju, lai atbalstītu mūsu darbu!',
+            donation_btn: 'Nopērciet mums kafiju'
+          },
+          lt: {
+            donation_title: 'Patinka The Salty Scrambler?',
+            donation_subtitle: 'Jūsų parama padeda mums išlaikyti šį įrankį nemokamą, saugų ir nuolat tobulinimą. Apsvarstykite galimybę nupirkti mums kavos, kad paremtumėte mūsų darbą!',
+            donation_btn: 'Nupirkite mums kavos'
+          },
+          bg: {
+            donation_title: 'Харесвате The Salty Scrambler?',
+            donation_subtitle: 'Вашата подкрепа ни помага да поддържаме този инструмент безплатен, сигурен и непрекъснато подобряван. Помислете да ни купите кафе, за да подкрепите работата ни!',
+            donation_btn: 'Купете ни кафе'
+          },
+          hr: {
+            donation_title: 'Volite The Salty Scrambler?',
+            donation_subtitle: 'Vaša podrška pomaže nam održavati ovaj alat besplatnim, sigurnim i stalno poboljšanim. Razmislite o tome da nam kupite kavu kako biste podržali naš rad!',
+            donation_btn: 'Kupite nam kavu'
+          },
+          sr: {
+            donation_title: 'Волите The Salty Scrambler?',
+            donation_subtitle: 'Ваша подршка нам помаже да одржимо овај алат бесплатним, безбедним и стално побољшаним. Размислите о томе да нам купите кафу како бисте подржали наш рад!',
+            donation_btn: 'Купите нам кафу'
+          },
+          mk: {
+            donation_title: 'Ви се допаѓа The Salty Scrambler?',
+            donation_subtitle: 'Вашата поддршка ни помага да го одржиме овој алат бесплатен, безбеден и постојано подобрен. Размислете за тоа да ни купите кафе за да ја поддржите нашата работа!',
+            donation_btn: 'Купете ни кафе'
+          },
+          af: {
+            donation_title: 'Is jy lief vir The Salty Scrambler?',
+            donation_subtitle: 'Jou ondersteuning help ons om hierdie instrument gratis, veilig en voortdurend verbeterend te hou. Oorweeg dit om vir ons \'n koffie te koop om ons werk aan te vuur!',
+            donation_btn: 'Koop vir ons koffie'
+          },
+          so: {
+            donation_title: 'Ma jeceshahay The Salty Scrambler?',
+            donation_subtitle: 'Taageeradaadu waxay naga caawisaa inaan qalabkan ku dhawno bilaash, ammaan ah, oo si joogto ah u hagaagsan. Ka fiirso inaad noo iibsato qahwe si aad u taageerto shaqadeena!',
+            donation_btn: 'Noo iibso qahwe'
+          },
+          am: {
+            donation_title: 'The Salty Scrambler ይወዳሉ?',
+            donation_subtitle: 'የእርስዎ ድጋፍ ይህንን መሳሪያ ነጻ፣ ደህንነቱ የተጠበቀ እና በቀጣይነት እየተሻሻለ እንድንይዝ ይረዳናል። ስራችንን ለማበረታታት ቡና እንድትገዙልን እባክዎን ያስቡበት!',
+            donation_btn: 'ቡና ይግዙልን'
+          }
+        };
+
+        // For brevity, fallback all missing languages to English
+        LANGS.forEach(([code]) => { if (!T[code]) T[code] = T.en; });
+
+        let currentLang = navigator.language ? navigator.language.slice(0,2) : 'en';
+        if (!T[currentLang]) currentLang = 'en';
+
+        function tr(key, ...args) {
+          let text = (T[currentLang] && T[currentLang][key]) || T.en[key] || key;
+          // Simple placeholder replacement: {0}, {1}, etc.
+          args.forEach((arg, i) => {
+            text = text.replace(`{${i}}`, arg);
+          });
+          return text;
+        }
+
+        function setLanguage(lang) {
+          if (!T[lang]) lang = 'en';
+          currentLang = lang;
+          // Update all UI text
+          document.getElementById('subtitle').textContent = tr('subtitle');
+          document.getElementById('labelFileInput').textContent = tr('selectFiles');
+          document.getElementById('labelPasswordInput').textContent = tr('encryptionKey');
+          document.getElementById('encryptBtn').textContent = tr('encryptBtn');
+          document.getElementById('decryptHeading').textContent = tr('decryptHeading');
+          document.getElementById('decryptSubtitle').textContent = tr('decryptSubtitle');
+          document.getElementById('labelDecryptPassword').textContent = tr('decryptionKey');
+          document.getElementById('labelEncryptedFiles').textContent = tr('selectEncFiles');
+          document.getElementById('decryptBtn').textContent = tr('decryptBtn');
+          document.getElementById('tabEncrypt').textContent = tr('encrypt');
+          document.getElementById('tabDecrypt').textContent = tr('decrypt');
+          // Update placeholders
+          document.getElementById('passwordInput').placeholder = tr('encryptKeyPlaceholder');
+          document.getElementById('decryptPassword').placeholder = tr('decryptKeyPlaceholder');
+          // Update donation section
+          document.getElementById('donationTitle').textContent = tr('donation_title');
+          document.getElementById('donationSubtitle').textContent = tr('donation_subtitle');
+          document.getElementById('donationBtnText').textContent = tr('donation_btn');
+        }
+
+        function initLanguageSelector() {
+          const toggle = document.getElementById('langDropdownToggle');
+          const menu = document.getElementById('langDropdownMenu');
+          const currentFlag = document.getElementById('currentFlag');
+          const currentLangLabel = document.getElementById('currentLangLabel');
+          const select = document.getElementById('langSelect');
+
+          // Create hidden select for accessibility
+          LANGS.forEach(([code, name, flag]) => {
+            const option = document.createElement('option');
+            option.value = code;
+            option.textContent = `${flag} ${name}`;
+            if (code === currentLang) option.selected = true;
+            select.appendChild(option);
+          });
+
+          // Set initial display
+          const currentLangData = LANGS.find(([code]) => code === currentLang);
+          if (currentLangData) {
+            currentFlag.textContent = currentLangData[2];
+            currentLangLabel.textContent = currentLangData[1];
+          }
+
+          // Create dropdown options
+          LANGS.forEach(([code, name, flag, region]) => {
+            const option = document.createElement('button');
+            option.type = 'button';
+            option.className = `dropdown-option ${code === currentLang ? 'selected' : ''}`;
+            option.setAttribute('data-lang', code);
+            option.setAttribute('role', 'option');
+            option.setAttribute('aria-selected', code === currentLang ? 'true' : 'false');
+            option.innerHTML = `
+              <span class="dropdown-option-flag">${flag}</span>
+              <div class="dropdown-option-content">
+                <span class="dropdown-option-name">${name}</span>
+                <span class="dropdown-option-region">${region}</span>
+              </div>
+            `;
+            option.addEventListener('click', () => {
+              selectLanguage(code, flag, name);
+            });
+            menu.appendChild(option);
+          });
+
+          function selectLanguage(code, flag, name) {
+            // Update button display
+            currentFlag.textContent = flag;
+            currentLangLabel.textContent = name;
+
+            // Update selected option styling
+            document.querySelectorAll('.dropdown-option').forEach(opt => {
+              opt.classList.remove('selected');
+              opt.setAttribute('aria-selected', 'false');
+            });
+            document.querySelector(`[data-lang="${code}"]`).classList.add('selected');
+            document.querySelector(`[data-lang="${code}"]`).setAttribute('aria-selected', 'true');
+
+            // Update hidden select
+            select.value = code;
+
+            // Close dropdown
+            closeDropdown();
+
+            // Set language
+            setLanguage(code);
+          }
+
+          function toggleDropdown() {
+            const isOpen = toggle.classList.contains('open');
+            if (isOpen) {
+              closeDropdown();
+            } else {
+              openDropdown();
+            }
+          }
+
+          function openDropdown() {
+            toggle.classList.add('open');
+            menu.classList.add('open');
+            toggle.setAttribute('aria-expanded', 'true');
+          }
+
+          function closeDropdown() {
+            toggle.classList.remove('open');
+            menu.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+          }
+
+          // Toggle dropdown on button click
+          toggle.addEventListener('click', toggleDropdown);
+
+          // Close dropdown when clicking outside
+          document.addEventListener('click', (e) => {
+            const wrapper = document.querySelector('.custom-dropdown-wrapper');
+            if (!wrapper.contains(e.target)) {
+              closeDropdown();
+            }
+          });
+
+          // Keyboard navigation
+          toggle.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              toggleDropdown();
+            }
+            if (e.key === 'ArrowDown') {
+              e.preventDefault();
+              openDropdown();
+              document.querySelector('.dropdown-option').focus();
+            }
+          });
+
+          // Keyboard navigation in menu
+          menu.addEventListener('keydown', (e) => {
+            const options = Array.from(document.querySelectorAll('.dropdown-option'));
+            const activeIndex = options.findIndex(opt => opt === document.activeElement);
+
+            if (e.key === 'ArrowDown') {
+              e.preventDefault();
+              const nextIndex = (activeIndex + 1) % options.length;
+              options[nextIndex].focus();
+            } else if (e.key === 'ArrowUp') {
+              e.preventDefault();
+              const prevIndex = activeIndex <= 0 ? options.length - 1 : activeIndex - 1;
+              options[prevIndex].focus();
+            } else if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              e.target.click();
+            } else if (e.key === 'Escape') {
+              e.preventDefault();
+              closeDropdown();
+              toggle.focus();
+            }
+          });
+
+          setLanguage(currentLang);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+          initLanguageSelector();
+        });
+
+        // Update encryption function to use tr()
+        async function startEncryption() {
+          const passwordInput = document.getElementById('passwordInput');
+          const fileInput = document.getElementById('fileInput');
+          const password = passwordInput.value;
+          const files = fileInput.files;
+          const encryptBtn = document.getElementById('encryptBtn');
+
+          const status = document.getElementById('status');
+          status.textContent = tr('status_starting');
+          status.className = 'show info';
+          encryptBtn.disabled = true;
+
+          if (!password || files.length === 0) {
+            status.textContent = tr('status_no_password_file');
+            status.className = 'show error';
+            encryptBtn.disabled = false;
+            return;
+          }
+
+          try {
+            const downloadedFiles = [];
+
+            for (let i = 0; i < files.length; i++) {
+              const file = files[i];
+              const downloadedName = await encryptAndDownloadFile(file, password);
+              downloadedFiles.push(downloadedName);
+              status.textContent = tr('status_encrypt_progress', (i + 1), files.length);
+              status.className = 'show info';
+            }
+
+            passwordInput.value = '';
+            fileInput.value = '';
+            document.getElementById('fileCount').textContent = '';
+
+            status.textContent = tr('status_encrypt_complete') + ' ' + tr('status_files_processed', downloadedFiles.length, downloadedFiles.length !== 1 ? 's' : '');
+            status.className = 'show success';
+            encryptBtn.disabled = false;
+
+          } catch (error) {
+            status.textContent = tr('status_failed', error.message);
+            status.className = 'show error';
+            encryptBtn.disabled = false;
+          }
+        }
+
+        async function startDecryption() {
+          const password = document.getElementById('decryptPassword').value;
+          const files = document.getElementById('encryptedFiles').files;
+          const status = document.getElementById('decryptStatus');
+          const gallery = document.getElementById('gallery');
+          const decryptBtn = document.getElementById('decryptBtn');
+
+          gallery.innerHTML = '';
+          status.textContent = tr('status_starting_decrypt');
+          status.className = 'show info';
+          decryptBtn.disabled = true;
+
+          if (!password || !files || files.length === 0) {
+            status.textContent = tr('status_no_password_files_decrypt');
+            status.className = 'show error';
+            decryptBtn.disabled = false;
+            return;
+          }
+
+          try {
+            for (let i = 0; i < files.length; i++) {
+              const file = files[i];
+              status.textContent = tr('status_decrypt_progress', (i + 1), files.length);
+
+              const bundledArrayBuffer = await file.arrayBuffer();
+              const bundledData = new Uint8Array(bundledArrayBuffer);
+
+              if (bundledData.length < SALT_LENGTH + IV_LENGTH) {
+                throw new Error(tr('error_invalid_file', file.name));
+              }
+
+              const salt = bundledData.slice(0, SALT_LENGTH);
+              const iv = bundledData.slice(SALT_LENGTH, SALT_LENGTH + IV_LENGTH);
+              const encryptedData = bundledData.slice(SALT_LENGTH + IV_LENGTH);
+
+              const decKey = await deriveKey(password, salt, 'decrypt');
+              const decryptedBytes = await decryptData(decKey, encryptedData.buffer || encryptedData, iv);
+
+              const blob = new Blob([decryptedBytes], { type: 'image/jpeg' });
+              const downloadName = file.name.replace(/\.enc$/i, '') + '.jpg';
+
+              const urlAuto = URL.createObjectURL(blob);
+              const urlManual = URL.createObjectURL(blob);
+
+              const link = document.createElement('a');
+              link.href = urlManual;
+              link.download = downloadName;
+              link.textContent = tr('downloadPrefix') + downloadName;
+              link.style.display = 'block';
+              link.style.marginBottom = '0.5rem';
+
+              const manualRevokeTimer = setTimeout(() => {
+                try { URL.revokeObjectURL(urlManual); } catch (e) {}
+                try { link.remove(); } catch (e) {}
+              }, 10 * 60 * 1000);
+
+              link.addEventListener('click', () => {
+                setTimeout(() => {
+                  try { URL.revokeObjectURL(urlManual); } catch (e) {}
+                  try { link.remove(); } catch (e) {}
+                }, 1500);
+                clearTimeout(manualRevokeTimer);
+              });
+
+              gallery.appendChild(link);
+
+              const a = document.createElement('a');
+              a.href = urlAuto;
+              a.download = downloadName;
+              document.body.appendChild(a);
+              a.click();
+              document.body.removeChild(a);
+
+              setTimeout(() => {
+                try { URL.revokeObjectURL(urlAuto); } catch (e) {}
+              }, 2000);
+            }
+
+            status.textContent = tr('status_decrypt_complete') + ' ' + tr('status_files_downloaded', files.length, files.length !== 1 ? 's' : '');
+            status.className = 'show success';
+
+          } catch (err) {
+            status.textContent = tr('status_failed', err.message);
+            status.className = 'show error';
+          } finally {
+            document.getElementById('decryptPassword').value = '';
+            document.getElementById('encryptedFiles').value = '';
+            document.getElementById('decryptFileCount').textContent = '';
+            decryptBtn.disabled = false;
+          }
+        }
+
+        showTab('encrypt');
+
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('sw.js').catch(() => {});
+        }
+    </script>
+</body>
+</html>

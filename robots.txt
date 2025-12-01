@@ -1,0 +1,19 @@
+# robots.txt for The Salty Scrambler
+# https://www.robotstxt.org/robotstxt.html
+
+# Allow all robots
+User-agent: *
+Allow: /
+
+# Disallow scripts and tools directories (if applicable)
+Disallow: /tools/
+Disallow: /.claude/
+
+# Specify sitemap location
+Sitemap: https://yourdomain.com/sitemap.xml
+
+# Crawl delay (optional - adjust as needed)
+Crawl-delay: 1
+
+# Request rate limit (optional)
+Request-rate: 1/1s

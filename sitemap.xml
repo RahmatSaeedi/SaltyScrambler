@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Main Application Page -->
+  <url>
+    <loc>https://github.com/RahmatSaeedi/SaltyScrambler/index.html</loc>
+    <lastmod>2024-11-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://github.com/RahmatSaeedi/SaltyScrambler/og-image.png</image:loc>
+      <image:title>The Salty Scrambler - Secure File Encryption</image:title>
+    </image:image>
+  </url>
+
+  <!-- Documentation Page -->
+  <url>
+    <loc>https://github.com/RahmatSaeedi/SaltyScrambler/readme.md</loc>
+    <lastmod>2024-11-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Root/Home -->
+  <url>
+    <loc>https://github.com/RahmatSaeedi/SaltyScrambler/</loc>
+    <lastmod>2024-11-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Manifest (Progressive Web App) -->
+  <url>
+    <loc>https://github.com/RahmatSaeedi/SaltyScrambler/manifest.json</loc>
+    <lastmod>2024-11-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>
