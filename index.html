@@ -5477,7 +5477,17 @@
         showTab('encrypt');
 
         if ('serviceWorker' in navigator) {
-          navigator.serviceWorker.register('sw.js',{ scope: './SaltyScrambler/' }).catch(() => {});
+          navigator.serviceWorker.register('sw.js').then(registration => {
+                            const currentScope = registration.scope;
+                            console.log('Service Worker registered successfully with scope:', currentScope);
+                            
+                            // Check the resolved scope to confirm the expected subfolder path
+                            if (currentScope.includes('/SaltyScrambler/')) {
+                                displayMessage('PWA Registered! App scope is the /SaltyScrambler/ subfolder.', 'info');
+                            } else {
+                                displayMessage('PWA Warning: Scope may not be /SaltyScrambler/. Ensure this file is in the subfolder.', 'error');
+                            }
+                        }).catch(() => {});
         }
     </script>
 </body>
